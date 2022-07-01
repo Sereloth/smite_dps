@@ -1,5 +1,7 @@
 # smite_dps
 
+In order to run the program you only need to download "smite_dps.exe"
+
 A program that runs over each item combination and calculates the ability damage/auto attack dps that would be dealt by the build in order to help find the highest damage builds by sorting and displaying the highest damage builds. 
 
 Of course the highest damage build is rarely the best build so there are many options to customise the results such as only displaying builds with enough CDR or enough lifesteal. Most item passives that are "conditional" can be disabled or enabled so that the results can be tailored to whatever playstyle your going for. For example if you just want to oneshot someone, enabling soul gems passive may be good but if you want high consistent ability damage you would want soul gem disabled.
