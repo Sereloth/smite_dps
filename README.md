@@ -15,4 +15,4 @@ I do intend to keep this updated so if you decide to use it, check back on each 
 
 Enabling hydra/poly's passives will add a hydra/poly auto attack into the ability damage calculation while not affecting the auto dps calculation.
 
-If you have any questions do let me know.
+If you have any questions, please do let me know.
