@@ -12,3 +12,7 @@ Below is a screenshot of the interface with some captions to try and make it eas
 
 
 I do intend to keep this updated so if you decide to use it, check back on each patch for an updated version. Also their are a few minor things that still haven't been added like Zeus's passive on auto attacks which might end up getting added. However currently pretty much all of the important passives have been added such as Sol, Olorun, Charybdis, Heim, etc... 
+
+Enabling hydra/poly's passives will add a hydra/poly auto attack into the ability damage calculation while not affecting the auto dps calculation.
+
+If you have any questions do let me know.
