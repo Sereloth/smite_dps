@@ -9,3 +9,6 @@ Of course the highest damage build is rarely the best build so there are many op
 
 Below is a screenshot of the interface with some captions to try and make it easier to understand.
 ![Untitled](https://user-images.githubusercontent.com/97856152/176965681-62720f12-b11c-428d-b3fa-9d1c5f304b7a.png)
+
+
+I do intend to keep this updated so if you decide to use it, check back on each patch for an updated version. Also their are a few minor things that still haven't been added like Zeus's passive on auto attacks which might end up getting added. However currently pretty much all of the important passives have been added such as Sol, Olorun, Charybdis, Heim, etc... 
