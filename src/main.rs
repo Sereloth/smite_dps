@@ -6178,7 +6178,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     bancroft_enabled:bool,tahuti_enabled:bool,magical:bool,serrated_enabled:bool,runeforged_enabled:bool,shifters_power_enabled:bool,cowl_enabled:bool,
     redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,kaldr_enabled:bool,pos2_enabled:bool,nimble_enabled:bool,as_buff:f32,
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
-    enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool) -> f32
+    enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
+    ao_2:bool) -> f32
 {
     let mut telk_bool = false;
     let mut hecate_bool = false;
@@ -6236,6 +6237,9 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         attack_speed += 0.35 * (god.base_as - god.as_per_level);
         chronos_2_auto_scaling_increase = 0.35;
     }
+
+    let mut ao_2_stacks = 0.0;
+    if ao_2 { ao_2_stacks = 6.0; }
 
     for name in build.names.iter()
     {
@@ -6511,6 +6515,16 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 
             }
 
+            let mut mitigated_ao_2_damage = 0.0;
+            if ao_2_stacks > 0.0
+            {
+                ao_2_stacks -= 1.0;
+                let unmitigated_ao_2_damage = (95.0 + (power * 0.3 * tahuti_scaling_multi)) * (1.0 + sacrificial_damage_multi);
+                let target_prots_after_pen_with_obby = (target_prots_after_shred * (1.0 - percent_pen - dominance_pen - obby_pen)) - flat_pen;
+                let protections_multiplier_with_obby = clamp(100.0/(100.0+target_prots_after_pen_with_obby),0.0,1.0);
+                mitigated_ao_2_damage = unmitigated_ao_2_damage * protections_multiplier_with_obby;
+            }
+
             let mut unmitigated_pos2_damage = 0.0;
             if pos2_enabled{ unmitigated_pos2_damage = 2.0 * (70.0 + (power * 0.25));} // *2 as we assume both 'extra' shots hit
 
@@ -6523,7 +6537,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
                         + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage) * protections_multiplier 
-                        + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage;
+                        + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage;
             
 
             let damage_after_you_do_more_damage_buffs = damage * (1.0 + focus_damage_multi + rangdas_multi);
@@ -6832,6 +6846,7 @@ fn main() {
     let baka_3 = button::CheckButton::new(100, 30, 75, 30, "Baka 3");
     let sol_passive = button::CheckButton::new(175, 30, 110, 30, "Sol Passive");
     let chronos_2 = button::CheckButton::new(285, 30, 200, 30, "Chronos 2 (4th Quadrant)");
+    let ao_2 = button::CheckButton::new(0, 60, 120, 30, "Ao Kuang 2");
     wind2.end();
 
     let mut wind3 = Window::new(500, 0, 500, 300, "Stat Buffs");
@@ -6923,7 +6938,7 @@ fn main() {
             baka_3.value(),hs_reaver_subsequent_hits_btn.value(),ichaival_ability_power_btn.value(),sol_passive.value(),flat_power_buff.value().parse().unwrap(),
             percent_power_buff.value().parse().unwrap(),red_buff.value(),enhanced_red_buff.value(),purp_buff.value(),enhanced_purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
-            ,target2_mitigations.value().parse().unwrap(),chronos_2.value())); 
+            ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value())); 
 
     
 
@@ -6947,7 +6962,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     min_lifesteal:f32,require_antiheal:bool,god:&God,target1_god:&God,target2_god:&God,kaldr_enabled:bool,pos2_enabled:bool,
     ability_crit_enabled:bool,ability_true_damage:bool,hydras_enabled:bool,nimble_enabled:bool,as_buff:f32,freya_1_2_enabled:bool,baka_3_enabled:bool,
     hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,
-    enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool)
+    enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,ao_2:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7186,7 +7201,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                         protector_enabled,kaldr_enabled,pos2_enabled,nimble_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                         flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                        p500_pot,pen_pot,target1_mitigations,chronos_2);
+                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
@@ -7197,7 +7212,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                             protector_enabled,kaldr_enabled,pos2_enabled,nimble_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                             flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                            p500_pot,pen_pot,target2_mitigations,chronos_2);
+                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
