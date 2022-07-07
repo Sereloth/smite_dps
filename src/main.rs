@@ -146,15 +146,16 @@ static SPHINX:Item = Item
 //-------------------------------------------------------------------------
 //Starters
 
-static MAGICAL_STARTERS:[&Item;28] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
+static MAGICAL_STARTERS:[&Item;30] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
                                         &VAMP_SHROUD,&BLOODSOAKED,&SACRIFICIAL,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,
                                         &GILDED,&DIAMOND,&ORNATE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,&BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,
-                                        &MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,&TAINTED_AMULET,&TAINTED_BREASTPLATE];
+                                        &MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,&TAINTED_AMULET,&TAINTED_BREASTPLATE,
+                                        &FIGHTERS,&RANGDAS];
 
-static PHYSICAL_STARTERS:[&Item;24] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
+static PHYSICAL_STARTERS:[&Item;26] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
                                         &HUNTERS_COWL,&BLUESTONE_PENDANT,&BLUESTONE_BROOCH,&REDSTONE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,
                                         &BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,&MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,
-                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE];
+                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS];
    
                                         
 static SANDS:Item = Item
@@ -857,6 +858,50 @@ static TAINTED_BREASTPLATE:Item = Item
     magical_prot: 30.0,
     mp5: 0.0,
     hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2150.0,
+};
+
+static FIGHTERS:Item = Item
+{
+    name: "Fighter's Mask",
+    magical_power: 15.0,
+    physical_power: 10.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana: 0.0,
+    health: 0.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 10.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 650.0,
+};
+
+static RANGDAS:Item = Item
+{
+    name: "Rangda's Mask",
+    magical_power: 80.0,
+    physical_power: 60.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana: 0.0,
+    health: 0.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2150.0,
@@ -4139,7 +4184,7 @@ static ZHONG:God = God
     base_auto_damage: 35.0,
     auto_damage_per_level: 1.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
-    base_phys_prots: 14.0,
+    base_phys_prots: 21.0,
     phys_prots_per_level: 2.8,
     base_magical_prots: 40.0,
     magical_prots_per_level: 1.2,
@@ -6087,7 +6132,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     shifters_power_enabled:bool,cowl_enabled:bool,redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,mhb_enabled:bool,
     ability_crit:bool,ability_true_damage:bool,hydras_enabled:bool,as_buff:f32,hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,
     flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,
-    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool) -> f32
+    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool,myr_enabled:bool) -> f32
 {
     let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);
     let flat_pen = clamp(build.flat_pen,0.0,50.0);
@@ -6127,6 +6172,9 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut hydras_bool = false;
     let mut basic_attack_damage = 0.0;
     let mut sphinx_multi = 0.0;
+    let mut fighters_multi = 0.0;
+    let mut rangdas_bool = false;
+    let mut myr_multi = 0.0;
 
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
     if god.name == FREYA.name { bancroft_lifesteal += 0.15; }
@@ -6153,6 +6201,9 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name) { power += 100.0; bancroft_lifesteal = 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
+        if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
+        if name == &RANGDAS.name { rangdas_bool = true; }
+        if myr_enabled && name == &MYRDDIN.name { myr_multi = 0.25; }
 
         if name == &CRUSHER.name { crusher_bool = true; }
         if name == &HEARTSEEKER.name { heartseeker_bool = true; }
@@ -6195,6 +6246,8 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &SPHINX.name { sphinx_multi = 0.2; }
 
     }
+
+    
 
     let mut item_mitigations = 0.0;
     for name in target_build.names.iter()
@@ -6250,6 +6303,15 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if typhon_bool { power += clamp(build.lifesteal + bancroft_lifesteal,0.0,0.65)*200.0;}
 
     if silverbranch_bool{ power += clamp(attack_speed - 2.5,0.0,9999.9) * 100.0;  }
+
+    let mut rangdas_multi = 0.0;
+    if rangdas_bool
+    {
+        if magical{ rangdas_multi = clamp(0.03 * ((power / 90.0) - (power % 90.0)/90.0), 0.0, 0.15); }
+        else { rangdas_multi = clamp(0.03 * ((power / 65.0) - (power % 65.0)/65.0), 0.0, 0.15); }
+    }
+
+    
 
     //applies percent increases to power
     power *= 1.0 + percent_power_increase + percent_power_buff;
@@ -6353,15 +6415,15 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
                                 unmitigated_archmages_damage + unmitigated_crusher_damage + unmitigated_heartseeker_damage + unmitigated_arondight_damage + unmitigated_bluestone_pendant_damage + 
                                 unmitigated_bluestone_brooch_damage + unmitigated_redstone_damage + unmitigated_hydras_auto_damage + unmitigated_calam_damage + unmitigated_claw_damage;
 
-    let damage = ( unmitigated_damage * protections_multiplier) + estaff_max_health_steal + conduit_true_damage + mhb_damage;
+    let damage = ( unmitigated_damage * protections_multiplier) + conduit_true_damage + mhb_damage;
 
-    let damage_after_you_do_more_damage_buffs = damage * (1.0  + focus_damage_multi );
+    let damage_after_you_do_more_damage_buffs = damage * (1.0  + focus_damage_multi + fighters_multi + rangdas_multi + myr_multi);
 
     let damage_after_increased_damage_on_target = damage_after_you_do_more_damage_buffs * (1.0 + magus_multi + runeforged_multi);
 
     let damage_after_mitigations = damage_after_increased_damage_on_target * (1.0 - mitigations - item_mitigations);
 
-    damage_after_mitigations
+    damage_after_mitigations + estaff_max_health_steal
 }
 
 fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target:&God, target_level:f32, target_build:&Build, 
@@ -6370,7 +6432,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,kaldr_enabled:bool,pos2_enabled:bool,as_buff:f32,
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
     enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool) -> f32
+    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool) -> f32
 {
     let mut telk_bool = false;
     let mut hecate_bool = false;
@@ -6406,6 +6468,10 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut toxic_blade_bool = false;
     let mut obby_pen = 0.0;
     let mut griffon_multi = 0.0;
+    let mut myr_bool = false;
+    let mut myr_multi = 0.0;
+    let mut fighters_multi = 0.0;
+    let mut rangdas_bool = false;
 
 
     let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
@@ -6490,6 +6556,9 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name ==&OBBY.name && obby_enabled { obby_pen = 0.1;}
 
         if name == &GRIFFONWING.name { griffon_multi = 0.15; }
+        if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.25; }
+        if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
+        if name == &RANGDAS.name { rangdas_bool = true; }
         
         
     }
@@ -6590,12 +6659,20 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         power += silverbranch_power;
         power *= 1.0 + percent_power_increase;
 
+        let mut rangdas_multi = 0.0;
+        if rangdas_bool
+        {
+            if magical{ rangdas_multi = clamp(0.03 * ((power / 90.0) - (power % 90.0)/90.0), 0.0, 0.15); }
+            else { rangdas_multi = clamp(0.03 * ((power / 65.0) - (power % 65.0)/65.0), 0.0, 0.15); }
+        }
+
         let mut heim_progression_multi = 1.0; //heims first 2 autos have swing times and damage which don't match so this is used to account for it
         if god.name == HEIM.name && auto_attack_progression_counter < 2{ heim_progression_multi = 1.04; }
 
         let mut as_cap_reduction = 0.0;
         if heavy_exe_bool { as_cap_reduction = 0.75; }
 
+        if myr_bool{ myr_multi = clamp((-0.028125*time_spent_attacking)+0.25,0.025,0.25); }
         time_spent_attacking += (1.0/(clamp(attack_speed,0.35,2.5-as_cap_reduction)-witchblade_slow*(god.base_as - god.as_per_level))) * god.auto_progression[auto_attack_progression_counter] * heim_progression_multi;
 
         let autos_per_attack = 1.0 + 1.0 * (god.name == ZHONG.name) as i32 as f32; //used for zhong double autos
@@ -6632,6 +6709,14 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 let percent_health = (2.0/75000.0)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (7.0/300.0);
                 unmitigated_qins_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
                 unmitigated_qins_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+            }
+
+            let mut unmitigated_erlang_passive_damage = 0.0;
+            if god.name == ERLANG.name
+            {
+                let erlang_passive_percent_damage = 0.0175 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
+                let erlang_passive_flat_damage = (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * auto_attack_power_scaling) * 0.075;
+                unmitigated_erlang_passive_damage = erlang_passive_flat_damage + erlang_passive_percent_damage;   
             }
 
             let mut unmitigated_obow_damage = 0.0;
@@ -6699,7 +6784,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             kaldr_alternator *= -1.0;
             if kaldr_enabled && kaldr_alternator == 1.0
             {
-                unmitigated_damage_kaldr_damage = god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * auto_attack_power_scaling;
+                unmitigated_damage_kaldr_damage = (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * auto_attack_power_scaling) * 0.8;
             }
 
             let mut unmitigated_freya_1_damage = 0.0;
@@ -6736,11 +6821,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
 
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
-                        + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage) * protections_multiplier 
+                        + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage) * protections_multiplier 
                         + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage;
             
 
-            let damage_after_you_do_more_damage_buffs = damage * (1.0 + focus_damage_multi);
+            let damage_after_you_do_more_damage_buffs = damage * (1.0 + focus_damage_multi + myr_multi + fighters_multi + rangdas_multi);
 
             let damage_after_increased_damage_on_target = damage_after_you_do_more_damage_buffs * (1.0 + magus_multi + runeforged_multi + (ferocious_exe_stacks * 0.02));
 
@@ -6871,6 +6956,7 @@ fn main() {
     let bancroft_btn = button::CheckButton::default().with_size(130,0).with_label("Bancroft's Talon");
     let tahuti_btn = button::CheckButton::default().with_size(110,0).with_label("Rod of Tahuti");
     let calam_btn = button::CheckButton::default().with_size(140,0).with_label("Calamitous Glyph");
+    let myr_btn = button::CheckButton::default().with_size(80,0).with_label("Myrddin"); 
     pack3.end();
 
     let mut phys_pack3 = group::Pack::new(10, 160, 100, 30, "");
@@ -7143,7 +7229,7 @@ fn main() {
             baka_3.value(),hs_reaver_subsequent_hits_btn.value(),ichaival_ability_power_btn.value(),sol_passive.value(),flat_power_buff.value().parse().unwrap(),
             percent_power_buff.value().parse().unwrap(),red_buff.value(),enhanced_red_buff.value(),purp_buff.value(),enhanced_purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
-            ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value())); 
+            ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value())); 
 
     
 
@@ -7168,7 +7254,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     ability_crit_enabled:bool,ability_true_damage:bool,hydras_enabled:bool,calam_enabled:bool,as_buff:f32,freya_1_2_enabled:bool,baka_3_enabled:bool,
     hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,
     enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool)
+    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7325,7 +7411,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 if i.name == "Book of Thoth" && !book_of_thoth_enabled { duplicate_detected_in_build = true;}
                 if i.name == "Warlock's Staff" && !warlocks_enabled { duplicate_detected_in_build = true;}
                 if i.name == "Transcendence" && !trans_enabled { duplicate_detected_in_build = true;}
-                if i.name == "Bancroft's Talon" && !bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
+                if (i.name == "Bancroft's Talon" || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
 
                 if i.name == TAHUTI.name || i.name == CALAM_TAHUTI.name { tahutis += 1.0; }
                 if i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name || i.name == BANCROFTS_CLAW.name { bancrofts += 1.0; }
@@ -7375,7 +7461,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
                         redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled,
                         as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                        purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled);
+                        purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled,myr_enabled);
 
                     if target1_ability_damage < target1_min_ability_damage{ build_fits_criteria = false;}
                     
@@ -7388,7 +7474,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
                             redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled
                             ,as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                            purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled);
+                            purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled,myr_enabled);
 
                         if target2_ability_damage < target2_min_ability_damage{ build_fits_criteria = false;}
                         
@@ -7425,7 +7511,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                         protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                         flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled);
+                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
@@ -7436,7 +7522,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                             protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                             flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled);
+                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
