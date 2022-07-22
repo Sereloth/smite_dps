@@ -6650,12 +6650,19 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut auto_attack_progression_counter = 0;
     let mut anhur_passive_shred = 0.0;
 
+    let mut temp_percent_power_increase_store = 0.0;
+    let mut temp_flat_power_increase_store = 0.0;
+
     power *= 1.0 + percent_power_increase;
     while time_spent_attacking < time_to_auto
     {
         power /= 1.0 + percent_power_increase;
         power -= silverbranch_power;
         if silverbranch_bool{ silverbranch_power = clamp(attack_speed - 2.5,0.0,99.9) * 100.0; } 
+        percent_power_increase += temp_percent_power_increase_store;
+        power += temp_flat_power_increase_store;
+        temp_percent_power_increase_store = 0.0;
+        temp_flat_power_increase_store = 0.0;
         power += silverbranch_power;
         power *= 1.0 + percent_power_increase;
 
@@ -6836,13 +6843,13 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             
             if hecate_bool && hecate_stacks < 3
             {
-                percent_power_increase += 0.05;
+                temp_percent_power_increase_store += 0.05;
                 hecate_stacks = hecate_stacks + 1;
             }
 
             if ichaival_bool && ichaival_stacks < 3
             {
-                power += 10.0;
+                temp_flat_power_increase_store += 10.0;
                 ichaival_stacks += 1;
             }
 
