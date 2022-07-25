@@ -2420,7 +2420,7 @@ static GOLDEN_BLADE:Item = Item
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
-    move_speed: 0.1,
+    move_speed: 0.07,
     gold: 2150.0,
 };
 
@@ -6722,7 +6722,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if god.name == ERLANG.name
             {
                 let erlang_passive_percent_damage = 0.0175 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
-                let erlang_passive_flat_damage = (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * auto_attack_power_scaling) * 0.075;
+                let erlang_passive_flat_damage = (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * auto_attack_power_scaling) * 0.05;
                 unmitigated_erlang_passive_damage = erlang_passive_flat_damage + erlang_passive_percent_damage;   
             }
 
@@ -6861,7 +6861,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
             if ferocious_exe_bool && ferocious_exe_stacks < 10.0 { ferocious_exe_stacks += 1.0; }
 
-            if scs_bool && scs_stacks < 3.0 { scs_stacks += 1.0; }
+            if scs_bool && scs_stacks < 2.0 { scs_stacks += 1.0; }
 
             autos += 1.0;
             if wind_bool && autos >= estimated_autos_to_proc_wind_demon
@@ -6888,7 +6888,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.7");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.7 Bonus");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
