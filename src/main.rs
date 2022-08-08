@@ -136,7 +136,7 @@ static SPHINX:Item = Item
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
-    mp5: 30.0,
+    mp5: 20.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -3363,7 +3363,7 @@ static FAE_BLESSED:Item = Item
 };
 
 
-static GODS:[&God;120] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+static GODS:[&God;121] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
                         &HOUYI,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
@@ -3372,7 +3372,7 @@ static GODS:[&God;120] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,
                         &SUSANO,&THANA,&THOR,&TSUKU,&ARES,&ARTIO,&ATHENA,&ATLAS,&BACCHUS,&CABRAKAN,&CERBERUS
                         ,&CTHULHU,&FAFNIR,&GANESHA,&GEB,&JORM,&KHEPRI,&KUMBHAKARNA,&KUZENBO
                         ,&SOBEK,&SYLVANUS,&TERRA,&XING,&YEMOJA,&YMIR,&ACHILLES,&AMATERASU,&BELLONA,&CHAAC
-                        ,&CU_CHU,&ERLANG,&GUAN,&HERCULES,&HORUS,&ARTHUR,&MULAN,&NIKE,&ODIN,&OSIRIS,&SHIVA
+                        ,&CU_CHU,&ERLANG,&GILG,&GUAN,&HERCULES,&HORUS,&ARTHUR,&MULAN,&NIKE,&ODIN,&OSIRIS,&SHIVA
                         ,&WUKONG,&TYR,&VAMANA];
 
 
@@ -5788,6 +5788,28 @@ static ERLANG:God = God
     mp5_per_level: 0.3,
 };
 
+static GILG:God = God
+{
+    name: "Gilgamesh",
+    base_health: 761.0,
+    health_per_level: 89.0,
+    base_mana: 245.0,
+    mana_per_level: 35.0,
+    base_as: 1.01,
+    as_per_level: 0.0125,
+    base_auto_damage: 36.0,
+    auto_damage_per_level: 2.3,
+    auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
+    base_phys_prots: 28.0,
+    phys_prots_per_level: 3.2,
+    base_magical_prots: 40.0,
+    magical_prots_per_level: 1.2,
+    base_hp5: 10.8,
+    hp5_per_level: 0.8,
+    base_mp5: 4.69,
+    mp5_per_level: 0.39,
+};
+
 static GUAN:God = God
 {
     name: "Guan Yu",
@@ -6555,7 +6577,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
         if name ==&OBBY.name && obby_enabled { obby_pen = 0.1;}
 
-        if name == &GRIFFONWING.name { griffon_multi = 0.15; }
+        if name == &GRIFFONWING.name { griffon_multi = 0.1; }
         if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.25; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
@@ -6888,7 +6910,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.7 Bonus");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.7 Bonus 2");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7446,7 +7468,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
             }
             
             let mut cdr_after_cap = build.cdr;
-            if sphinx_bool { cdr_after_cap = clamp(cdr_after_cap,0.0,0.6); }
+            if sphinx_bool { cdr_after_cap = clamp(cdr_after_cap,0.0,0.5); }
             else { cdr_after_cap = clamp(cdr_after_cap,0.0,0.4); }
 
             if !duplicate_detected_in_build && cdr_after_cap >= min_cdr && build.lifesteal + bancroft_passive_lifesteal >= min_lifesteal && antiheal_pass && build.gold < max_gold
