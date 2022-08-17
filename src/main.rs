@@ -102,7 +102,7 @@ static EMPTY:Item = Item
 static GRIFFONWING:Item = Item
 {
     name: "Griffonwing Earrings",
-    magical_power: 60.0,
+    magical_power: 70.0,
     physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -124,8 +124,8 @@ static GRIFFONWING:Item = Item
 static SPHINX:Item = Item
 {
     name: "Sphinx's Baubles",
-    magical_power: 80.0,
-    physical_power: 55.0,
+    magical_power: 70.0,
+    physical_power: 45.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -816,7 +816,7 @@ static TAINTED_STEEL:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 650.0,
+    gold: 600.0,
 };
 
 static TAINTED_AMULET:Item = Item
@@ -833,12 +833,12 @@ static TAINTED_AMULET:Item = Item
     mana: 0.0,
     health: 0.0,
     phys_prot: 30.0,
-    magical_prot: 80.0,
+    magical_prot: 90.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2150.0,
+    gold: 2100.0,
 };
 
 static TAINTED_BREASTPLATE:Item = Item
@@ -854,13 +854,13 @@ static TAINTED_BREASTPLATE:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
-    phys_prot: 70.0,
+    phys_prot: 80.0,
     magical_prot: 30.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2150.0,
+    gold: 2100.0,
 };
 
 static FIGHTERS:Item = Item
@@ -1026,7 +1026,7 @@ static DIVINE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2300.0,
+    gold: 2200.0,
 };
 
 static MAGUS:Item = Item
@@ -1048,7 +1048,7 @@ static MAGUS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2550.0,
+    gold: 2450.0,
 };
 
 static DESO:Item = Item
@@ -1070,7 +1070,7 @@ static DESO:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2500.0,
 };
 
 static OBBY:Item = Item
@@ -1098,7 +1098,7 @@ static OBBY:Item = Item
 static TAHUTI:Item = Item
 {
     name: "Rod of Tahuti",
-    magical_power: 120.0,
+    magical_power: 135.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1120,7 +1120,7 @@ static TAHUTI:Item = Item
 static CALAM_TAHUTI:Item = Item
 {
     name: "Calamitous Rod of Tahuti",
-    magical_power: 120.0,
+    magical_power: 135.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1789,7 +1789,7 @@ static BRAWLERS:Item = Item
 {
     name: "Brawler's Beat Stick",
     magical_power: 0.0,
-    physical_power: 50.0,
+    physical_power: 55.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1811,7 +1811,7 @@ static JOTUNNS:Item = Item
 {
     name: "Jotunn's Wrath",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 45.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1833,7 +1833,7 @@ static CRUSHER:Item = Item
 {
     name: "The Crusher",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 45.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.1,
@@ -1870,7 +1870,7 @@ static TITANS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2550.0,
+    gold: 2450.0,
 };
 
 static DOMINANCE:Item = Item
@@ -2277,7 +2277,7 @@ static SHADOWSTEEL:Item = Item
     physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.2,
+    attack_speed: 0.25,
     crit_chance: 0.2,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -3331,11 +3331,11 @@ static MANTICORE:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 350.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
+    phys_prot: 40.0,
+    magical_prot: 40.0,
     mp5: 20.0,
-    hp5: 30.0,
-    ccr: 20.0,
+    hp5: 0.0,
+    ccr: 0.0,
     move_speed: 0.0,
     gold: 2200.0,
 };
@@ -3350,13 +3350,13 @@ static FAE_BLESSED:Item = Item
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
-    cdr: 0.0,
+    cdr: 0.1,
     mana: 0.0,
-    health: 300.0,
+    health: 350.0,
     phys_prot: 0.0,
-    magical_prot: 0.0,
+    magical_prot: 60.0,
     mp5: 40.0,
-    hp5: 20.0,
+    hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2200.0,
@@ -3766,8 +3766,8 @@ static JANUS:God = God
     base_auto_damage: 35.0,
     auto_damage_per_level: 1.45,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
-    base_phys_prots: 14.0,
-    phys_prots_per_level: 2.8,
+    base_phys_prots: 17.0,
+    phys_prots_per_level: 3.0,
     base_magical_prots: 40.0,
     magical_prots_per_level: 1.2,
     base_hp5: 6.45,
@@ -6193,7 +6193,6 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut deathbringer_bonus = 0.0;
     let mut hydras_bool = false;
     let mut basic_attack_damage = 0.0;
-    let mut sphinx_multi = 0.0;
     let mut fighters_multi = 0.0;
     let mut rangdas_bool = false;
     let mut myr_multi = 0.0;
@@ -6265,7 +6264,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &MANIKINS_MACE.name { basic_attack_damage += 50.0; }
 
         if calam_enabled && name == &CALAM_TAHUTI.name { calam_bool = true; }
-        if name == &SPHINX.name { sphinx_multi = 0.2; }
+
 
     }
 
@@ -6330,7 +6329,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if rangdas_bool
     {
         if magical{ rangdas_multi = clamp(0.03 * ((power / 90.0) - (power % 90.0)/90.0), 0.0, 0.15); }
-        else { rangdas_multi = clamp(0.03 * ((power / 65.0) - (power % 65.0)/65.0), 0.0, 0.15); }
+        else { rangdas_multi = clamp(0.03 * ((power / 55.0) - (power % 65.0)/65.0), 0.0, 0.15); }
     }
 
     
@@ -6433,7 +6432,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut unmitigated_redstone_damage = 0.0;
     if redstone_bool{ unmitigated_redstone_damage = 75.0;}
 
-    let unmitigated_damage =(unmitigated_ability_damage_after_crit * (1.0+sacrificial_damage_multi-sphinx_multi)) + unmitigated_reaver_damage + unmitigated_soul_gem_damage + unmitigated_poly_damage + 
+    let unmitigated_damage =(unmitigated_ability_damage_after_crit * (1.0+sacrificial_damage_multi)) + unmitigated_reaver_damage + unmitigated_soul_gem_damage + unmitigated_poly_damage + 
                                 unmitigated_archmages_damage + unmitigated_crusher_damage + unmitigated_heartseeker_damage + unmitigated_arondight_damage + unmitigated_bluestone_pendant_damage + 
                                 unmitigated_bluestone_brooch_damage + unmitigated_redstone_damage + unmitigated_hydras_auto_damage + unmitigated_calam_damage + unmitigated_claw_damage;
 
@@ -6454,7 +6453,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,kaldr_enabled:bool,pos2_enabled:bool,as_buff:f32,
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
     enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool) -> f32
+    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool) -> f32
 {
     let mut telk_bool = false;
     let mut hecate_bool = false;
@@ -6489,7 +6488,6 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut sacrificial_damage_multi = 0.0;
     let mut toxic_blade_bool = false;
     let mut obby_pen = 0.0;
-    let mut griffon_multi = 0.0;
     let mut myr_bool = false;
     let mut myr_multi = 0.0;
     let mut fighters_multi = 0.0;
@@ -6504,6 +6502,19 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
     if god.name == FREYA.name { bancroft_lifesteal += 0.15; }
+
+    if ishtar_1a
+    {
+        basic_attack_damage += 30.0;
+        deathbringer_bonus -= 0.4;
+    }
+
+    let mut ishtar_1c_damage_reduction = 0.0;
+    if ishtar_1c
+    {
+        attack_speed += 0.4 * (god.base_as - god.as_per_level);
+        ishtar_1c_damage_reduction = 0.2;
+    }
 
     let mut sol_passive_auto_multiplier = 1.0;
     if sol_passive 
@@ -6552,7 +6563,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &HEAVY_EXE.name { heavy_exe_bool = true; }
         if ferocious_enabled && name == &FEROCIOUS_EXE.name { ferocious_exe_bool = true}
         if name == &QINS.name { qins_bool = true; }
-        if name == &DEATHBRINGER.name { deathbringer_bonus = 0.25}
+        if name == &DEATHBRINGER.name { deathbringer_bonus += 0.25}
         if name == &SCS.name { scs_bool = true;}
         if name == &OBOW.name { obow_bool = true; }
         if name == &WIND_DEMON.name { wind_bool = true; }
@@ -6577,7 +6588,6 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
         if name ==&OBBY.name && obby_enabled { obby_pen = 0.1;}
 
-        if name == &GRIFFONWING.name { griffon_multi = 0.1; }
         if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.25; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
@@ -6711,10 +6721,10 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             i += 1.0;
             let auto_attack_power_scaling = (0.2 * magical as i32 as f32) + (1.0 * !magical as i32 as f32) + (0.05 * (god.name==OLORUN.name) as i32 as f32) + chronos_2_auto_scaling_increase;         
             let unmitigated_damage = god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * tahuti_scaling_multi * auto_attack_power_scaling;
-            let unmitigated_damage_after_multis = unmitigated_damage * god.auto_progression[auto_attack_progression_counter] * (1.0 + temper_multi - griffon_multi);
+            let unmitigated_damage_after_multis = unmitigated_damage * god.auto_progression[auto_attack_progression_counter] * (1.0 + temper_multi);
             let crit_multi = clamp(1.0 + crit_chance * (0.75 + deathbringer_bonus - spectral_multi - 0.35 * (god.name==HEIM.name) as i32 as f32 - 0.65 * (target.name==GEB.name) as i32 as f32) * !magical as i32 as f32,1.0,100.0);
             let olorun_crit_multi = 1.0 + clamp(power/1000.0,0.0,0.7) * 0.3 * (god.name==OLORUN.name) as i32 as f32 * (power>=150.0) as i32 as f32;
-            let mut unmitigated_damage_after_crit = unmitigated_damage_after_multis * crit_multi * olorun_crit_multi * sol_passive_auto_multiplier;
+            let mut unmitigated_damage_after_crit = unmitigated_damage_after_multis * crit_multi * olorun_crit_multi * sol_passive_auto_multiplier * (1.0 - ishtar_1c_damage_reduction);
             if i == 2.0 { unmitigated_damage_after_crit *= 0.5; } //halves damage for zhongs mini auto
             if nemean_stacks >= 1.0
             {
@@ -6842,6 +6852,9 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut unmitigated_pos2_damage = 0.0;
             if pos2_enabled{ unmitigated_pos2_damage = 2.0 * (70.0 + (power * 0.25));} // *2 as we assume both 'extra' shots hit
 
+            let mut unmitigated_ishtar_1b_damage = 0.0;
+            if ishtar_1b{ unmitigated_ishtar_1b_damage = 0.5 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power); }
+
             let mut butcher_blades_damage = 0.0;
             if baka_3_enabled { butcher_blades_damage = 70.0; }
 
@@ -6850,7 +6863,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
 
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
-                        + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage) * protections_multiplier 
+                        + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage 
+                        + unmitigated_ishtar_1b_damage) * protections_multiplier 
                         + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage;
             
 
@@ -6910,7 +6924,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.7 Bonus 2");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.8 - The Ishtar Patch");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7166,7 +7180,10 @@ fn main() {
     let baka_3 = button::CheckButton::new(100, 30, 75, 30, "Baka 3");
     let sol_passive = button::CheckButton::new(175, 30, 110, 30, "Sol Passive");
     let chronos_2 = button::CheckButton::new(285, 30, 200, 30, "Chronos 2 (4th Quadrant)");
-    let ao_2 = button::CheckButton::new(0, 60, 120, 30, "Ao Kuang 2");
+    let ao_2 = button::CheckButton::new(0, 60, 100, 30, "Ao Kuang 2");
+    let ishtar_1a = button::CheckButton::new(100, 60, 90, 30, "Ishtar 1A");
+    let ishtar_1b = button::CheckButton::new(190, 60, 90, 30, "Ishtar 1B");
+    let ishtar_1c = button::CheckButton::new(280, 60, 90, 30, "Ishtar 1C");
     wind2.end();
 
     let mut wind3 = Window::new(500, 0, 500, 300, "Stat Buffs");
@@ -7258,7 +7275,8 @@ fn main() {
             baka_3.value(),hs_reaver_subsequent_hits_btn.value(),ichaival_ability_power_btn.value(),sol_passive.value(),flat_power_buff.value().parse().unwrap(),
             percent_power_buff.value().parse().unwrap(),red_buff.value(),enhanced_red_buff.value(),purp_buff.value(),enhanced_purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
-            ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value())); 
+            ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
+            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value())); 
 
     
 
@@ -7283,7 +7301,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     ability_crit_enabled:bool,ability_true_damage:bool,hydras_enabled:bool,calam_enabled:bool,as_buff:f32,freya_1_2_enabled:bool,baka_3_enabled:bool,
     hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,
     enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool)
+    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7540,7 +7558,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                         protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                         flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled);
+                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
@@ -7551,7 +7569,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                             protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                             flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled);
+                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
@@ -7610,21 +7628,19 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         if sorted_builds.len() < builds_to_store_with_sort + 2
                         {
                             let mut sorted = false;
-                            let mut current_index = (((sorted_builds.len()-1)/2) as f32).round() as usize;
+                            let mut current_index = (((sorted_builds.len()-1)/2) as f32).round() as usize;                       
 
-                            
                             while !sorted
-                            {
-                                
+                            {                                
                                 if  damage <= &sorted_builds[current_index][sort_mode].parse::<f32>().unwrap()
                                 {     
                                     if damage >= &sorted_builds[current_index-1][sort_mode].parse::<f32>().unwrap() { sorted = true;}                   
                                     else { current_index -= 1; }
                                 }
-                                else{ current_index += 1; }
+                                else{ current_index += 1; }  
+                            }                        
 
-                            }
-                            sorted_builds.insert(current_index,array);
+                            sorted_builds.insert(current_index,array)
                         }
                             
                         
