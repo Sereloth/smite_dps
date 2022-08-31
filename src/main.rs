@@ -146,16 +146,16 @@ static SPHINX:Item = Item
 //-------------------------------------------------------------------------
 //Starters
 
-static MAGICAL_STARTERS:[&Item;30] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
+static MAGICAL_STARTERS:[&Item;31] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
                                         &VAMP_SHROUD,&BLOODSOAKED,&SACRIFICIAL,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,
                                         &GILDED,&DIAMOND,&ORNATE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,&BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,
                                         &MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,&TAINTED_AMULET,&TAINTED_BREASTPLATE,
-                                        &FIGHTERS,&RANGDAS];
+                                        &FIGHTERS,&RANGDAS,&ANIMOSITY];
 
-static PHYSICAL_STARTERS:[&Item;26] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
+static PHYSICAL_STARTERS:[&Item;27] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
                                         &HUNTERS_COWL,&BLUESTONE_PENDANT,&BLUESTONE_BROOCH,&REDSTONE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,
                                         &BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,&MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,
-                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS];
+                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS,&ANIMOSITY];
    
                                         
 static SANDS:Item = Item
@@ -905,6 +905,28 @@ static RANGDAS:Item = Item
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2150.0,
+};
+
+static ANIMOSITY:Item = Item
+{
+    name: "Animosity",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 400.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 20.0,
+    hp5: 20.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 1850.0,
 };
 
 //-------------------------------------------------------------------------
@@ -3330,9 +3352,9 @@ static MANTICORE:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 350.0,
-    phys_prot: 40.0,
-    magical_prot: 40.0,
+    health: 300.0,
+    phys_prot: 35.0,
+    magical_prot: 35.0,
     mp5: 20.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -3363,8 +3385,8 @@ static FAE_BLESSED:Item = Item
 };
 
 
-static GODS:[&God;121] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
-                        &HOUYI,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
+static GODS:[&God;122] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+                        &HOUYI,&ISHTAR,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
                         &THOTH,&TIAMET,&VULCAN,&YUHUANG,&ZEUS,&ZHONG,&ARACHNE,&AWILIX,&BAKA,&BASTET,&CAMA,&CLIO,&DAJI,
@@ -4948,6 +4970,28 @@ static HOUYI:God = God
     mp5_per_level: 0.35,
 };
 
+static ISHTAR:God = God
+{
+    name: "Ishtar",
+    base_health: 740.0,
+    health_per_level: 82.0,
+    base_mana: 258.0,
+    mana_per_level: 38.0,
+    base_as: 1.02,
+    as_per_level: 0.016,
+    base_auto_damage: 39.0,
+    auto_damage_per_level: 2.6,
+    auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    base_phys_prots: 21.0,
+    phys_prots_per_level: 3.13,
+    base_magical_prots: 40.0,
+    magical_prots_per_level: 1.2,
+    base_hp5: 7.7,
+    hp5_per_level: 0.7,
+    base_mp5: 4.88,
+    mp5_per_level: 0.38,
+};
+
 static IZANAMI:God = God
 {
     name: "Izanami",
@@ -6492,6 +6536,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut myr_multi = 0.0;
     let mut fighters_multi = 0.0;
     let mut rangdas_bool = false;
+    let mut anim_bool = false;
 
 
     let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
@@ -6591,6 +6636,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.25; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
+        if name == &ANIMOSITY.name { anim_bool = true; }
         
         
     }
@@ -6819,6 +6865,24 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 manikins_mace_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
 
+            let mut anim_damage = 0.0;
+            if anim_bool
+            {       
+                let unmitigated_anim_damage = 0.03 * (god.base_health + (god.health_per_level * (level - 1.0)) + build.health);                 
+                
+                if magical
+                {            
+                    anim_damage = unmitigated_anim_damage * protections_multiplier;
+                }
+                else //for magical is a bit special since anim does magical damage
+                {
+                    let target_magical_prots_after_shred_and_pen = (target_physical_prots - binding_shred) - (TOXICBLADE.flat_pen * toxic_blade_bool as i32 as f32);
+                    let magical_protections_multiplier = clamp(100.0/(100.0+target_magical_prots_after_shred_and_pen),0.0,1.0);
+                    anim_damage = unmitigated_anim_damage * magical_protections_multiplier;
+                }
+                manikins_scepter_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+            }
+
             let mut unmitigated_damage_kaldr_damage = 0.0;
             kaldr_alternator *= -1.0;
             if kaldr_enabled && kaldr_alternator == 1.0
@@ -6853,7 +6917,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if pos2_enabled{ unmitigated_pos2_damage = 2.0 * (70.0 + (power * 0.25));} // *2 as we assume both 'extra' shots hit
 
             let mut unmitigated_ishtar_1b_damage = 0.0;
-            if ishtar_1b{ unmitigated_ishtar_1b_damage = 0.5 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power); }
+            if ishtar_1b
+            { 
+                let crit_multi = clamp(1.0 + crit_chance * (0.75 + deathbringer_bonus - spectral_multi - 0.35 * (god.name==HEIM.name) as i32 as f32 - 0.65 * (target.name==GEB.name) as i32 as f32) * !magical as i32 as f32,1.0,100.0);
+                unmitigated_ishtar_1b_damage = 0.5 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power) * crit_multi; 
+            }
 
             let mut butcher_blades_damage = 0.0;
             if baka_3_enabled { butcher_blades_damage = 70.0; }
@@ -6865,7 +6933,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
                         + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage 
                         + unmitigated_ishtar_1b_damage) * protections_multiplier 
-                        + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage;
+                        + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage + anim_damage;
             
 
             let damage_after_you_do_more_damage_buffs = damage * (1.0 + focus_damage_multi + myr_multi + fighters_multi + rangdas_multi);
@@ -6924,7 +6992,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.8 - The Ishtar Patch");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.8 - Bonus Patch");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
