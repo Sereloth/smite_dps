@@ -146,16 +146,16 @@ static SPHINX:Item = Item
 //-------------------------------------------------------------------------
 //Starters
 
-static MAGICAL_STARTERS:[&Item;31] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
+static MAGICAL_STARTERS:[&Item;32] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
                                         &VAMP_SHROUD,&BLOODSOAKED,&SACRIFICIAL,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,
                                         &GILDED,&DIAMOND,&ORNATE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,&BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,
                                         &MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,&TAINTED_AMULET,&TAINTED_BREASTPLATE,
-                                        &FIGHTERS,&RANGDAS,&ANIMOSITY];
+                                        &FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN];
 
-static PHYSICAL_STARTERS:[&Item;27] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
+static PHYSICAL_STARTERS:[&Item;28] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
                                         &HUNTERS_COWL,&BLUESTONE_PENDANT,&BLUESTONE_BROOCH,&REDSTONE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,
                                         &BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,&MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,
-                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS,&ANIMOSITY];
+                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN];
    
                                         
 static SANDS:Item = Item
@@ -924,6 +924,28 @@ static ANIMOSITY:Item = Item
     magical_prot: 0.0,
     mp5: 20.0,
     hp5: 20.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 1850.0,
+};
+
+static SPARTAN:Item = Item
+{
+    name: "Spartan Flag",
+    magical_power: 65.0,
+    physical_power: 40.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 300.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
+    hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 1850.0,
@@ -6263,7 +6285,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if tyranical_enabled && name == &TYRANNICAL.name { power += 30.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = 10.0; }
-        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name) { power += 100.0; bancroft_lifesteal = 0.2; }
+        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
@@ -6294,6 +6316,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         }
         if bumbas_spear_enabled && name == &BUMBAS_SPEAR.name { percent_power_increase += 0.1; }
         if protector_enabled && name == &PROTECTOR.name {  percent_power_increase += 0.15;}
+        if name == &SPARTAN.name {  percent_power_increase += 0.1;}
         
         if mhb_enabled &&  name == &MHB.name { mhb_bool = true;}
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
@@ -6598,7 +6621,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if tyranical_enabled && name == &TYRANNICAL.name { power += 30.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = 10.0; }
-        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name) { power += 100.0; bancroft_lifesteal += 0.2; }
+        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal += 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
 
@@ -6629,6 +6652,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         }
         if bumbas_spear_enabled && name == &BUMBAS_SPEAR.name { percent_power_increase += 0.1; }
         if protector_enabled && name == &PROTECTOR.name {  percent_power_increase += 0.15}
+        if name == &SPARTAN.name {  percent_power_increase += 0.1;}
+
         if name == &NIMBLE_BANCROFTS.name { nimble_bool = true; } 
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
         if name ==&OBBY.name && obby_enabled { obby_pen = 0.1;}
