@@ -1056,7 +1056,7 @@ static DIVINE:Item = Item
     name: "Divine Ruin",
     magical_power: 100.0,
     physical_power: 0.0,
-    flat_pen: 12.0,
+    flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
@@ -1078,7 +1078,7 @@ static MAGUS:Item = Item
     name: "Spear of the Magus",
     magical_power: 110.0,
     physical_power: 0.0,
-    flat_pen: 12.0,
+    flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
@@ -1100,7 +1100,7 @@ static DESO:Item = Item
     name: "Spear of Desolation",
     magical_power: 110.0,
     physical_power: 0.0,
-    flat_pen: 12.0,
+    flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
@@ -2560,7 +2560,7 @@ static BLACKTHORN:Item = Item
 {
     name: "Blackthorn Hammer",
     magical_power: 0.0,
-    physical_power: 25.0,
+    physical_power: 30.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -3290,7 +3290,7 @@ static SOV:Item = Item
     phys_prot: 55.0,
     magical_prot: 0.0,
     mp5: 0.0,
-    hp5: 35.0,
+    hp5: 25.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2100.0,
@@ -4827,7 +4827,7 @@ static CHARYBDIS:God = God
     as_per_level: 0.016,
     base_auto_damage: 41.0,
     auto_damage_per_level: 2.6,
-    auto_progression: [1.0,1.0,0.4,0.4,0.4,0.0,0.0],
+    auto_progression: [1.0,1.0,0.333,0.333,0.333,0.0,0.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
     base_magical_prots: 40.0,
@@ -6778,9 +6778,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
         let mut heim_progression_multi = 1.0; //heims first 2 autos have swing times and damage which don't match so this is used to account for it
         if god.name == HEIM.name && auto_attack_progression_counter < 2{ heim_progression_multi = 1.04; }
+        if god.name == AOKUANG.name && auto_attack_progression_counter > 0 && auto_attack_progression_counter < 3{ heim_progression_multi = 1.4; }
+        if god.name == CHARYBDIS.name && auto_attack_progression_counter > 1{ heim_progression_multi = 1.201; }
 
         let mut as_cap_reduction = 0.0;
-        if heavy_exe_bool { as_cap_reduction = 0.75; }
+        if heavy_exe_bool { as_cap_reduction = 0.6; }
 
         if myr_bool{ myr_multi = clamp((-0.028125*time_spent_attacking)+0.25,0.025,0.25); }
         time_spent_attacking += (1.0/(clamp(attack_speed,0.35,2.5-as_cap_reduction)-witchblade_slow*(god.base_as - god.as_per_level))) * god.auto_progression[auto_attack_progression_counter] * heim_progression_multi;
@@ -7017,7 +7019,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.8 - Bonus Patch");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.9");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
