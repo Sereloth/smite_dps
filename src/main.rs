@@ -1208,7 +1208,7 @@ static CHRONOS_PENDANT:Item = Item
 static CHARONS:Item = Item
 {
     name: "Charon's Coin",
-    magical_power: 80.0,
+    magical_power: 90.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
@@ -1276,7 +1276,7 @@ static BOOK_OF_THOTH:Item = Item
     name: "Book of Thoth",
     magical_power: 80.0,
     physical_power: 0.0,
-    flat_pen: 0.0,
+    flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
@@ -1943,7 +1943,7 @@ static TRANS:Item = Item
 {
     name: "Transcendence",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 35.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1980,7 +1980,7 @@ static HEARTSEEKER:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2900.0,
+    gold: 2750.0,
 };
 
 static HYDRAS:Item = Item
@@ -2031,7 +2031,7 @@ static SILVERBRANCH:Item = Item
 {
     name: "Silverbranch Bow",
     magical_power: 0.0,
-    physical_power: 30.0,
+    physical_power: 25.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
     attack_speed: 0.3,
@@ -2046,7 +2046,7 @@ static SILVERBRANCH:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2550.0,
 };
 
 static ICHAIVAL:Item = Item
@@ -2099,7 +2099,7 @@ static DEVOS:Item = Item
     magical_power: 0.0,
     physical_power: 70.0,
     flat_pen: 0.0,
-    percent_pen: 0.0,
+    percent_pen: 10.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.25,
@@ -3156,7 +3156,7 @@ static HEARTWARD:Item = Item
     mana:0.0,
     health: 250.0,
     phys_prot: 0.0,
-    magical_prot: 70.0,
+    magical_prot: 75.0,
     mp5: 30.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -3381,7 +3381,7 @@ static MANTICORE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2400.0,
 };
 
 static FAE_BLESSED:Item = Item
@@ -3403,7 +3403,7 @@ static FAE_BLESSED:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2300.0,
 };
 
 
@@ -6453,7 +6453,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut unmitigated_heartseeker_damage = 0.0;
     if heartseeker_bool
     {
-        let percent_health = clamp((3.0/20000.0)*power,0.03,0.06);
+        let percent_health = clamp((1.0/5000.0)*power-(1.0/100.0),0.03,0.06);
         unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) *(1.0 - 0.25 * hs_reaver_subsequent_hits as i32 as f32);
     }
 
@@ -6494,7 +6494,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 20.0;}
 
     let mut unmitigated_bluestone_brooch_damage = 0.0;
-    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = 50.0 + 0.075 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);}
+    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = 50.0 + 0.06 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);}
 
     let mut unmitigated_redstone_damage = 0.0;
     if redstone_bool{ unmitigated_redstone_damage = 75.0;}
@@ -7019,7 +7019,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.9");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.10");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
