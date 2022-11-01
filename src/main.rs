@@ -3407,7 +3407,7 @@ static FAE_BLESSED:Item = Item
 };
 
 
-static GODS:[&God;122] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+static GODS:[&God;123] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
                         &HOUYI,&ISHTAR,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
@@ -3415,7 +3415,7 @@ static GODS:[&God;122] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,
                         &FENRIR,&HUNBATZ,&KALI,&LANCELOT,&LOKI,&MERC,&NEZHA,&NEMESIS,&PELE,&RAT,&RAVANA,&SERQET,&SET,
                         &SUSANO,&THANA,&THOR,&TSUKU,&ARES,&ARTIO,&ATHENA,&ATLAS,&BACCHUS,&CABRAKAN,&CERBERUS
                         ,&CTHULHU,&FAFNIR,&GANESHA,&GEB,&JORM,&KHEPRI,&KUMBHAKARNA,&KUZENBO
-                        ,&SOBEK,&SYLVANUS,&TERRA,&XING,&YEMOJA,&YMIR,&ACHILLES,&AMATERASU,&BELLONA,&CHAAC
+                        ,&MAUI,&SOBEK,&SYLVANUS,&TERRA,&XING,&YEMOJA,&YMIR,&ACHILLES,&AMATERASU,&BELLONA,&CHAAC
                         ,&CU_CHU,&ERLANG,&GILG,&GUAN,&HERCULES,&HORUS,&ARTHUR,&MULAN,&NIKE,&ODIN,&OSIRIS,&SHIVA
                         ,&WUKONG,&TYR,&VAMANA];
 
@@ -4569,6 +4569,28 @@ static KUZENBO:God = God
     base_hp5: 8.85,
     hp5_per_level: 0.85,
     base_mp5: 5.02,
+    mp5_per_level: 0.42,
+};
+
+static MAUI:God = God
+{
+    name: "Maui",
+    base_health: 793.0,
+    health_per_level: 100.0,
+    base_mana: 236.0,
+    mana_per_level: 36.0,
+    base_as: 0.86,
+    as_per_level: 0.012,
+    base_auto_damage: 37.0,
+    auto_damage_per_level: 1.5,
+    auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    base_phys_prots: 33.0,
+    phys_prots_per_level: 3.5,
+    base_magical_prots: 40.0,
+    magical_prots_per_level: 1.2,
+    base_hp5: 8.8,
+    hp5_per_level: 0.8,
+    base_mp5: 4.92,
     mp5_per_level: 0.42,
 };
 
@@ -7019,7 +7041,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.10");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.10 Bonus");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
