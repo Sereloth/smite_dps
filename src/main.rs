@@ -102,11 +102,11 @@ static EMPTY:Item = Item
 static GRIFFONWING:Item = Item
 {
     name: "Griffonwing Earrings",
-    magical_power: 70.0,
-    physical_power: 40.0,
+    magical_power: 80.0,
+    physical_power: 45.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.25,
+    attack_speed: 0.3,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -294,19 +294,19 @@ static FOCUS:Item = Item
 static VAMP_SHROUD:Item = Item
 {
     name: "Vampiric Shroud",
-    magical_power: 20.0,
+    magical_power: 30.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.05,
+    lifesteal: 0.07,
     cdr: 0.0,
     mana: 0.0,
-    health: 75.0,
-    phys_prot: 5.0,
+    health: 0.0,
+    phys_prot: 0.0,
     magical_prot: 0.0,
-    mp5: 0.0,
+    mp5: 0.7,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -316,7 +316,7 @@ static VAMP_SHROUD:Item = Item
 static BLOODSOAKED:Item = Item
 {
     name: "Blood-Soaked Shroud",
-    magical_power: 75.0,
+    magical_power: 95.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -325,10 +325,10 @@ static BLOODSOAKED:Item = Item
     lifesteal: 0.15,
     cdr: 0.0,
     mana: 0.0,
-    health: 200.0,
-    phys_prot: 55.0,
+    health: 300.0,
+    phys_prot: 0.0,
     magical_prot: 0.0,
-    mp5: 0.0,
+    mp5: 0.15,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -347,10 +347,10 @@ static SACRIFICIAL:Item = Item
     lifesteal: 0.15,
     cdr: 0.0,
     mana: 0.0,
-    health: 100.0,
-    phys_prot: 20.0,
+    health: 0.0,
+    phys_prot: 40.0,
     magical_prot: 0.0,
-    mp5: 0.0,
+    mp5: 0.15,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -1120,7 +1120,7 @@ static DESO:Item = Item
 static OBBY:Item = Item
 {
     name: "Obsidian Shard",
-    magical_power: 100.0,
+    magical_power: 90.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
@@ -1136,7 +1136,7 @@ static OBBY:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2450.0,
+    gold: 2500.0,
 };
 
 static TAHUTI:Item = Item
@@ -1202,7 +1202,7 @@ static CHRONOS_PENDANT:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2700.0,
+    gold: 2600.0,
 };
 
 static CHARONS:Item = Item
@@ -1877,7 +1877,7 @@ static CRUSHER:Item = Item
 {
     name: "The Crusher",
     magical_power: 0.0,
-    physical_power: 45.0,
+    physical_power: 40.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.1,
@@ -1899,7 +1899,7 @@ static TITANS:Item = Item
 {
     name: "Titan's Bane",
     magical_power: 0.0,
-    physical_power: 55.0,
+    physical_power: 50.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
     attack_speed: 0.0,
@@ -1914,7 +1914,7 @@ static TITANS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2450.0,
+    gold: 2500.0,
 };
 
 static DOMINANCE:Item = Item
@@ -2411,7 +2411,7 @@ static SERRATED:Item = Item
     percent_pen: 0.2,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.1,
+    lifesteal: 0.15,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -2421,7 +2421,7 @@ static SERRATED:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.07,
-    gold: 2650.0,
+    gold: 2500.0,
 };
 
 static SCS:Item = Item
@@ -2538,7 +2538,7 @@ static SLEDGE:Item = Item
 {
     name: "The Sledge",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2591,7 +2591,7 @@ static BERSERKERS:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
-    phys_prot: 40.0,
+    phys_prot: 50.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 15.0,
@@ -2891,8 +2891,8 @@ static THEBES:Item = Item
     cdr: 0.0,
     mana:0.0,
     health: 250.0,
-    phys_prot: 60.0,
-    magical_prot: 60.0,
+    phys_prot: 65.0,
+    magical_prot: 65.0,
     mp5: 0.0,
     hp5: 15.0,
     ccr: 0.0,
@@ -2941,7 +2941,7 @@ static SPIRIT_ROBE:Item = Item
     hp5: 0.0,
     ccr: 0.2,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2400.0,
 };
 
 static MANTLE:Item = Item
@@ -3308,8 +3308,8 @@ static MYSTICAL:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:0.0,
-    health: 200.0,
-    phys_prot: 35.0,
+    health: 250.0,
+    phys_prot: 40.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 0.0,
@@ -6312,7 +6312,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
-        if myr_enabled && name == &MYRDDIN.name { myr_multi = 0.25; }
+        if myr_enabled && name == &MYRDDIN.name { myr_multi = 0.2; }
 
         if name == &CRUSHER.name { crusher_bool = true; }
         if name == &HEARTSEEKER.name { heartseeker_bool = true; }
@@ -6637,7 +6637,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &BOOK_OF_THOTH.name { power += build.mana * 0.1; }
         if name == &VOID_STONE.name {void_stone_pen = 0.1;}
         if temper_enabled && name == &DEATHS_TEMPER.name { temper_multi = 0.35; }
-        if diamond_enabled && name == &DIAMOND.name { attack_speed += 0.6 * (god.base_as - god.as_per_level); }
+        if diamond_enabled && name == &DIAMOND.name { attack_speed += 0.75 * (god.base_as - god.as_per_level); }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.09; }
         if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
@@ -6680,7 +6680,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
         if name ==&OBBY.name && obby_enabled { obby_pen = 0.1;}
 
-        if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.25; }
+        if myr_enabled && name == &MYRDDIN.name { myr_bool = true; myr_multi = 0.2; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
         if name == &ANIMOSITY.name { anim_bool = true; }
@@ -7041,7 +7041,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.10 Bonus");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.11");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
