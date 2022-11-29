@@ -2097,7 +2097,7 @@ static DEVOS:Item = Item
 {
     name: "Devourer's Gauntlet",
     magical_power: 0.0,
-    physical_power: 70.0,
+    physical_power: 65.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -3396,9 +3396,9 @@ static FAE_BLESSED:Item = Item
     lifesteal: 0.0,
     cdr: 0.1,
     mana: 0.0,
-    health: 350.0,
+    health: 300.0,
     phys_prot: 0.0,
-    magical_prot: 60.0,
+    magical_prot: 50.0,
     mp5: 40.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -7041,7 +7041,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.11");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.11 Bonus");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
