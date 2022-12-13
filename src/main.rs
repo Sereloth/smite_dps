@@ -6868,11 +6868,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut unmitigated_manikins_scepter_damage = 0.0;
             if manikins_scepter_bool
             {       
-                if manikins_scepter_stacks == 0.0 { next_mani_scepter_damage_time = time_spent_attacking + 0.5; }     
+                if manikins_scepter_stacks == 0.0 { next_mani_scepter_damage_time = time_spent_attacking + 1.0; }     
                 if time_spent_attacking > next_mani_scepter_damage_time
                 {
-                    next_mani_scepter_damage_time = time_spent_attacking + 0.5;
-                    unmitigated_manikins_scepter_damage = (16.0 + 0.05 * power) * manikins_scepter_stacks;
+                    next_mani_scepter_damage_time = time_spent_attacking + 1.0;
+                    unmitigated_manikins_scepter_damage = (8.0 + 0.025 * power) * 0.5 * manikins_scepter_stacks;
                 }
                 if manikins_scepter_stacks < 3.0{ manikins_scepter_stacks += 1.0; }   
                 
@@ -6893,11 +6893,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut manikins_mace_damage = 0.0;
             if manikins_mace_bool
             {       
-                if manikins_mace_stacks == 0.0 { next_mani_mace_damage_time = time_spent_attacking + 0.5; }     
+                if manikins_mace_stacks == 0.0 { next_mani_mace_damage_time = time_spent_attacking + 1.0; }     
                 if time_spent_attacking > next_mani_mace_damage_time
                 {
-                    next_mani_mace_damage_time = time_spent_attacking + 0.5;
-                    unmitigated_manikins_mace_damage = (60.0) * manikins_mace_stacks;
+                    next_mani_mace_damage_time = time_spent_attacking + 1.0;
+                    unmitigated_manikins_mace_damage = (60.0) * 0.5 * manikins_mace_stacks;
                 }
                 if manikins_mace_stacks < 3.0{ manikins_mace_stacks += 1.0; }
                 
@@ -7041,7 +7041,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.11 Bonus");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.12");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
