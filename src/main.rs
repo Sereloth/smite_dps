@@ -146,16 +146,16 @@ static SPHINX:Item = Item
 //-------------------------------------------------------------------------
 //Starters
 
-static MAGICAL_STARTERS:[&Item;32] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
+static MAGICAL_STARTERS:[&Item;33] = [&EMPTY,&SANDS,&PENDULUM,&ALTERNATE_TIMELINE,&CONDUIT,&ARCHMAGES,&FOCUS,
                                         &VAMP_SHROUD,&BLOODSOAKED,&SACRIFICIAL,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,
                                         &GILDED,&DIAMOND,&ORNATE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,&BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,
                                         &MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,&TAINTED_AMULET,&TAINTED_BREASTPLATE,
-                                        &FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN];
+                                        &FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN,&GLEAMING_CUFFS];
 
-static PHYSICAL_STARTERS:[&Item;28] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
+static PHYSICAL_STARTERS:[&Item;29] = [&EMPTY,&DEATHS_TOLL,&DEATHS_EMBRACE,&DEATHS_TEMPER,&GILDED,&DIAMOND,&ORNATE,&LEATHER_COWL,
                                         &HUNTERS_COWL,&BLUESTONE_PENDANT,&BLUESTONE_BROOCH,&REDSTONE,&BUMBAS_DAGGER,&BUMBAS_SPEAR,
                                         &BUMBAS_HAMMER,&EYE,&SEER,&PROTECTOR,&MANIKIN_SCEPTER,&MANIKINS_MACE,&MHB,&TAINTED_STEEL,
-                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN];
+                                        &TAINTED_AMULET,&TAINTED_BREASTPLATE,&FIGHTERS,&RANGDAS,&ANIMOSITY,&SPARTAN,&GLEAMING_CUFFS];
    
                                         
 static SANDS:Item = Item
@@ -949,6 +949,28 @@ static SPARTAN:Item = Item
     ccr: 0.0,
     move_speed: 0.0,
     gold: 1850.0,
+};
+
+static GLEAMING_CUFFS:Item = Item
+{
+    name: "Gleaming Ear Cuffs",
+    magical_power: 30.0,
+    physical_power: 20.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.15,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 0.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 1300.0,
 };
 
 //-------------------------------------------------------------------------
@@ -3411,7 +3433,7 @@ static GODS:[&God;123] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,
                         &HOUYI,&ISHTAR,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
-                        &THOTH,&TIAMET,&VULCAN,&YUHUANG,&ZEUS,&ZHONG,&ARACHNE,&AWILIX,&BAKA,&BASTET,&CAMA,&CLIO,&DAJI,
+                        &THOTH,&TIAMAT,&VULCAN,&YUHUANG,&ZEUS,&ZHONG,&ARACHNE,&AWILIX,&BAKA,&BASTET,&CAMA,&CLIO,&DAJI,
                         &FENRIR,&HUNBATZ,&KALI,&LANCELOT,&LOKI,&MERC,&NEZHA,&NEMESIS,&PELE,&RAT,&RAVANA,&SERQET,&SET,
                         &SUSANO,&THANA,&THOR,&TSUKU,&ARES,&ARTIO,&ATHENA,&ATLAS,&BACCHUS,&CABRAKAN,&CERBERUS
                         ,&CTHULHU,&FAFNIR,&GANESHA,&GEB,&JORM,&KHEPRI,&KUMBHAKARNA,&KUZENBO
@@ -4128,9 +4150,9 @@ static THOTH:God = God
     mp5_per_level: 0.44,
 };
 
-static TIAMET:God = God
+static TIAMAT:God = God
 {
-    name: "Tiamet",
+    name: "Tiamat",
     base_health: 641.0,
     health_per_level: 81.0,
     base_mana: 355.0,
@@ -6242,7 +6264,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     shifters_power_enabled:bool,cowl_enabled:bool,redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,mhb_enabled:bool,
     ability_crit:bool,ability_true_damage:bool,hydras_enabled:bool,as_buff:f32,hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,
     flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,
-    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool,myr_enabled:bool) -> f32
+    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool,myr_enabled:bool,number_of_abilities:i32) -> f32
 {
     let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);
     let flat_pen = clamp(build.flat_pen,0.0,50.0);
@@ -6463,13 +6485,17 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         //y = percent of health, x = health
         let percent_health = clamp((7.0/75000.0)*(target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) - (1.0/6.0),0.02,0.09);
         unmitigated_reaver_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * (1.0 - 0.5 * hs_reaver_subsequent_hits as i32 as f32);
+        if number_of_abilities > 1
+        {
+            unmitigated_reaver_damage += (number_of_abilities as f32-1.0) * percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * 0.5;
+        }
     }
 
     let mut unmitigated_claw_damage = 0.0;
     if claw_bool
     {
         let percent_health = 0.005 * ((power / 75.0) - (power % 75.0)/75.0);
-        unmitigated_claw_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
+        unmitigated_claw_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * clamp(number_of_abilities as f32,1.0,3.0);
     }
 
     let mut unmitigated_heartseeker_damage = 0.0;
@@ -6477,10 +6503,15 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     {
         let percent_health = clamp((1.0/5000.0)*power-(1.0/100.0),0.03,0.06);
         unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) *(1.0 - 0.25 * hs_reaver_subsequent_hits as i32 as f32);
+        if number_of_abilities > 1
+        {
+            unmitigated_heartseeker_damage += (number_of_abilities as f32-1.0) * percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * 0.75
+        }
     }
 
     let mut unmitigated_soul_gem_damage = 0.0;
-    if soul_gem_bool{ unmitigated_soul_gem_damage = power * 0.25;}
+    if soul_gem_bool{ unmitigated_soul_gem_damage = power * 0.25 * (((number_of_abilities as f32-1.0)/4.0).floor()+1.0);}
+    else { unmitigated_soul_gem_damage = power * 0.25 * (number_of_abilities as f32/4.0).floor();}
 
     let mut unmitigated_archmages_damage = 0.0;
     if archmage_bool{ unmitigated_archmages_damage = power * 0.2;}
@@ -6507,19 +6538,19 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if conduit_bool{ conduit_true_damage = 40.0;}
 
     let mut unmitigated_crusher_damage = 0.0;
-    if crusher_bool{ unmitigated_crusher_damage = 20.0 + (power * 0.2)}
+    if crusher_bool{ unmitigated_crusher_damage = 20.0 + (power * 0.2) * number_of_abilities as f32}
 
     let mut unmitigated_arondight_damage = 0.0;
     if arondight_bool{ unmitigated_arondight_damage = 20.0 + (power * 0.4)}
 
     let mut unmitigated_bluestone_pendant_damage = 0.0;
-    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 20.0;}
+    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 20.0 * clamp(number_of_abilities as f32,1.0,2.0);}
 
     let mut unmitigated_bluestone_brooch_damage = 0.0;
-    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = 50.0 + 0.06 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);}
+    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (50.0 + 0.06 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) * clamp(number_of_abilities as f32,1.0,2.0);}
 
     let mut unmitigated_redstone_damage = 0.0;
-    if redstone_bool{ unmitigated_redstone_damage = 75.0;}
+    if redstone_bool{ unmitigated_redstone_damage = 75.0 * clamp(number_of_abilities as f32,1.0,2.0);}
 
     let unmitigated_damage =(unmitigated_ability_damage_after_crit * (1.0+sacrificial_damage_multi)) + unmitigated_reaver_damage + unmitigated_soul_gem_damage + unmitigated_poly_damage + 
                                 unmitigated_archmages_damage + unmitigated_crusher_damage + unmitigated_heartseeker_damage + unmitigated_arondight_damage + unmitigated_bluestone_pendant_damage + 
@@ -7057,6 +7088,9 @@ fn main() {
     sort_damage_menu.add_choice("No Sort|Ability Damage (Target 1)|Auto DPS (Target 1)|Ability Damage (Target 2)|Auto DPS (Target 2)");
     sort_damage_menu.set_value(0);
 
+    let mut number_of_abilities_input = input::IntInput::new(950,0,40,40,"Number of Abilities: ");
+    number_of_abilities_input.set_value("1");
+
     let mut builds_to_store_with_sort = input::IntInput::new(710,40,40,40,"Builds Displayed When Sorting: ");
     builds_to_store_with_sort.set_value("20");
 
@@ -7393,7 +7427,7 @@ fn main() {
             percent_power_buff.value().parse().unwrap(),red_buff.value(),enhanced_red_buff.value(),purp_buff.value(),enhanced_purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
             ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
-            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value())); 
+            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap())); 
 
     
 
@@ -7418,7 +7452,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     ability_crit_enabled:bool,ability_true_damage:bool,hydras_enabled:bool,calam_enabled:bool,as_buff:f32,freya_1_2_enabled:bool,baka_3_enabled:bool,
     hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,
     enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool)
+    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7625,7 +7659,8 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
                         redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled,
                         as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                        purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled,myr_enabled);
+                        purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled,myr_enabled,
+                        number_of_abilities);
 
                     if target1_ability_damage < target1_min_ability_damage{ build_fits_criteria = false;}
                     
@@ -7638,7 +7673,8 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
                             redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled
                             ,as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                            purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled,myr_enabled);
+                            purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled,myr_enabled,
+                            number_of_abilities);
 
                         if target2_ability_damage < target2_min_ability_damage{ build_fits_criteria = false;}
                         
