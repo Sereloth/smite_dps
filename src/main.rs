@@ -71,6 +71,7 @@ struct God
     hp5_per_level : f32,
     base_mp5: f32,
     mp5_per_level : f32,
+    class : &'static str,
 }
 
 
@@ -124,8 +125,8 @@ static GRIFFONWING:Item = Item
 static SPHINX:Item = Item
 {
     name: "Sphinx's Baubles",
-    magical_power: 70.0,
-    physical_power: 45.0,
+    magical_power: 80.0,
+    physical_power: 50.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -140,7 +141,7 @@ static SPHINX:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2700.0,
+    gold: 2550.0,
 };
 
 //-------------------------------------------------------------------------
@@ -909,7 +910,7 @@ static RANGDAS:Item = Item
 
 static ANIMOSITY:Item = Item
 {
-    name: "Animosity",
+    name: "Axe of Animosity",
     magical_power: 0.0,
     physical_power: 0.0,
     flat_pen: 0.0,
@@ -919,14 +920,14 @@ static ANIMOSITY:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 400.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 20.0,
-    hp5: 20.0,
-    ccr: 0.0,
+    health: 300.0,
+    phys_prot: 35.0,
+    magical_prot: 35.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.3,
     move_speed: 0.0,
-    gold: 1850.0,
+    gold: 2150.0,
 };
 
 static SPARTAN:Item = Item
@@ -1067,11 +1068,11 @@ static THISTLETHORN:Item = Item
 //-------------------------------------------------------------------------
 //Magical Items
 
-static MAGICAL_ITEMS:[&Item;39] = [&EMPTY,&DIVINE,&MAGUS,&DESO,&OBBY,&TAHUTI,&CALAM_TAHUTI,&CHRONOS_PENDANT,&CHARONS,
-                                    &DOOM_ORB,&MYRDDIN,&BOOK_OF_THOTH,&POLY,&REAVER,&BOOK_OF_THE_DEAD,
-                                    &PYTHAGS,&SOUL_GEM,&BANCROFTS,&NIMBLE_BANCROFTS,&BANCROFTS_CLAW,&TYPHONS,&VOID_STONE,&FAL,&BINDING,
-                                    &CELESTIAL,&LOTUS,&JADE_EMPS_CROWN,&TYRANNICAL,&ISOLATION,&ESTAFF,
-                                    &ASCLEPIUS,&WARLOCKS,&DEMONIC_GRIP,&TELKHINES,&HASTENED_RING,&HECATE,&GRIFFONWING,&SPHINX,&TOXICBLADE];
+static MAGICAL_ITEMS:[&Item;35] = [&EMPTY,&DIVINE,&MAGUS,&DESO,&OBBY,&TAHUTI,&CALAM_TAHUTI,&CHRONOS_PENDANT,&CHARONS,
+                                    &DOOM_ORB,&MYRDDIN,&BOOK_OF_THOTH,&TABLET,&POLY,&REAVER,
+                                    &PYTHAGS,&SOUL_GEM,&BANCROFTS,&NIMBLE_BANCROFTS,&BANCROFTS_CLAW,&TYPHONS,&BINDING,
+                                    &ISOLATION,&ESTAFF,
+                                    &ASCLEPIUS,&WARLOCKS,&DEMONIC_GRIP,&TELKHINES,&CYCLOP_RING,&HASTENED_RING,&GRIFFONWING,&SPHINX,&TOXICBLADE,&BERSERKERS,&GLADS];
 
 static DIVINE:Item = Item
 {
@@ -1092,7 +1093,7 @@ static DIVINE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2550.0,
 };
 
 static MAGUS:Item = Item
@@ -1100,8 +1101,8 @@ static MAGUS:Item = Item
     name: "Spear of the Magus",
     magical_power: 110.0,
     physical_power: 0.0,
-    flat_pen: 15.0,
-    percent_pen: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.1,
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.12,
@@ -1180,7 +1181,7 @@ static TAHUTI:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 3000.0,
+    gold: 2850.0,
 };
 
 static CALAM_TAHUTI:Item = Item
@@ -1202,7 +1203,7 @@ static CALAM_TAHUTI:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 3600.0,
+    gold: 3450.0,
 };
 
 static CHRONOS_PENDANT:Item = Item
@@ -1315,6 +1316,28 @@ static BOOK_OF_THOTH:Item = Item
     gold: 2500.0,
 };
 
+static TABLET:Item = Item
+{
+    name: "Tablet of Destinies",
+    magical_power: 90.0,
+    physical_power: 0.0,
+    flat_pen: 10.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana:300.0,
+    health: 150.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 20.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2650.0,
+};
+
 static POLY:Item = Item
 {
     name: "Polynomicon",
@@ -1357,28 +1380,6 @@ static REAVER:Item = Item
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2650.0,
-};
-
-static BOOK_OF_THE_DEAD:Item = Item
-{
-    name: "Book of the Dead",
-    magical_power: 120.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:200.0,
-    health: 0.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.2,
-    move_speed: 0.0,
-    gold: 2600.0,
 };
 
 static PYTHAGS:Item = Item
@@ -1513,10 +1514,10 @@ static TYPHONS:Item = Item
     gold: 2800.0,
 };
 
-static VOID_STONE:Item = Item
+static BINDING:Item = Item
 {
-    name: "Void Stone",
-    magical_power: 40.0,
+    name: "Stone of Binding",
+    magical_power: 0.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1525,146 +1526,14 @@ static VOID_STONE:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:0.0,
-    health: 200.0,
-    phys_prot: 0.0,
-    magical_prot: 50.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2250.0,
-};
-
-static FAL:Item = Item
-{
-    name: "Stone of Fal",
-    magical_power: 20.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 150.0,
+    health: 250.0,
     phys_prot: 40.0,
     magical_prot: 40.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2350.0,
-};
-
-static BINDING:Item = Item
-{
-    name: "Stone of Binding",
-    magical_power: 25.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 0.0,
-    phys_prot: 30.0,
-    magical_prot: 30.0,
-    mp5: 10.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 1700.0,
-};
-
-static CELESTIAL:Item = Item
-{
-    name: "Celestial Legion Helm",
-    magical_power: 55.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 0.0,
-    phys_prot: 30.0,
-    magical_prot: 0.0,
-    mp5: 20.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2150.0,
-};
-
-static LOTUS:Item = Item
-{
-    name: "Lotus Crown",
-    magical_power: 30.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 0.0,
-    phys_prot: 50.0,
-    magical_prot: 0.0,
-    mp5: 20.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2150.0,
-};
-
-static JADE_EMPS_CROWN:Item = Item
-{
-    name: "Jade Emperor's Crown",
-    magical_power: 30.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 300.0,
-    phys_prot: 50.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.1,
-    move_speed: 0.0,
-    gold: 2600.0,
-};
-
-static TYRANNICAL:Item = Item
-{
-    name: "Tyrannical Plate Helm",
-    magical_power: 70.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 100.0,
-    phys_prot: 30.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.2,
-    move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2300.0,
 };
 
 static ISOLATION:Item = Item
@@ -1732,7 +1601,7 @@ static ASCLEPIUS:Item = Item
     move_speed: 0.07,
     gold: 2600.0,
 };
-
+// 
 static WARLOCKS:Item = Item
 {
     name: "Warlock's Staff",
@@ -1780,13 +1649,13 @@ static DEMONIC_GRIP:Item = Item
 static TELKHINES:Item = Item
 {
     name: "Telkhines Ring",
-    magical_power: 90.0,
+    magical_power: 60.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.2,
     crit_chance: 0.0,
-    lifesteal: 0.0,
+    lifesteal: 0.1,
     cdr: 0.0,
     mana:0.0,
     health: 0.0,
@@ -1796,7 +1665,7 @@ static TELKHINES:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2700.0,
+    gold: 2250.0,
 };
 
 static HASTENED_RING:Item = Item
@@ -1821,17 +1690,17 @@ static HASTENED_RING:Item = Item
     gold: 2700.0,
 };
 
-static HECATE:Item = Item
+static CYCLOP_RING :Item = Item
 {
-    name: "Ring of Hecate",
+    name: "Cyclopean Ring",
     magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.2,
+    attack_speed: 0.25,
     crit_chance: 0.0,
-    lifesteal: 0.15,
-    cdr: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
     mana:0.0,
     health: 0.0,
     phys_prot: 0.0,
@@ -1840,16 +1709,17 @@ static HECATE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2600.0,
 };
+
 
 //-------------------------------------------------------------------------
 //Physical Items
-static PHYSICAL_ITEMS:[&Item;49] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
-                                    &ICHAIVAL,&OBOW,&DEVOS,&BLOODFORGE,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,&RAGE,
-                                    &SHADOWSTEEL,&WIND_DEMON,&FAILNOT,&ARONDIGHT,&GRIFFONWING,&SPHINX,&SERRATED,&SCS,&GOLDEN_BLADE,&HASTENED_KATANA,
-                                    &FROSTBOUND,&RUNEFORGED,&SLEDGE,&BLACKTHORN,&BERSERKERS,&SHIFTERS,&GLADS,&VOID_SHIELD,
-                                    &RUNIC,&ANCILE,&CAD_SHIELD,&TOXICBLADE,&EVERGREEN,&THISTLETHORN,&BRISTLEBUSH,&THICKBARK];
+static PHYSICAL_ITEMS:[&Item;43] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
+                                    &OBOW,&DEVOS,&BLOODFORGE,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,&RAGE,&BOOMERANG,
+                                    &FAILNOT,&ARONDIGHT,&GRIFFONWING,&SPHINX,&SHADOWDRINKER,&SERRATED,&GOLDEN_BLADE,&HASTENED_KATANA,
+                                    &FROSTBOUND,&RUNEFORGED,&DAWNBRINGER,&BERSERKERS,&GLADS,&BINDING,
+                                    &CAD_SHIELD,&TOXICBLADE,&EVERGREEN,&THISTLETHORN,&BRISTLEBUSH,&THICKBARK];
 
 static BRAWLERS:Item = Item
 {
@@ -1870,7 +1740,7 @@ static BRAWLERS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2350.0,
+    gold: 2600.0,
 };
 
 static JOTUNNS:Item = Item
@@ -1899,10 +1769,10 @@ static CRUSHER:Item = Item
 {
     name: "The Crusher",
     magical_power: 0.0,
-    physical_power: 40.0,
-    flat_pen: 15.0,
-    percent_pen: 0.0,
-    attack_speed: 0.1,
+    physical_power: 55.0,
+    flat_pen: 0.0,
+    percent_pen: 0.1,
+    attack_speed: 0.15,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -1945,8 +1815,8 @@ static DOMINANCE:Item = Item
     magical_power: 0.0,
     physical_power: 55.0,
     flat_pen: 0.0,
-    percent_pen: 0.1,
-    attack_speed: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.15,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2016,11 +1886,11 @@ static HYDRAS:Item = Item
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.1,
-    mana: 0.0,
+    mana: 200.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
-    mp5: 10.0,
+    mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -2031,12 +1901,12 @@ static ATALANTAS:Item = Item
 {
     name: "Atalanta's Bow",
     magical_power: 0.0,
-    physical_power: 30.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.2,
-    crit_chance: 0.2,
-    lifesteal: 0.1,
+    percent_pen: 0.1,
+    attack_speed: 0.25,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -2046,16 +1916,16 @@ static ATALANTAS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2400.0,
 };
 
 static SILVERBRANCH:Item = Item
 {
     name: "Silverbranch Bow",
     magical_power: 0.0,
-    physical_power: 25.0,
+    physical_power: 35.0,
     flat_pen: 0.0,
-    percent_pen: 0.2,
+    percent_pen: 0.1,
     attack_speed: 0.3,
     crit_chance: 0.0,
     lifesteal: 0.0,
@@ -2069,28 +1939,6 @@ static SILVERBRANCH:Item = Item
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2550.0,
-};
-
-static ICHAIVAL:Item = Item
-{
-    name: "Ichaival",
-    magical_power: 0.0,
-    physical_power: 35.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.3,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 0.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2450.0,
 };
 
 static OBOW:Item = Item
@@ -2134,7 +1982,7 @@ static DEVOS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2300.0,
+    gold: 2400.0,
 };
 
 static BLOODFORGE:Item = Item
@@ -2155,8 +2003,8 @@ static BLOODFORGE:Item = Item
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
-    move_speed: 0.05,
-    gold: 2750.0,
+    move_speed: 0.07,
+    gold: 2600.0,
 };
 
 static SOUL_NOMMER:Item = Item
@@ -2252,12 +2100,12 @@ static ASI:Item = Item
 {
     name: "Asi",
     magical_power: 0.0,
-    physical_power: 25.0,
-    flat_pen: 15.0,
+    physical_power: 50.0,
+    flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.25,
+    attack_speed: 0.2,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.2,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -2267,7 +2115,7 @@ static ASI:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2550.0,
+    gold: 2450.0,
 };
 
 static QINS:Item = Item
@@ -2318,7 +2166,7 @@ static RAGE:Item = Item
 {
     name: "Rage",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 55.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2336,14 +2184,14 @@ static RAGE:Item = Item
     gold: 2500.0,
 };
 
-static SHADOWSTEEL:Item = Item
+static BOOMERANG:Item = Item
 {
-    name: "Shadowsteel Shuriken",
+    name: "Bladed Boomerang",
     magical_power: 0.0,
     physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.25,
+    attack_speed: 0.15,
     crit_chance: 0.2,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2355,17 +2203,17 @@ static SHADOWSTEEL:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2600.0,
 };
 
 static WIND_DEMON:Item = Item
 {
-    name: "Wind Demon",
+    name: "Demon Blade",
     magical_power: 0.0,
     physical_power: 25.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.15,
+    attack_speed: 0.2,
     crit_chance: 0.2,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2424,6 +2272,28 @@ static ARONDIGHT:Item = Item
     gold: 2600.0,
 };
 
+static SHADOWDRINKER:Item = Item
+{
+    name: "Shadowdrinker",
+    magical_power: 0.0,
+    physical_power: 50.0,
+    flat_pen: 10.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 0.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.07,
+    gold: 2300.0,
+};
+
 static SERRATED:Item = Item
 {
     name: "Serrated Edge",
@@ -2444,28 +2314,6 @@ static SERRATED:Item = Item
     ccr: 0.0,
     move_speed: 0.07,
     gold: 2500.0,
-};
-
-static SCS:Item = Item
-{
-    name: "Stone Cutting Sword",
-    magical_power: 0.0,
-    physical_power: 50.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 0.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.07,
-    gold: 2200.0,
 };
 
 static GOLDEN_BLADE:Item = Item
@@ -2516,7 +2364,29 @@ static FROSTBOUND:Item = Item
 {
     name: "Frostbound Hammer",
     magical_power: 0.0,
-    physical_power: 25.0,
+    physical_power: 30.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 350.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
+    hp5: 20.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2400.0,
+};
+
+static RUNEFORGED:Item = Item
+{
+    name: "Runeforged Hammer",
+    magical_power: 0.0,
+    physical_power: 35.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2527,16 +2397,84 @@ static FROSTBOUND:Item = Item
     health: 250.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
+    mp5: 20.0,
+    hp5: 15.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2500.0,
+};
+
+static DAWNBRINGER:Item = Item
+{
+    name: "Dawnbringer",
+    magical_power: 0.0,
+    physical_power: 40.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 300.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
     mp5: 0.0,
     hp5: 0.0,
+    ccr: 0.2,
+    move_speed: 0.0,
+    gold: 2600.0,
+};
+
+
+
+static BERSERKERS:Item = Item
+{
+    name: "Berserker's Shield",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.25,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 150.0,
+    phys_prot: 60.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 20.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2400.0,
+};
+
+static GLADS:Item = Item
+{
+    name: "Gladiator's Shield",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana: 0.0,
+    health: 150.0,
+    phys_prot: 50.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 25.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2300.0,
 };
 
-static RUNEFORGED:Item = Item
+static CAD_SHIELD:Item = Item
 {
-    name: "Runeforged Hammer",
+    name: "Caduceus Club",
     magical_power: 0.0,
     physical_power: 30.0,
     flat_pen: 0.0,
@@ -2550,204 +2488,6 @@ static RUNEFORGED:Item = Item
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 20.0,
-    hp5: 25.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2400.0,
-};
-
-static SLEDGE:Item = Item
-{
-    name: "The Sledge",
-    magical_power: 0.0,
-    physical_power: 40.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 150.0,
-    health: 250.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.3,
-    move_speed: 0.0,
-    gold: 2300.0,
-};
-
-static BLACKTHORN:Item = Item
-{
-    name: "Blackthorn Hammer",
-    magical_power: 0.0,
-    physical_power: 30.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 200.0,
-    health: 400.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2300.0,
-};
-
-static BERSERKERS:Item = Item
-{
-    name: "Berserker's Shield",
-    magical_power: 0.0,
-    physical_power: 20.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.25,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 0.0,
-    phys_prot: 50.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 15.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2400.0,
-};
-
-static SHIFTERS:Item = Item
-{
-    name: "Shifter's Shield",
-    magical_power: 0.0,
-    physical_power: 25.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 0.0,
-    phys_prot: 25.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2350.0,
-};
-
-static GLADS:Item = Item
-{
-    name: "Gladiator's Shield",
-    magical_power: 0.0,
-    physical_power: 20.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.1,
-    mana: 0.0,
-    health: 250.0,
-    phys_prot: 40.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2400.0,
-};
-
-static VOID_SHIELD:Item = Item
-{
-    name: "Void Shield",
-    magical_power: 0.0,
-    physical_power: 20.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 150.0,
-    phys_prot: 35.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2600.0,
-};
-
-static RUNIC:Item = Item
-{
-    name: "Runic Shield",
-    magical_power: 0.0,
-    physical_power: 30.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 150.0,
-    phys_prot: 0.0,
-    magical_prot: 50.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2150.0,
-};
-
-static ANCILE:Item = Item
-{
-    name: "Ancile",
-    magical_power: 0.0,
-    physical_power: 35.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.1,
-    mana: 0.0,
-    health: 0.0,
-    phys_prot: 0.0,
-    magical_prot: 30.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2250.0,
-};
-
-static CAD_SHIELD:Item = Item
-{
-    name: "Caduceus Shield",
-    magical_power: 0.0,
-    physical_power: 20.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 0.0,
-    health: 100.0,
-    phys_prot: 30.0,
-    magical_prot: 30.0,
-    mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -2760,10 +2500,11 @@ static CAD_SHIELD:Item = Item
 //-------------------------------------------------------------------------
 //Tank Items
 
-static TANK_ITEMS:[&Item;48] = [&WINGED_BLADE,&RELIC_DAGGER,&WITCHBLADE,&TOXICBLADE,&REGROWTH,&RENEWAL,&THEBES,&GAIA,&SPIRIT_ROBE,&MANTLE,&URCHIN,&MAGIS
-                                    ,&PRIDWEN,&GENJIS,&ONI_HUNTERS,&SHOGUNS,&BULWARK,&PESTI,&HEARTWARD,&TALISMAN,&NEMEAN,&BREASTPLATE,&SPECTRAL,&CONTAGION,&SOV,&MYSTICAL
-                                    ,&MIDGARDIAN,&EMPERORS,&CELESTIAL,&LOTUS,&JADE_EMPS_CROWN,&TYRANNICAL,&FAL,&VOID_STONE,&BINDING,&BERSERKERS,&SHIFTERS,&GLADS,
-                                    &VOID_SHIELD,&RUNIC,&ANCILE,&CAD_SHIELD,&FROSTBOUND,&RUNEFORGED,&SLEDGE,&BLACKTHORN,&MANTICORE,&FAE_BLESSED];
+static TANK_ITEMS:[&Item;40] = [&WINGED_BLADE,&RELIC_DAGGER,&LOTUS,&TOXICBLADE,&RENEWAL,&THEBES,&GAIA,&SPIRIT_ROBE,&MANTLE,&MAGIS
+                                    ,&PRIDWEN,&GENJIS,&ONI_HUNTERS,&SHOGUNS,&PESTI,&HEARTWARD,&TALISMAN,&BREASTPLATE,&REGROWTH,&SPECTRAL,
+                                     &CONTAGION,&SOV,&MYSTICAL,&MIDGARDIAN,&EMPERORS,&LOTUS,&BINDING,&BERSERKERS,&GLADS,&PHALANX
+                                    ,&CAD_SHIELD,&FROSTBOUND,&RUNEFORGED,&MANTICORE,&FAE_BLESSED,&ABSOLUTION,&ABYSSAL,&ARCHDRUID,&PROPHETIC,
+                                     &CANNONEER];
 
 
 
@@ -2812,9 +2553,9 @@ static RELIC_DAGGER:Item = Item
     gold: 1850.0,
 };
 
-static WITCHBLADE:Item = Item
+static LOTUS:Item = Item
 {
-    name: "Witchblade",
+    name: "Lotus Sickle",
     magical_power: 0.0,
     physical_power: 0.0,
     flat_pen: 0.0,
@@ -2824,14 +2565,14 @@ static WITCHBLADE:Item = Item
     lifesteal: 0.0,
     cdr: 0.1,
     mana:0.0,
-    health: 250.0,
-    phys_prot: 30.0,
+    health: 300.0,
+    phys_prot: 25.0,
     magical_prot: 0.0,
-    mp5: 0.0,
+    mp5: 20.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.07,
-    gold: 2050.0,
+    gold: 2000.0,
 };
 
 static TOXICBLADE:Item = Item
@@ -2839,9 +2580,9 @@ static TOXICBLADE:Item = Item
     name: "Toxic Blade",
     magical_power: 0.0,
     physical_power: 0.0,
-    flat_pen: 15.0,
+    flat_pen: 10.0,
     percent_pen: 0.0,
-    attack_speed: 0.3,
+    attack_speed: 0.15,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2853,30 +2594,9 @@ static TOXICBLADE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.07,
-    gold: 2200.0,
+    gold: 2400.0,
 };
 
-static REGROWTH:Item = Item
-{
-    name: "Shield of Regrowth",
-    magical_power: 0.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.1,
-    mana:0.0,
-    health: 300.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 15.0,
-    hp5: 15.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold:2000.0,
-};
 
 static RENEWAL:Item = Item
 {
@@ -2890,14 +2610,14 @@ static RENEWAL:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:0.0,
-    health: 250.0,
-    phys_prot: 30.0,
-    magical_prot: 30.0,
+    health: 350.0,
+    phys_prot: 20.0,
+    magical_prot: 20.0,
     mp5: 0.0,
-    hp5: 15.0,
+    hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2300.0,
 };
 
 static THEBES:Item = Item
@@ -2998,38 +2718,16 @@ static MAGIS:Item = Item
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
-    cdr: 0.0,
+    cdr: 10.0,
     mana:0.0,
-    health: 300.0,
-    phys_prot: 15.0,
-    magical_prot: 15.0,
+    health: 0.0,
+    phys_prot: 30.0,
+    magical_prot: 30.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
     gold: 2150.0,
-};
-
-static URCHIN:Item = Item
-{
-    name: "Hide of the Urchin",
-    magical_power: 0.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:250.0,
-    health: 250.0,
-    phys_prot: 51.0,
-    magical_prot: 51.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2450.0,
 };
 
 static PRIDWEN:Item = Item
@@ -3088,7 +2786,7 @@ static ONI_HUNTERS:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:0.0,
-    health: 200.0,
+    health: 150.0,
     phys_prot: 0.0,
     magical_prot: 60.0,
     mp5: 30.0,
@@ -3120,28 +2818,6 @@ static SHOGUNS:Item = Item
     gold: 2200.0,
 };
 
-static BULWARK:Item = Item
-{
-    name: "Bulwark of Hope",
-    magical_power: 0.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 250.0,
-    phys_prot: 0.0,
-    magical_prot: 70.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.2,
-    move_speed: 0.0,
-    gold: 2300.0,
-};
-
 static PESTI:Item = Item
 {
     name: "Pestilence",
@@ -3161,7 +2837,7 @@ static PESTI:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2250.0,
+    gold: 2400.0,
 };
 
 static HEARTWARD:Item = Item
@@ -3208,28 +2884,6 @@ static TALISMAN:Item = Item
     gold: 2150.0,
 };
 
-static NEMEAN:Item = Item
-{
-    name: "Hide of the Nemean Lion",
-    magical_power: 0.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana: 200.0,
-    health: 0.0,
-    phys_prot: 70.0,
-    magical_prot: 0.0,
-    mp5: 20.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.0,
-    gold: 2200.0,
-};
-
 static BREASTPLATE:Item = Item
 {
     name: "Breastplate of Valor",
@@ -3252,6 +2906,29 @@ static BREASTPLATE:Item = Item
     gold: 2300.0,
 };
 
+static REGROWTH:Item = Item
+{
+    name: "Breastplate of Regrowth",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana:300.0,
+    health: 300.0,
+    phys_prot: 55.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold:2000.0,
+};
+
+
 static SPECTRAL:Item = Item
 {
     name: "Spectral Armor",
@@ -3271,7 +2948,7 @@ static SPECTRAL:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2100.0,
+    gold: 2300.0,
 };
 
 static CONTAGION:Item = Item
@@ -3293,7 +2970,7 @@ static CONTAGION:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2050.0,
+    gold: 2250.0,
 };
 
 static SOV:Item = Item
@@ -3353,7 +3030,7 @@ static MIDGARDIAN:Item = Item
     cdr: 0.0,
     mana:0.0,
     health: 300.0,
-    phys_prot: 40.0,
+    phys_prot: 50.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 0.0,
@@ -3381,7 +3058,7 @@ static EMPERORS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2000.0,
+    gold: 2250.0,
 };
 
 static MANTICORE:Item = Item
@@ -3428,8 +3105,141 @@ static FAE_BLESSED:Item = Item
     gold: 2300.0,
 };
 
+static ABSOLUTION:Item = Item
+{
+    name: "Absolution",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 250.0,
+    phys_prot: 0.0,
+    magical_prot: 60.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.1,
+    move_speed: 0.0,
+    gold: 2250.0,
+};
 
-static GODS:[&God;123] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+static ABYSSAL:Item = Item
+{
+    name: "Abyssal Stone",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 300.0,
+    phys_prot: 40.0,
+    magical_prot: 40.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.1,
+    move_speed: 0.0,
+    gold: 2350.0,
+};
+
+static ARCHDRUID:Item = Item
+{
+    name: "Archdruid's Fury",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 300.0,
+    phys_prot: 35.0,
+    magical_prot: 35.0,
+    mp5: 15.0,
+    hp5: 0.0,
+    ccr: 0.1,
+    move_speed: 0.0,
+    gold: 2500.0,
+};
+
+static PHALANX:Item = Item
+{
+    name: "Phalanx",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 150.0,
+    phys_prot: 55.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 20.0,
+    ccr: 0.1,
+    move_speed: 0.0,
+    gold: 2200.0,
+};
+
+static PROPHETIC:Item = Item
+{
+    name: "Prophetic Cloak",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.2,
+    mana: 0.0,
+    health: 150.0,
+    phys_prot: 85.0,
+    magical_prot: 85.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2350.0,
+};
+
+static CANNONEER:Item = Item
+{
+    name: "Cannoneer's Cuirass",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 300.0,
+    phys_prot: 30.0,
+    magical_prot: 30.0,
+    mp5: 0.0,
+    hp5: 20.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2250.0,
+};
+
+
+
+static GODS:[&God;124] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
                         &HOUYI,&ISHTAR,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
@@ -3438,7 +3248,7 @@ static GODS:[&God;123] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,
                         &SUSANO,&THANA,&THOR,&TSUKU,&ARES,&ARTIO,&ATHENA,&ATLAS,&BACCHUS,&CABRAKAN,&CERBERUS
                         ,&CTHULHU,&FAFNIR,&GANESHA,&GEB,&JORM,&KHEPRI,&KUMBHAKARNA,&KUZENBO
                         ,&MAUI,&SOBEK,&SYLVANUS,&TERRA,&XING,&YEMOJA,&YMIR,&ACHILLES,&AMATERASU,&BELLONA,&CHAAC
-                        ,&CU_CHU,&ERLANG,&GILG,&GUAN,&HERCULES,&HORUS,&ARTHUR,&MULAN,&NIKE,&ODIN,&OSIRIS,&SHIVA
+                        ,&CU_CHU,&ERLANG,&GILG,&GUAN,&HERCULES,&HORUS,&ARTHUR,&MULAN,&NIKE,&ODIN,&OSIRIS,&SHIVA,&SURTR
                         ,&WUKONG,&TYR,&VAMANA];
 
 
@@ -3462,6 +3272,7 @@ static ERROR:God = God //used when god name is invalid
     hp5_per_level: 0.47,
     base_mp5: 5.07,
     mp5_per_level: 0.37,
+    class: "Error"
 };
 
 
@@ -3482,12 +3293,13 @@ static AGNI:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.47,
     hp5_per_level: 0.47,
     base_mp5: 5.07,
     mp5_per_level: 0.37,
+    class: "Mage"
 };
 
 static AHPUCH:God = God
@@ -3504,12 +3316,13 @@ static AHPUCH:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.32,
     mp5_per_level: 0.42,
+    class: "Mage"
 };
 
 static ANUBIS:God = God
@@ -3526,12 +3339,13 @@ static ANUBIS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 17.0,
     phys_prots_per_level: 2.7,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.45,
     hp5_per_level: 0.45,
     base_mp5: 5.16,
     mp5_per_level: 0.36,
+    class: "Mage"
 };
 
 static AOKUANG:God = God
@@ -3548,12 +3362,13 @@ static AOKUANG:God = God
     auto_progression: [1.0,0.5,0.5,1.0,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.7,
     hp5_per_level: 0.7,
     base_mp5: 5.21,
     mp5_per_level: 0.41,
+    class: "Mage"
 };
 
 static APHRO:God = God
@@ -3570,12 +3385,13 @@ static APHRO:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.21,
     mp5_per_level: 0.41,
+    class: "Mage"
 };
 
 static BABA:God = God
@@ -3592,12 +3408,13 @@ static BABA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.5,
     hp5_per_level: 0.5,
     base_mp5: 5.6,
     mp5_per_level: 0.6,
+    class: "Mage"
 };
 
 static BARON:God = God
@@ -3614,12 +3431,13 @@ static BARON:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.6,
     hp5_per_level: 0.6,
     base_mp5: 5.45,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static CHANGE:God = God
@@ -3636,12 +3454,13 @@ static CHANGE:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.94,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static CHRONOS:God = God
@@ -3658,12 +3477,13 @@ static CHRONOS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.48,
     hp5_per_level: 0.48,
     base_mp5: 4.84,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static DISCO:God = God
@@ -3680,12 +3500,13 @@ static DISCO:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.45,
     hp5_per_level: 0.45,
     base_mp5: 5.43,
     mp5_per_level: 0.43,
+    class: "Mage"
 };
 
 static ESET:God = God
@@ -3702,12 +3523,13 @@ static ESET:God = God
     auto_progression: [1.0,1.0,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.23,
     mp5_per_level: 0.43,
+    class: "Mage"
 };
 
 static FREYA:God = God
@@ -3724,12 +3546,13 @@ static FREYA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.52,
     hp5_per_level: 0.52,
     base_mp5: 4.89,
     mp5_per_level: 0.39,
+    class: "Mage"
 };
 
 static HADES:God = God
@@ -3746,12 +3569,13 @@ static HADES:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 5.54,
     hp5_per_level: 0.54,
     base_mp5: 5.36,
     mp5_per_level: 0.36,
+    class: "Mage"
 };
 
 static HEBO:God = God
@@ -3768,12 +3592,13 @@ static HEBO:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 15.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.3,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static HEL:God = God
@@ -3790,12 +3615,13 @@ static HEL:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 15.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 5.43,
     hp5_per_level: 0.43,
     base_mp5: 5.45,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static HERA:God = God
@@ -3812,12 +3638,13 @@ static HERA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.21,
     mp5_per_level: 0.41,
+    class: "Mage"
 };
 
 static JANUS:God = God
@@ -3834,12 +3661,13 @@ static JANUS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 17.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.45,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static KUKU:God = God
@@ -3856,12 +3684,13 @@ static KUKU:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.46,
     hp5_per_level: 0.46,
     base_mp5: 5.45,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static MERLIN:God = God
@@ -3878,12 +3707,13 @@ static MERLIN:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 17.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.48,
     hp5_per_level: 0.48,
     base_mp5: 5.24,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static MORGANA:God = God
@@ -3900,12 +3730,13 @@ static MORGANA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.48,
     hp5_per_level: 0.48,
     base_mp5: 5.24,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static NOX:God = God
@@ -3922,12 +3753,13 @@ static NOX:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.6,
     hp5_per_level: 0.6,
     base_mp5: 5.4,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static NUWA:God = God
@@ -3944,12 +3776,13 @@ static NUWA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.45,
     hp5_per_level: 0.45,
     base_mp5: 5.03,
     mp5_per_level: 0.43,
+    class: "Mage"
 };
 
 static OLORUN:God = God
@@ -3966,12 +3799,13 @@ static OLORUN:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.45,
     hp5_per_level: 0.45,
     base_mp5: 5.4,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static PERSE:God = God
@@ -3988,12 +3822,13 @@ static PERSE:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.45,
     hp5_per_level: 0.45,
     base_mp5: 5.42,
     mp5_per_level: 0.42,
+    class: "Mage"
 };
 
 static POSEIDON:God = God
@@ -4010,12 +3845,13 @@ static POSEIDON:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 14.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.5,
     hp5_per_level: 0.5,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static RA:God = God
@@ -4032,12 +3868,13 @@ static RA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 17.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.48,
     hp5_per_level: 0.48,
     base_mp5: 5.24,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static RAIJIN:God = God
@@ -4054,12 +3891,13 @@ static RAIJIN:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 16.0,
     phys_prots_per_level: 3.3,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.06,
     mp5_per_level: 0.46,
+    class: "Mage"
 };
 
 static SCYLLA:God = God
@@ -4076,12 +3914,13 @@ static SCYLLA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 15.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.3,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static SOL:God = God
@@ -4098,12 +3937,13 @@ static SOL:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 15.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.3,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static MORRI:God = God
@@ -4120,12 +3960,13 @@ static MORRI:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.7,
     hp5_per_level: 0.7,
     base_mp5: 4.9,
     mp5_per_level: 0.4,
+    class: "Mage"
 };
 
 static THOTH:God = God
@@ -4142,12 +3983,13 @@ static THOTH:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 15.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.04,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static TIAMAT:God = God
@@ -4164,12 +4006,13 @@ static TIAMAT:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.5,
     hp5_per_level: 0.5,
     base_mp5: 5.44,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static VULCAN:God = God
@@ -4186,12 +4029,13 @@ static VULCAN:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.48,
     hp5_per_level: 0.48,
     base_mp5: 5.25,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static YUHUANG:God = God
@@ -4208,12 +4052,13 @@ static YUHUANG:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.47,
     hp5_per_level: 0.47,
     base_mp5: 5.14,
     mp5_per_level: 0.44,
+    class: "Mage"
 };
 
 static ZEUS:God = God
@@ -4230,12 +4075,13 @@ static ZEUS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 14.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.45,
     hp5_per_level: 0.45,
     base_mp5: 5.05,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 static ZHONG:God = God
@@ -4252,12 +4098,13 @@ static ZHONG:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 2.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.44,
     hp5_per_level: 0.44,
     base_mp5: 5.25,
     mp5_per_level: 0.45,
+    class: "Mage"
 };
 
 
@@ -4278,12 +4125,13 @@ static ARES:God = God
     auto_progression: [1.0,0.75,1.0,1.25,0.0,0.0,0.0],
     base_phys_prots: 31.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.67,
     hp5_per_level: 0.67,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static ARTIO:God = God
@@ -4300,12 +4148,13 @@ static ARTIO:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.9,
     hp5_per_level: 0.9,
     base_mp5: 5.03,
     mp5_per_level: 0.43,
+    class: "Guardian"
 };
 
 static ATHENA:God = God
@@ -4322,12 +4171,13 @@ static ATHENA:God = God
     auto_progression: [1.0,1.0,2.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.9,
     hp5_per_level: 0.9,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static ATLAS:God = God
@@ -4344,12 +4194,13 @@ static ATLAS:God = God
     auto_progression: [1.25,1.25,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.4,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static BACCHUS:God = God
@@ -4366,12 +4217,13 @@ static BACCHUS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.2,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static CABRAKAN:God = God
@@ -4388,12 +4240,13 @@ static CABRAKAN:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.6,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.75,
     hp5_per_level: 0.75,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static CERBERUS:God = God
@@ -4410,12 +4263,13 @@ static CERBERUS:God = God
     auto_progression: [1.0,0.8,0.8,0.0,0.0,0.0,0.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.75,
     hp5_per_level: 0.75,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static CTHULHU:God = God
@@ -4432,12 +4286,13 @@ static CTHULHU:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 33.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static FAFNIR:God = God
@@ -4454,12 +4309,13 @@ static FAFNIR:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 33.0,
     phys_prots_per_level: 3.7,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.54,
     hp5_per_level: 0.54,
     base_mp5: 4.95,
     mp5_per_level: 0.45,
+    class: "Guardian"
 };
 
 static GANESHA:God = God
@@ -4476,12 +4332,13 @@ static GANESHA:God = God
     auto_progression: [1.05,0.8,0.8,1.5,0.95,0.0,0.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.67,
     hp5_per_level: 0.67,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static GEB:God = God
@@ -4498,12 +4355,13 @@ static GEB:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static JORM:God = God
@@ -4520,12 +4378,13 @@ static JORM:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 33.0,
     phys_prots_per_level: 3.8,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.9,
     hp5_per_level: 0.9,
     base_mp5: 4.95,
     mp5_per_level: 0.45,
+    class: "Guardian"
 };
 
 static KHEPRI:God = God
@@ -4542,12 +4401,13 @@ static KHEPRI:God = God
     auto_progression: [1.0,0.5,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static KUMBHAKARNA:God = God
@@ -4564,12 +4424,13 @@ static KUMBHAKARNA:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 29.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.75,
     hp5_per_level: 0.75,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static KUZENBO:God = God
@@ -4586,12 +4447,13 @@ static KUZENBO:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 29.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.85,
     hp5_per_level: 0.85,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static MAUI:God = God
@@ -4608,12 +4470,13 @@ static MAUI:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 33.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 4.92,
     mp5_per_level: 0.42,
+    class: "Guardian"
 };
 
 static SOBEK:God = God
@@ -4630,12 +4493,13 @@ static SOBEK:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.75,
     hp5_per_level: 0.75,
     base_mp5: 4.93,
     mp5_per_level: 0.43,
+    class: "Guardian"
 };
 
 static SYLVANUS:God = God
@@ -4652,12 +4516,13 @@ static SYLVANUS:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static TERRA:God = God
@@ -4674,12 +4539,13 @@ static TERRA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 32.0,
     phys_prots_per_level: 3.5,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 static XING:God = God
@@ -4696,12 +4562,13 @@ static XING:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 33.0,
     phys_prots_per_level: 3.7,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 5.54,
     hp5_per_level: 0.54,
     base_mp5: 4.95,
     mp5_per_level: 0.45,
+    class: "Guardian"
 };
 
 static YEMOJA:God = God
@@ -4718,12 +4585,13 @@ static YEMOJA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 30.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.7,
     hp5_per_level: 0.7,
     base_mp5: 0.0,
     mp5_per_level: 0.0,
+    class: "Guardian"
 };
 
 static YMIR:God = God
@@ -4740,12 +4608,13 @@ static YMIR:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 36.0,
     phys_prots_per_level: 3.6,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 36.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.9,
     hp5_per_level: 0.9,
     base_mp5: 4.9,
     mp5_per_level: 0.4,
+    class: "Guardian"
 };
 
 //-------------------------------------------------------------------------
@@ -4759,17 +4628,18 @@ static AMC:God = God
     mana_per_level: 40.0,
     base_as: 0.97,
     as_per_level: 0.017,
-    base_auto_damage: 40.0,
+    base_auto_damage: 35.0,
     auto_damage_per_level: 2.2,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.71,
     hp5_per_level: 0.71,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static ANHUR:God = God
@@ -4781,17 +4651,18 @@ static ANHUR:God = God
     mana_per_level: 35.0,
     base_as: 0.92,
     as_per_level: 0.017,
-    base_auto_damage: 43.0,
+    base_auto_damage: 37.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.69,
     hp5_per_level: 0.69,
     base_mp5: 4.82,
     mp5_per_level: 0.32,
+    class: "Hunter"
 };
 
 static APOLLO:God = God
@@ -4803,17 +4674,18 @@ static APOLLO:God = God
     mana_per_level: 40.0,
     base_as: 0.97,
     as_per_level: 0.017,
-    base_auto_damage: 43.0,
+    base_auto_damage: 37.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 2.9,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.69,
     hp5_per_level: 0.69,
     base_mp5: 5.0,
     mp5_per_level: 0.4,
+    class: "Hunter"
 };
 
 static ARTEMIS:God = God
@@ -4825,17 +4697,18 @@ static ARTEMIS:God = God
     mana_per_level: 34.0,
     base_as: 0.97,
     as_per_level: 0.017,
-    base_auto_damage: 38.0,
+    base_auto_damage: 33.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.68,
     hp5_per_level: 0.68,
     base_mp5: 4.65,
     mp5_per_level: 0.25,
+    class: "Hunter"
 };
 
 static CERN:God = God
@@ -4847,17 +4720,18 @@ static CERN:God = God
     mana_per_level: 37.0,
     base_as: 1.01,
     as_per_level: 0.014,
-    base_auto_damage: 40.0,
+    base_auto_damage: 35.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.69,
     hp5_per_level: 0.69,
     base_mp5: 4.82,
     mp5_per_level: 0.32,
+    class: "Hunter"
 };
 
 static CHARYBDIS:God = God
@@ -4869,17 +4743,18 @@ static CHARYBDIS:God = God
     mana_per_level: 38.0,
     base_as: 0.97,
     as_per_level: 0.016,
-    base_auto_damage: 41.0,
+    base_auto_damage: 36.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,0.333,0.333,0.333,0.0,0.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.69,
     hp5_per_level: 0.69,
     base_mp5: 4.78,
     mp5_per_level: 0.32,
+    class: "Hunter"
 };
 
 static CHERNO:God = God
@@ -4891,17 +4766,18 @@ static CHERNO:God = God
     mana_per_level: 38.0,
     base_as: 0.97,
     as_per_level: 0.017,
-    base_auto_damage: 39.0,
+    base_auto_damage: 34.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 19.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.67,
     hp5_per_level: 0.67,
     base_mp5: 4.75,
     mp5_per_level: 0.35,
+    class: "Hunter"
 };
 
 static CHIRON:God = God
@@ -4913,17 +4789,18 @@ static CHIRON:God = God
     mana_per_level: 40.0,
     base_as: 1.01,
     as_per_level: 0.014,
-    base_auto_damage: 37.0,
+    base_auto_damage: 32.0,
     auto_damage_per_level: 2.35,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.65,
     hp5_per_level: 0.65,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static CUPID:God = God
@@ -4935,17 +4812,18 @@ static CUPID:God = God
     mana_per_level: 39.0,
     base_as: 0.97,
     as_per_level: 0.018,
-    base_auto_damage: 37.0,
+    base_auto_damage: 32.0,
     auto_damage_per_level: 2.3,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 19.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.67,
     hp5_per_level: 0.67,
     base_mp5: 4.95,
     mp5_per_level: 0.35,
+    class: "Hunter"
 };
 
 static DANZA:God = God
@@ -4957,17 +4835,18 @@ static DANZA:God = God
     mana_per_level: 38.0,
     base_as: 1.01,
     as_per_level: 0.014,
-    base_auto_damage: 43.0,
+    base_auto_damage: 38.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.69,
     hp5_per_level: 0.69,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static HACHI:God = God
@@ -4976,7 +4855,7 @@ static HACHI:God = God
     base_health: 718.0,
     health_per_level: 81.0,
     base_mana: 266.0,
-    mana_per_level: 36.0,
+    mana_per_level: 31.0,
     base_as: 1.01,
     as_per_level: 0.013,
     base_auto_damage: 39.0,
@@ -4984,12 +4863,13 @@ static HACHI:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.69,
     hp5_per_level: 0.69,
     base_mp5: 4.87,
     mp5_per_level: 0.37,
+    class: "Hunter"
 };
 
 static HEIM:God = God
@@ -5001,17 +4881,18 @@ static HEIM:God = God
     mana_per_level: 34.0,
     base_as: 0.97,
     as_per_level: 0.015,
-    base_auto_damage: 35.0,
+    base_auto_damage: 30.0,
     auto_damage_per_level: 3.0,
     auto_progression: [1.25,1.25,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 26.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 4.9,
     mp5_per_level: 0.4,
+    class: "Hunter"
 };
 
 static HOUYI:God = God
@@ -5023,17 +4904,18 @@ static HOUYI:God = God
     mana_per_level: 38.0,
     base_as: 0.96,
     as_per_level: 0.012,
-    base_auto_damage: 43.0,
+    base_auto_damage: 38.0,
     auto_damage_per_level: 2.8,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.68,
     hp5_per_level: 0.68,
     base_mp5: 5.35,
     mp5_per_level: 0.35,
+    class: "Hunter"
 };
 
 static ISHTAR:God = God
@@ -5045,17 +4927,18 @@ static ISHTAR:God = God
     mana_per_level: 38.0,
     base_as: 1.02,
     as_per_level: 0.016,
-    base_auto_damage: 39.0,
+    base_auto_damage: 34.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.13,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.7,
     hp5_per_level: 0.7,
     base_mp5: 4.88,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static IZANAMI:God = God
@@ -5067,17 +4950,18 @@ static IZANAMI:God = God
     mana_per_level: 35.0,
     base_as: 0.94,
     as_per_level: 0.017,
-    base_auto_damage: 36.0,
+    base_auto_damage: 31.0,
     auto_damage_per_level: 2.4,
-    auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    auto_progression: [1.1,1.1,1.1,1.1,1.1,1.1,1.1],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.7,
     hp5_per_level: 0.7,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static JING:God = God
@@ -5089,17 +4973,18 @@ static JING:God = God
     mana_per_level: 36.0,
     base_as: 1.01,
     as_per_level: 0.014,
-    base_auto_damage: 41.0,
+    base_auto_damage: 36.0,
     auto_damage_per_level: 2.7,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.68,
     hp5_per_level: 0.69,
     base_mp5: 4.7,
     mp5_per_level: 0.3,
+    class: "Hunter"
 };
 
 static MEDUSA:God = God
@@ -5111,17 +4996,18 @@ static MEDUSA:God = God
     mana_per_level: 34.0,
     base_as: 0.96,
     as_per_level: 0.014,
-    base_auto_damage: 41.0,
+    base_auto_damage: 36.0,
     auto_damage_per_level: 2.6,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.68,
     hp5_per_level: 0.68,
     base_mp5: 4.65,
     mp5_per_level: 0.25,
+    class: "Hunter"
 };
 
 static NEITH:God = God
@@ -5133,17 +5019,18 @@ static NEITH:God = God
     mana_per_level: 39.0,
     base_as: 1.02,
     as_per_level: 0.016,
-    base_auto_damage: 41.0,
+    base_auto_damage: 36.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.54,
     hp5_per_level: 0.54,
     base_mp5: 4.75,
     mp5_per_level: 0.35,
+    class: "Hunter"
 };
 
 static RAMA:God = God
@@ -5155,17 +5042,18 @@ static RAMA:God = God
     mana_per_level: 34.0,
     base_as: 0.97,
     as_per_level: 0.017,
-    base_auto_damage: 43.0,
+    base_auto_damage: 38.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.65,
     hp5_per_level: 0.65,
     base_mp5: 4.75,
     mp5_per_level: 0.25,
+    class: "Hunter"
 };
 
 static SKADI:God = God
@@ -5177,17 +5065,18 @@ static SKADI:God = God
     mana_per_level: 35.0,
     base_as: 0.97,
     as_per_level: 0.016,
-    base_auto_damage: 38.0,
+    base_auto_damage: 33.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.69,
     hp5_per_level: 0.69,
     base_mp5: 4.82,
     mp5_per_level: 0.32,
+    class: "Hunter"
 };
 
 static ULLR:God = God
@@ -5199,17 +5088,18 @@ static ULLR:God = God
     mana_per_level: 40.0,
     base_as: 0.96,
     as_per_level: 0.015,
-    base_auto_damage: 40.0,
+    base_auto_damage: 35.0,
     auto_damage_per_level: 2.4,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.71,
     hp5_per_level: 0.71,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Hunter"
 };
 
 static XBAL:God = God
@@ -5221,17 +5111,18 @@ static XBAL:God = God
     mana_per_level: 37.0,
     base_as: 0.96,
     as_per_level: 0.015,
-    base_auto_damage: 43.0,
+    base_auto_damage: 38.0,
     auto_damage_per_level: 2.5,
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.68,
     hp5_per_level: 0.68,
     base_mp5: 4.8,
     mp5_per_level: 0.4,
+    class: "Hunter"
 };
 
 //-------------------------------------------------------------------------
@@ -5250,12 +5141,13 @@ static ARACHNE:God = God
     auto_progression: [0.5,1.0,1.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.67,
     hp5_per_level: 0.67,
     base_mp5: 5.26,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 static AWILIX:God = God
@@ -5272,12 +5164,13 @@ static AWILIX:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.68,
     hp5_per_level: 0.68,
     base_mp5: 4.36,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 static BAKA:God = God
@@ -5294,12 +5187,13 @@ static BAKA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.68,
     hp5_per_level: 0.68,
     base_mp5: 5.26,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 static BASTET:God = God
@@ -5316,12 +5210,13 @@ static BASTET:God = God
     auto_progression: [1.0,0.7,1.3,0.0,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.72,
     hp5_per_level: 0.72,
     base_mp5: 4.65,
     mp5_per_level: 0.25,
+    class: "Assassin"
 };
 
 static CAMA:God = God
@@ -5338,12 +5233,13 @@ static CAMA:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 19.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.67,
     hp5_per_level: 0.67,
     base_mp5: 4.7,
     mp5_per_level: 0.3,
+    class: "Assassin"
 };
 
 static CLIO:God = God
@@ -5360,12 +5256,13 @@ static CLIO:God = God
     auto_progression: [1.0,1.0,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.3,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.85,
     hp5_per_level: 0.85,
     base_mp5: 4.7,
     mp5_per_level: 0.4,
+    class: "Assassin"
 };
 
 static DAJI:God = God
@@ -5382,12 +5279,13 @@ static DAJI:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 4.97,
     mp5_per_level: 0.37,
+    class: "Assassin"
 };
 
 static FENRIR:God = God
@@ -5404,12 +5302,13 @@ static FENRIR:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.73,
     hp5_per_level: 0.73,
     base_mp5: 4.46,
     mp5_per_level: 0.26,
+    class: "Assassin"
 };
 
 static HUNBATZ:God = God
@@ -5426,12 +5325,13 @@ static HUNBATZ:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.68,
     hp5_per_level: 0.68,
     base_mp5: 4.17,
     mp5_per_level: 0.27,
+    class: "Assassin"
 };
 
 static KALI:God = God
@@ -5448,12 +5348,13 @@ static KALI:God = God
     auto_progression: [1.0,0.5,0.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 24.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.68,
     hp5_per_level: 0.68,
     base_mp5: 4.51,
     mp5_per_level: 0.21,
+    class: "Assassin"
 };
 
 static LANCELOT:God = God
@@ -5470,12 +5371,13 @@ static LANCELOT:God = God
     auto_progression: [1.0,1.0,1.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 2.06,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 static LOKI:God = God
@@ -5492,12 +5394,13 @@ static LOKI:God = God
     auto_progression: [1.0,0.5,0.5,0.5,1.5,0.0,0.0],
     base_phys_prots: 18.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.7,
     hp5_per_level: 0.7,
     base_mp5: 4.55,
     mp5_per_level: 0.35,
+    class: "Assassin"
 };
 
 static MERC:God = God
@@ -5514,12 +5417,13 @@ static MERC:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.7,
     hp5_per_level: 0.7,
     base_mp5: 4.75,
     mp5_per_level: 0.35,
+    class: "Assassin"
 };
 
 static NEZHA:God = God
@@ -5536,12 +5440,13 @@ static NEZHA:God = God
     auto_progression: [1.0,1.0,1.5,2.0,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.71,
     hp5_per_level: 0.71,
     base_mp5: 4.17,
     mp5_per_level: 0.27,
+    class: "Assassin"
 };
 
 static NEMESIS:God = God
@@ -5558,12 +5463,13 @@ static NEMESIS:God = God
     auto_progression: [1.0,1.0,0.75,1.25,0.0,0.0,0.0],
     base_phys_prots: 19.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.7,
     hp5_per_level: 0.7,
     base_mp5: 4.7,
     mp5_per_level: 0.4,
+    class: "Assassin"
 };
 
 static PELE:God = God
@@ -5580,12 +5486,13 @@ static PELE:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 4.7,
     mp5_per_level: 0.4,
+    class: "Assassin"
 };
 
 static RAT:God = God
@@ -5602,12 +5509,13 @@ static RAT:God = God
     auto_progression: [1.0,0.5,0.5,1.25,0.0,0.0,0.0],
     base_phys_prots: 20.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 5.06,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 static RAVANA:God = God
@@ -5624,12 +5532,13 @@ static RAVANA:God = God
     auto_progression: [0.75,0.5,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.7,
     hp5_per_level: 0.7,
     base_mp5: 4.75,
     mp5_per_level: 0.35,
+    class: "Assassin"
 };
 
 static SERQET:God = God
@@ -5646,12 +5555,13 @@ static SERQET:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 4.59,
     mp5_per_level: 0.29,
+    class: "Assassin"
 };
 
 static SET:God = God
@@ -5668,12 +5578,13 @@ static SET:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 4.58,
     mp5_per_level: 0.38,
+    class: "Assassin"
 };
 
 static SUSANO:God = God
@@ -5690,12 +5601,13 @@ static SUSANO:God = God
     auto_progression: [1.0,1.0,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 4.47,
     mp5_per_level: 0.27,
+    class: "Assassin"
 };
 
 static THANA:God = God
@@ -5712,12 +5624,13 @@ static THANA:God = God
     auto_progression: [1.0,0.75,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.67,
     hp5_per_level: 0.67,
     base_mp5: 4.78,
     mp5_per_level: 0.38,
+    class: "Assassin"
 };
 
 static THOR:God = God
@@ -5734,12 +5647,13 @@ static THOR:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 23.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.69,
     hp5_per_level: 0.69,
     base_mp5: 4.69,
     mp5_per_level: 0.29,
+    class: "Assassin"
 };
 
 static TSUKU:God = God
@@ -5756,12 +5670,13 @@ static TSUKU:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 21.0,
     phys_prots_per_level: 3.0,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.68,
     hp5_per_level: 0.68,
     base_mp5: 4.96,
     mp5_per_level: 0.46,
+    class: "Assassin"
 };
 
 //-------------------------------------------------------------------------
@@ -5780,12 +5695,13 @@ static ACHILLES:God = God
     auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.75,
     hp5_per_level: 0.75,
     base_mp5: 5.09,
     mp5_per_level: 0.39,
+    class: "Warrior"
 };
 
 static AMATERASU:God = God
@@ -5802,12 +5718,13 @@ static AMATERASU:God = God
     auto_progression: [1.0,0.5,1.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.2,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static BELLONA:God = God
@@ -5824,12 +5741,13 @@ static BELLONA:God = God
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 5.2,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static CHAAC:God = God
@@ -5846,12 +5764,13 @@ static CHAAC:God = God
     auto_progression: [1.0,0.5,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.8,
     hp5_per_level: 0.8,
     base_mp5: 5.09,
     mp5_per_level: 0.39,
+    class: "Warrior"
 };
 
 static CU_CHU:God = God
@@ -5868,12 +5787,13 @@ static CU_CHU:God = God
     auto_progression: [0.7,0.7,1.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.75,
     hp5_per_level: 0.75,
     base_mp5: 0.0,
     mp5_per_level: 0.0,
+    class: "Warrior"
 };
 
 static ERLANG:God = God
@@ -5890,12 +5810,13 @@ static ERLANG:God = God
     auto_progression: [0.75,0.75,0.75,1.1,0.9,0.0,0.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.6,
     hp5_per_level: 0.6,
     base_mp5: 5.0,
     mp5_per_level: 0.3,
+    class: "Warrior"
 };
 
 static GILG:God = God
@@ -5912,12 +5833,13 @@ static GILG:God = God
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.8,
     hp5_per_level: 0.8,
     base_mp5: 4.69,
     mp5_per_level: 0.39,
+    class: "Warrior"
 };
 
 static GUAN:God = God
@@ -5934,12 +5856,13 @@ static GUAN:God = God
     auto_progression: [1.0,1.0,1.3,1.75,0.0,0.0,0.0],
     base_phys_prots: 26.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.7,
     hp5_per_level: 0.7,
     base_mp5: 5.25,
     mp5_per_level: 0.45,
+    class: "Warrior"
 };
 
 static HERCULES:God = God
@@ -5956,12 +5879,13 @@ static HERCULES:God = God
     auto_progression: [1.0,1.0,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 7.63,
     hp5_per_level: 0.63,
     base_mp5: 4.7,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static HORUS:God = God
@@ -5978,12 +5902,13 @@ static HORUS:God = God
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.8,
     hp5_per_level: 0.8,
     base_mp5: 5.15,
     mp5_per_level: 0.45,
+    class: "Warrior"
 };
 
 static ARTHUR:God = God
@@ -6000,12 +5925,13 @@ static ARTHUR:God = God
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.8,
     hp5_per_level: 0.8,
     base_mp5: 4.8,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static MULAN:God = God
@@ -6022,12 +5948,13 @@ static MULAN:God = God
     auto_progression: [1.0,1.0,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.7,
     hp5_per_level: 0.7,
     base_mp5: 5.1,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static NIKE:God = God
@@ -6044,12 +5971,13 @@ static NIKE:God = God
     auto_progression: [1.0,1.0,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 24.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 10.8,
     hp5_per_level: 0.8,
     base_mp5: 4.99,
     mp5_per_level: 0.39,
+    class: "Warrior"
 };
 
 static ODIN:God = God
@@ -6066,12 +5994,13 @@ static ODIN:God = God
     auto_progression: [1.0,1.0,1.0,1.5,0.0,0.0,0.0],
     base_phys_prots: 26.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 9.63,
     hp5_per_level: 0.63,
     base_mp5: 4.5,
     mp5_per_level: 0.4,
+    class: "Warrior"
 };
 
 static OSIRIS:God = God
@@ -6088,12 +6017,13 @@ static OSIRIS:God = God
     auto_progression: [0.5,1.0,0.5,1.0,0.0,0.0,0.0],
     base_phys_prots: 27.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 6.8,
     hp5_per_level: 0.8,
     base_mp5: 5.09,
     mp5_per_level: 0.39,
+    class: "Warrior"
 };
 
 static SHIVA:God = God
@@ -6110,12 +6040,36 @@ static SHIVA:God = God
     auto_progression: [1.0,0.75,1.25,0.0,0.0,0.0,0.0],
     base_phys_prots: 26.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.7,
     hp5_per_level: 0.7,
     base_mp5: 4.89,
     mp5_per_level: 0.39,
+    class: "Warrior"
+};
+
+static SURTR:God = God
+{
+    name: "Surtr",
+    base_health: 758.0,
+    health_per_level: 88.0,
+    base_mana: 265.0,
+    mana_per_level: 35.0,
+    base_as: 1.01,
+    as_per_level: 0.012,
+    base_auto_damage: 41.0,
+    auto_damage_per_level: 2.2,
+    auto_progression: [1.0,0.75,1.0,1.5,0.0,0.0,0.0],
+    base_phys_prots: 28.0,
+    phys_prots_per_level: 3.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
+    base_hp5: 9.8,
+    hp5_per_level: 0.8,
+    base_mp5: 4.98,
+    mp5_per_level: 0.38,
+    class: "Warrior"
 };
 
 static WUKONG:God = God
@@ -6132,12 +6086,13 @@ static WUKONG:God = God
     auto_progression: [1.0,0.75,1.0,1.25,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.8,
     hp5_per_level: 0.8,
     base_mp5: 4.68,
     mp5_per_level: 0.38,
+    class: "Warrior"
 };
 
 static TYR:God = God
@@ -6154,12 +6109,13 @@ static TYR:God = God
     auto_progression: [1.0,0.5,1.5,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.2,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.72,
     hp5_per_level: 0.72,
     base_mp5: 4.69,
     mp5_per_level: 0.29,
+    class: "Warrior"
 };
 
 static VAMANA:God = God
@@ -6176,12 +6132,13 @@ static VAMANA:God = God
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
     phys_prots_per_level: 3.1,
-    base_magical_prots: 40.0,
-    magical_prots_per_level: 1.2,
+    base_magical_prots: 33.6,
+    magical_prots_per_level: 1.6,
     base_hp5: 8.5,
     hp5_per_level: 0.5,
     base_mp5: 5.11,
     mp5_per_level: 0.41,
+    class: "Warrior"
 };
 
 //-------------------------------------------------------------------------
@@ -6259,15 +6216,16 @@ fn combine_items(items:[&Item;6]) -> Build
 
 fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level: f32, build:&Build, target:&God, target_level:f32, 
     target_build:&Build,obby_enabled:bool, soul_gem_enabled:bool, poly_enabled:bool,estaff_enabled:bool,conduit_enabled:bool,
-    archmages_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,tyranical_enabled:bool,binding_enabled:bool,
+    archmages_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,binding_enabled:bool,
     bancroft_enabled:bool,tahuti_enabled:bool,magical:bool,titans_bane_enabled:bool,arondight_enabled:bool,serrated_enabled:bool,runeforged_enabled:bool,
-    shifters_power_enabled:bool,cowl_enabled:bool,redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,mhb_enabled:bool,
-    ability_crit:bool,ability_true_damage:bool,hydras_enabled:bool,as_buff:f32,hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,
-    flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,
-    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool,myr_enabled:bool,number_of_abilities:i32) -> f32
+    cowl_enabled:bool,redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,mhb_enabled:bool,
+    ability_crit:bool,ability_true_damage:bool,hydras_enabled:bool,as_buff:f32,sol_passive:bool,
+    flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,purp_buff:bool,fire_giant:bool,
+    enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,calam_enabled:bool,claw_enabled:bool,myr_enabled:bool,number_of_abilities:i32,
+    divine_enabled:bool,boomerang_enabled:bool) -> f32
 {
-    let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);
-    let flat_pen = clamp(build.flat_pen,0.0,50.0);
+    let mut power = clamp((build.magical_power+ ((god.class=="Mage")as i32 as f32) * (20.0 + level)) * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);
+    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (5.0 + 0.25 * level),0.0,50.0);
     let mut percent_pen = clamp(build.percent_pen,0.0,0.4);
     let mut attack_speed = god.base_as + (god.as_per_level * (level - 1.0)) + build.attack_speed * (god.base_as - god.as_per_level);
 
@@ -6279,7 +6237,6 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut archmage_bool = false;
     let mut sacrificial_damage_multi = 0.0;
     let mut focus_damage_multi = 0.0;
-    let mut void_stone_pen = 0.0;
     let mut magus_multi = 0.0;
     let mut binding_shred = 0.0;
     let mut typhon_bool = false;
@@ -6293,7 +6250,6 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut arondight_bool = false;
     let mut silverbranch_bool = false;
     let mut runeforged_multi = 0.0;
-    let mut void_shield_shred = 0.0;
     let mut bluestone_pendant_bool = false;
     let mut bluestone_brooch_bool = false;
     let mut redstone_bool = false;
@@ -6306,6 +6262,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut fighters_multi = 0.0;
     let mut rangdas_bool = false;
     let mut myr_multi = 0.0;
+    let mut divine_bool = false;
+    let mut tablet_bool = false;
+    let mut boomerang_crit = 0.0;
+
 
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
     if god.name == FREYA.name { bancroft_lifesteal += 0.15; }
@@ -6315,7 +6275,6 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     {
         if name == &TYPHONS.name { typhon_bool = true;}
         if name == &BOOK_OF_THOTH.name { power += build.mana * 0.1;}
-        if name == &VOID_STONE.name {void_stone_pen = 0.1;}
         if obby_enabled && name == &OBBY.name { percent_pen = percent_pen + 0.1; }        
         if name == &REAVER.name { reaver_bool = true;}
         if soul_gem_enabled && name == &SOUL_GEM.name { soul_gem_bool = true;}
@@ -6324,11 +6283,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if conduit_enabled && name == &CONDUIT.name { conduit_bool = true;}
         if archmages_enabled && name == &ARCHMAGES.name { archmage_bool = true;}
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
-        if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.09; }
+        if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.15; }
         if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
-        if tyranical_enabled && name == &TYRANNICAL.name { power += 30.0; }
-        if binding_enabled && name == &BINDING.name { binding_shred = 10.0; }
+        if binding_enabled && name == &BINDING.name { binding_shred = 5.0 + level; }
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
@@ -6343,9 +6301,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &TRANS.name { power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.03; }
         if name == &SILVERBRANCH.name { silverbranch_bool = true; }
         if serrated_enabled && name == &SERRATED.name { power += 24.0; }
-        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.2; }
-        if name == &VOID_SHIELD.name { void_shield_shred = 0.15;}
-        if shifters_power_enabled && name == &SHIFTERS.name { power += 25.0; }
+        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.1; }
         if cowl_enabled
         {
             if name== &LEATHER_COWL.name { attack_speed += 0.1 * (god.base_as - god.as_per_level);}
@@ -6366,7 +6322,6 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &TOXICBLADE.name { toxic_blade_bool = true;}
         if name == &DEATHBRINGER.name { deathbringer_bonus = 0.3; }
         if hydras_enabled && name == &HYDRAS.name { hydras_bool = true;}
-        if ichaival_ability_power && name == &ICHAIVAL.name { power += 30.0;}
 
         if name == &GILDED.name { basic_attack_damage += 20.0; }
         if name == &DIAMOND.name { basic_attack_damage += 80.0; }
@@ -6375,6 +6330,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &MANIKINS_MACE.name { basic_attack_damage += 50.0; }
 
         if calam_enabled && name == &CALAM_TAHUTI.name { calam_bool = true; }
+        if divine_enabled && name == &DIVINE.name { divine_bool = true; }
+        if name == &TABLET.name {tablet_bool = true;}
+
+        if boomerang_enabled && name == &BOOMERANG.name { boomerang_crit = 0.3; }
 
 
     }
@@ -6384,7 +6343,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut item_mitigations = 0.0;
     for name in target_build.names.iter()
     {
-        if name == &ONI_HUNTERS.name { item_mitigations += 0.09; }
+        if name == &ONI_HUNTERS.name { item_mitigations += 0.12; }
     }
     if target.name == CABRAKAN.name { item_mitigations += 0.05; }
 
@@ -6397,16 +6356,17 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         else { power += 5.0; }
     }
 
-    if enhanced_red_buff{ bancroft_lifesteal += 0.1; }
+ 
 
-    let mut purp_shred = 0.0;
+
     if purp_buff
     { 
         attack_speed += 0.1 * (god.base_as - god.as_per_level);
-        purp_shred = 10.0
+        if magical{ basic_attack_damage += 15.0; }
+        else{ basic_attack_damage += 12.0; }
     }
 
-    if enhanced_purp_buff { attack_speed += 0.15 * (god.base_as - god.as_per_level);}
+
 
     if fire_giant
     {
@@ -6450,15 +6410,15 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
 
 
     let unmitigated_ability_damage = base_ability_damage + (power * ability_scaling * tahuti_scaling_multi);
-    let crit_multi = 1.0 + build.crit_chance * (0.75 + deathbringer_bonus) * ((0.0 * magical as i32 as f32) + (1.0 * !magical as i32 as f32));
+    let crit_multi = 1.0 + (build.crit_chance + boomerang_crit) * (0.75 + deathbringer_bonus) * ((0.0 * magical as i32 as f32) + (1.0 * !magical as i32 as f32));
     let olorun_crit_multi = 1.0 + clamp(power/1000.0,0.0,0.7) * 0.3 * (god.name==OLORUN.name) as i32 as f32 * (power>=150.0) as i32 as f32;
     let unmitigated_ability_damage_after_crit = clamp(unmitigated_ability_damage * crit_multi * olorun_crit_multi * ability_crit as i32 as f32,unmitigated_ability_damage,99999.9);
 
     let target_magical_prots = target.base_magical_prots + (target.magical_prots_per_level * (target_level - 1.0)) + target_build.magical_prot;
     let target_physical_prots = target.base_phys_prots + (target.phys_prots_per_level * (target_level - 1.0)) + target_build.phys_prot;
     let target_prots = target_magical_prots * magical as i32 as f32 + target_physical_prots * !magical as i32 as f32;
-    let target_prots_after_shred = (target_prots - binding_shred) * (1.0 - void_stone_pen - void_shield_shred) - purp_shred;
-    let target_prots_after_pen = (target_prots * (1.0 - percent_pen)) - flat_pen;
+    let target_prots_after_shred = target_prots - binding_shred;
+    let target_prots_after_pen = (target_prots_after_shred * (1.0 - percent_pen)) - flat_pen;
 
     let protections_multiplier = clamp(100.0/(100.0+target_prots_after_pen) + 10.0 * ability_true_damage as i32 as f32,0.0,1.0);
 
@@ -6484,7 +6444,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         //y=(7/75,000)x - (1/6)  
         //y = percent of health, x = health
         let percent_health = clamp((7.0/75000.0)*(target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) - (1.0/6.0),0.02,0.09);
-        unmitigated_reaver_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * (1.0 - 0.5 * hs_reaver_subsequent_hits as i32 as f32);
+        unmitigated_reaver_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
         if number_of_abilities > 1
         {
             unmitigated_reaver_damage += (number_of_abilities as f32-1.0) * percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * 0.5;
@@ -6502,7 +6462,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if heartseeker_bool
     {
         let percent_health = clamp((1.0/5000.0)*power-(1.0/100.0),0.03,0.06);
-        unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) *(1.0 - 0.25 * hs_reaver_subsequent_hits as i32 as f32);
+        unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
         if number_of_abilities > 1
         {
             unmitigated_heartseeker_damage += (number_of_abilities as f32-1.0) * percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health) * 0.75
@@ -6514,10 +6474,13 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     else { unmitigated_soul_gem_damage = power * 0.25 * (number_of_abilities as f32/4.0).floor();}
 
     let mut unmitigated_archmages_damage = 0.0;
-    if archmage_bool{ unmitigated_archmages_damage = power * 0.2;}
+    if archmage_bool{ unmitigated_archmages_damage = power * 0.3;}
 
     let mut unmitigated_calam_damage = 0.0;
     if calam_bool{ unmitigated_calam_damage = 100.0 + (power * 0.35)}
+
+    let mut unmitigated_divine_damage = 0.0;
+    if divine_bool{ unmitigated_divine_damage = 40.0 + (power * 0.2)}
 
     let mut unmitigated_poly_damage = 0.0;
     if poly_bool{ unmitigated_poly_damage = (power * 0.75) + god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0))}
@@ -6527,7 +6490,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     {         
         let unmitigated_damage_hydras = god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power;
         let unmitigated_damage_after_multis_hydras = unmitigated_damage_hydras * god.auto_progression[0];
-        let crit_multi = 1.0 + build.crit_chance * (0.75 + deathbringer_bonus - 0.35 * (god.name==HEIM.name) as i32 as f32) * ((0.0 * magical as i32 as f32) + (1.0 * !magical as i32 as f32));
+        let crit_multi = 1.0 + (build.crit_chance + boomerang_crit) * (0.75 + deathbringer_bonus - 0.35 * (god.name==HEIM.name) as i32 as f32) * ((0.0 * magical as i32 as f32) + (1.0 * !magical as i32 as f32));
         unmitigated_hydras_auto_damage = unmitigated_damage_after_multis_hydras * crit_multi;
     }
 
@@ -6537,26 +6500,36 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut conduit_true_damage = 0.0;
     if conduit_bool{ conduit_true_damage = 40.0;}
 
+    let mut tablet_true_damage = 0.0;
+    if tablet_bool{ tablet_true_damage = 0.04 * (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))); }
+
     let mut unmitigated_crusher_damage = 0.0;
-    if crusher_bool{ unmitigated_crusher_damage = 20.0 + (power * 0.2) * number_of_abilities as f32}
+    if crusher_bool
+    { 
+        unmitigated_crusher_damage = (power * 0.4) * number_of_abilities as f32;
+        if number_of_abilities > 1
+        {
+            unmitigated_crusher_damage += (power * 0.2) * (number_of_abilities as f32 - 1.0);
+        }
+    }
 
     let mut unmitigated_arondight_damage = 0.0;
-    if arondight_bool{ unmitigated_arondight_damage = 20.0 + (power * 0.4)}
+    if arondight_bool{ unmitigated_arondight_damage = 20.0 + (power * 0.5)}
 
     let mut unmitigated_bluestone_pendant_damage = 0.0;
-    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 20.0 * clamp(number_of_abilities as f32,1.0,2.0);}
+    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 60.0;}
 
     let mut unmitigated_bluestone_brooch_damage = 0.0;
-    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (50.0 + 0.06 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) * clamp(number_of_abilities as f32,1.0,2.0);}
+    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (200.0 + 0.15 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health));}
 
     let mut unmitigated_redstone_damage = 0.0;
-    if redstone_bool{ unmitigated_redstone_damage = 75.0 * clamp(number_of_abilities as f32,1.0,2.0);}
+    if redstone_bool{ unmitigated_redstone_damage = 250.0;}
 
     let unmitigated_damage =(unmitigated_ability_damage_after_crit * (1.0+sacrificial_damage_multi)) + unmitigated_reaver_damage + unmitigated_soul_gem_damage + unmitigated_poly_damage + 
                                 unmitigated_archmages_damage + unmitigated_crusher_damage + unmitigated_heartseeker_damage + unmitigated_arondight_damage + unmitigated_bluestone_pendant_damage + 
-                                unmitigated_bluestone_brooch_damage + unmitigated_redstone_damage + unmitigated_hydras_auto_damage + unmitigated_calam_damage + unmitigated_claw_damage;
+                                unmitigated_bluestone_brooch_damage + unmitigated_redstone_damage + unmitigated_hydras_auto_damage + unmitigated_calam_damage + unmitigated_claw_damage + unmitigated_divine_damage;
 
-    let damage = ( unmitigated_damage * protections_multiplier) + conduit_true_damage + mhb_damage;
+    let damage = ( unmitigated_damage * protections_multiplier) + conduit_true_damage + mhb_damage + tablet_true_damage;
 
     let damage_after_you_do_more_damage_buffs = damage * (1.0  + focus_damage_multi + fighters_multi + rangdas_multi + myr_multi);
 
@@ -6568,37 +6541,32 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
 }
 
 fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target:&God, target_level:f32, target_build:&Build, 
-    temper_enabled:bool,diamond_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,tyranical_enabled:bool,binding_enabled:bool,
-    bancroft_enabled:bool,tahuti_enabled:bool,magical:bool,serrated_enabled:bool,runeforged_enabled:bool,shifters_power_enabled:bool,cowl_enabled:bool,
+    temper_enabled:bool,diamond_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,binding_enabled:bool,
+    bancroft_enabled:bool,tahuti_enabled:bool,magical:bool,serrated_enabled:bool,runeforged_enabled:bool,cowl_enabled:bool,
     redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,kaldr_enabled:bool,pos2_enabled:bool,as_buff:f32,
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
-    enhanced_red_buff:bool,purp_buff:bool,enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool) -> f32
+    purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
+    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,boomerang_enabled:bool) -> f32
 {
     let mut telk_bool = false;
-    let mut hecate_bool = false;
     let mut demonic_bool = false;
     let mut basic_attack_damage = 0.0;
     let mut temper_multi = 0.0;
     let mut focus_damage_multi = 0.0;
-    let mut void_stone_pen = 0.0;
     let mut magus_multi = 0.0;
     let mut binding_shred = 0.0;
     let mut typhon_bool = false;
     let mut bancroft_lifesteal = 0.0; //just used for any lifesteal gained through passives and not part of the build. Hasn't been renamed out of laziness
     let mut tahuti_scaling_multi = 1.0;
 
-    let mut ichaival_bool = false;
     let mut exe_bool = false;
     let mut heavy_exe_bool = false;
     let mut ferocious_exe_bool = false;
     let mut qins_bool = false;
     let mut deathbringer_bonus = 0.0;
-    let mut scs_bool = false;
     let mut obow_bool = false;
     let mut wind_bool = false;
     let mut dominance_pen = 0.0;
-    let mut void_shield_shred = 0.0;
     let mut silverbranch_bool = false;
     let mut runeforged_multi = 0.0;
     let mut percent_power_increase = percent_power_buff;
@@ -6613,10 +6581,14 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut fighters_multi = 0.0;
     let mut rangdas_bool = false;
     let mut anim_bool = false;
+    let mut cyclopean_bool = false;
+    let mut time_of_next_cyclopean = 0.0;
+    let mut toxic_blade_stacks = -1.0;
+    let mut boomerang_crit = 0.0;
 
 
-    let mut power = clamp(build.magical_power * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
-    let flat_pen = clamp(build.flat_pen,0.0,50.0);
+    let mut power = clamp((build.magical_power+ ((god.class=="Mage")as i32 as f32) * (20.0 + level)) * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
+    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (5.0 + 0.25 * level),0.0,50.0);
     let mut percent_pen = clamp(build.percent_pen,0.0,0.4);
     let crit_chance = clamp(build.crit_chance,0.0,1.0);
     let mut attack_speed = god.base_as + (god.as_per_level * (level - 1.0)) + build.attack_speed * (god.base_as - god.as_per_level);
@@ -6658,7 +6630,6 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     {
         if name == &TYPHONS.name { typhon_bool = true;}
         if name == &TELKHINES.name { telk_bool = true;}
-        if name == &HECATE.name { hecate_bool = true;}
         if name == &DEMONIC_GRIP.name { demonic_bool = true;}
         if name == &GILDED.name { basic_attack_damage += 20.0; }
         if name == &DIAMOND.name { basic_attack_damage += 80.0; }
@@ -6666,34 +6637,28 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &MANIKIN_SCEPTER.name { basic_attack_damage += 10.0; manikins_scepter_bool = true; }
         if name == &MANIKINS_MACE.name { basic_attack_damage += 50.0; manikins_mace_bool = true; }
         if name == &BOOK_OF_THOTH.name { power += build.mana * 0.1; }
-        if name == &VOID_STONE.name {void_stone_pen = 0.1;}
         if temper_enabled && name == &DEATHS_TEMPER.name { temper_multi = 0.35; }
         if diamond_enabled && name == &DIAMOND.name { attack_speed += 0.75 * (god.base_as - god.as_per_level); }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.09; }
         if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
-        if tyranical_enabled && name == &TYRANNICAL.name { power += 30.0; }
-        if binding_enabled && name == &BINDING.name { binding_shred = 10.0; }
+        if binding_enabled && name == &BINDING.name { binding_shred = 5.0 + level; }
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal += 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
 
-        if name == &DOMINANCE.name { dominance_pen = 0.15; }
-        if name == &ICHAIVAL.name { ichaival_bool = true; }
+        if name == &DOMINANCE.name { dominance_pen = 0.2; }
         if name == &EXE.name || name == &FEROCIOUS_EXE.name { exe_bool = true; }
         if name == &HEAVY_EXE.name { heavy_exe_bool = true; }
         if ferocious_enabled && name == &FEROCIOUS_EXE.name { ferocious_exe_bool = true}
         if name == &QINS.name { qins_bool = true; }
         if name == &DEATHBRINGER.name { deathbringer_bonus += 0.25}
-        if name == &SCS.name { scs_bool = true;}
         if name == &OBOW.name { obow_bool = true; }
         if name == &WIND_DEMON.name { wind_bool = true; }
         if name == &TRANS.name { power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.03; }
         if name == &SILVERBRANCH.name { silverbranch_bool = true; }
         if serrated_enabled && name == &SERRATED.name { power += 24.0; }
-        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.2; }
-        if name == &VOID_SHIELD.name { void_shield_shred = 0.15;}
-        if shifters_power_enabled && name == &SHIFTERS.name { power += 25.0; }
+        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.1; }
         if cowl_enabled
         {
             if name== &LEATHER_COWL.name { attack_speed += 0.1 * (god.base_as - god.as_per_level);}
@@ -6715,24 +6680,20 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
         if name == &ANIMOSITY.name { anim_bool = true; }
+        if name == &CYCLOP_RING.name { cyclopean_bool = true; }
+        if name == &TOXICBLADE.name { toxic_blade_stacks = 0.0;}
+        if boomerang_enabled && name == &BOOMERANG.name { boomerang_crit = 0.3; }
         
         
     }
 
     let mut spectral_multi = 0.0;
-    let mut witchblade_slow = 0.0;
+    let mut spectral_stacks = -1.0;
     let mut item_mitigations = 0.0;
-    let mut nemean_stacks = 0.0;
     for name in target_build.names.iter()
     {
-        if name == &SPECTRAL.name { spectral_multi = 0.3; }
-        if name == &WITCHBLADE.name { witchblade_slow = 0.25; }
+        if name == &SPECTRAL.name { spectral_multi = 0.3; spectral_stacks = 0.0; }
         if name == &ONI_HUNTERS.name { item_mitigations += 0.09; }
-        if name == &NEMEAN.name
-        {
-            let total_prots_from_items = target_build.phys_prot + target_build.magical_prot;
-            nemean_stacks = clamp(total_prots_from_items/80.0,0.0,3.0);
-        }
     }
     if target.name == CABRAKAN.name { item_mitigations += 0.05; }
 
@@ -6745,16 +6706,17 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         else { power += 5.0; }
     }
 
-    if enhanced_red_buff{ bancroft_lifesteal += 0.1; }
 
-    let mut purp_shred = 0.0;
+
+
     if purp_buff
     { 
         attack_speed += 0.1 * (god.base_as - god.as_per_level);
-        purp_shred = 10.0
+        if magical{ basic_attack_damage += 15.0; }
+        else{ basic_attack_damage += 12.0; }
     }
 
-    if enhanced_purp_buff { attack_speed += 0.15 * (god.base_as - god.as_per_level);}
+
 
     if fire_giant
     {
@@ -6788,13 +6750,10 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut total_damage = 0.0;
     
     let mut silverbranch_power = 0.0;
-    let mut hecate_stacks = 0;
-    let mut ichaival_stacks = 0;
     let mut demonic_stacks = 0.0;
     let mut exe_stacks = 0.0;
     let mut heavy_exe_stacks = 0.0;
     let mut ferocious_exe_stacks = 0.0;
-    let mut scs_stacks = 0.0;
     let mut obow_stacks = 0;
     let mut manikins_scepter_stacks = 0.0;
     let mut next_mani_scepter_damage_time = 0.0;
@@ -6838,7 +6797,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if heavy_exe_bool { as_cap_reduction = 0.6; }
 
         if myr_bool{ myr_multi = clamp((-0.028125*time_spent_attacking)+0.25,0.025,0.25); }
-        time_spent_attacking += (1.0/(clamp(attack_speed,0.35,2.5-as_cap_reduction)-witchblade_slow*(god.base_as - god.as_per_level))) * god.auto_progression[auto_attack_progression_counter] * heim_progression_multi;
+        time_spent_attacking += (1.0/clamp(attack_speed,0.35,2.5-as_cap_reduction)) * god.auto_progression[auto_attack_progression_counter] * heim_progression_multi;
 
         let autos_per_attack = 1.0 + 1.0 * (god.name == ZHONG.name) as i32 as f32; //used for zhong double autos
         let mut i = 0.0;
@@ -6847,26 +6806,23 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             i += 1.0;
             let auto_attack_power_scaling = (0.2 * magical as i32 as f32) + (1.0 * !magical as i32 as f32) + (0.05 * (god.name==OLORUN.name) as i32 as f32) + chronos_2_auto_scaling_increase;         
             let unmitigated_damage = god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power * tahuti_scaling_multi * auto_attack_power_scaling;
-            let unmitigated_damage_after_multis = unmitigated_damage * god.auto_progression[auto_attack_progression_counter] * (1.0 + temper_multi);
-            let crit_multi = clamp(1.0 + crit_chance * (0.75 + deathbringer_bonus - spectral_multi - 0.35 * (god.name==HEIM.name) as i32 as f32 - 0.65 * (target.name==GEB.name) as i32 as f32) * !magical as i32 as f32,1.0,100.0);
-            let olorun_crit_multi = 1.0 + clamp(power/1000.0,0.0,0.7) * 0.3 * (god.name==OLORUN.name) as i32 as f32 * (power>=150.0) as i32 as f32;
+            let unmitigated_damage_after_hunter_class_bonus = unmitigated_damage * (1.0 + (level * 0.005));
+            let unmitigated_damage_after_multis = unmitigated_damage_after_hunter_class_bonus * god.auto_progression[auto_attack_progression_counter] * (1.0 + temper_multi);
+            let crit_multi = clamp(1.0 + (crit_chance + boomerang_crit) * (0.75 + deathbringer_bonus - spectral_multi - 0.35 * (god.name==HEIM.name) as i32 as f32 - 0.65 * (target.name==GEB.name) as i32 as f32) * !magical as i32 as f32,1.0,100.0);
+            let olorun_crit_multi = 1.0 + clamp(power/1000.0,0.0,0.7) * 0.5 * (god.name==OLORUN.name) as i32 as f32 * (power>=150.0) as i32 as f32;
             let mut unmitigated_damage_after_crit = unmitigated_damage_after_multis * crit_multi * olorun_crit_multi * sol_passive_auto_multiplier * (1.0 - ishtar_1c_damage_reduction);
             if i == 2.0 { unmitigated_damage_after_crit *= 0.5; } //halves damage for zhongs mini auto
-            if nemean_stacks >= 1.0
-            {
-                unmitigated_damage_after_crit *= 0.45;
-                nemean_stacks -= 1.0;
-            }
+
             
             let target_magical_prots = target.base_magical_prots + (target.magical_prots_per_level * (target_level - 1.0)) + target_build.magical_prot;
             let target_physical_prots = target.base_phys_prots + (target.phys_prots_per_level * (target_level - 1.0)) + target_build.phys_prot;
             let target_prots = target_magical_prots * magical as i32 as f32 + target_physical_prots * !magical as i32 as f32;
-            let target_prots_after_shred = ((target_prots - binding_shred) * (1.0 - (0.1*demonic_stacks) - (0.07*exe_stacks) - (0.175*heavy_exe_stacks) - void_stone_pen - void_shield_shred)) - (scs_stacks * 7.0) - anhur_passive_shred - purp_shred;
+            let target_prots_after_shred = ((target_prots - binding_shred) * (1.0 - (0.1*demonic_stacks) - (0.07*exe_stacks) - (0.175*heavy_exe_stacks))) - anhur_passive_shred;
             let target_prots_after_pen = (target_prots_after_shred * (1.0 - percent_pen - dominance_pen)) - flat_pen;
             let protections_multiplier = clamp(100.0/(100.0+target_prots_after_pen),0.0,1.0);
 
             let mut unmitigated_telk_damage = 0.0;
-            if telk_bool { unmitigated_telk_damage = 10.0 + (power * 0.1);}
+            if telk_bool { unmitigated_telk_damage = 10.0 + (3.0*level);}
 
             let mut unmitigated_qins_damage = 0.0;  
             if qins_bool 
@@ -6874,6 +6830,17 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 let percent_health = (2.0/75000.0)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (7.0/300.0);
                 unmitigated_qins_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
                 unmitigated_qins_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+            }
+
+            let mut unmitigated_cyclop_damage = 0.0;
+            if cyclopean_bool
+            {
+                if time_of_next_cyclopean <= time_spent_attacking
+                {
+                    unmitigated_cyclop_damage = 0.08 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
+                    time_of_next_cyclopean = time_spent_attacking + 10.0
+                }
+                time_of_next_cyclopean -= 2.0;
             }
 
             let mut unmitigated_erlang_passive_damage = 0.0;
@@ -6948,7 +6915,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut anim_damage = 0.0;
             if anim_bool
             {       
-                let unmitigated_anim_damage = 0.03 * (god.base_health + (god.health_per_level * (level - 1.0)) + build.health);                 
+                let unmitigated_anim_damage = 0.025 * (god.base_health + (god.health_per_level * (level - 1.0)) + build.health);                 
                 
                 if magical
                 {            
@@ -7012,7 +6979,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
                         + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage 
-                        + unmitigated_ishtar_1b_damage) * protections_multiplier 
+                        + unmitigated_ishtar_1b_damage + unmitigated_cyclop_damage) * protections_multiplier 
                         + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage + anim_damage;
             
 
@@ -7025,17 +6992,9 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             total_damage += damage_after_mitigations;
 
             
-            if hecate_bool && hecate_stacks < 3
-            {
-                temp_percent_power_increase_store += 0.05;
-                hecate_stacks = hecate_stacks + 1;
-            }
 
-            if ichaival_bool && ichaival_stacks < 3
-            {
-                temp_flat_power_increase_store += 10.0;
-                ichaival_stacks += 1;
-            }
+
+
 
             if demonic_bool && demonic_stacks < 3.0 { demonic_stacks = demonic_stacks + 1.0; }
 
@@ -7044,8 +7003,19 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if heavy_exe_bool && heavy_exe_stacks < 2.0 { heavy_exe_stacks += 1.0; }
 
             if ferocious_exe_bool && ferocious_exe_stacks < 10.0 { ferocious_exe_stacks += 1.0; }
+            
+            if (toxic_blade_stacks != -1.0) && (toxic_blade_stacks < 4.0)
+            {
+                attack_speed += 0.05 * (god.base_as - god.as_per_level);
+                toxic_blade_stacks += 1.0;
+            }
 
-            if scs_bool && scs_stacks < 2.0 { scs_stacks += 1.0; }
+            if (spectral_stacks != -1.0) && (spectral_stacks < 4.0)
+            {
+                spectral_multi += 0.0375;
+                spectral_stacks += 1.0;
+            }
+
 
             autos += 1.0;
             if wind_bool && autos >= estimated_autos_to_proc_wind_demon
@@ -7072,7 +7042,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 9.12");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.1");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7121,7 +7091,6 @@ fn main() {
     let arondight_btn = button::CheckButton::default().with_size(90,0).with_label("Arondight");
     let serrated_btn = button::CheckButton::default().with_size(110,0).with_label("Serrated Edge");
     let runeforged_btn = button::CheckButton::default().with_size(150,0).with_label("Runeforged Hammer");
-    let shifters_power_btn = button::CheckButton::default().with_size(170,0).with_label("Shifter's Shield (Power)");
     let cowl_btn = button::CheckButton::default().with_size(260,0).with_label("Leather/Hunter's Cowl (Attack Speed)");
     let ferocious_btn = button::CheckButton::default().with_size(170,0).with_label("Ferocious Executioner");
     phys_pack.end();
@@ -7135,7 +7104,7 @@ fn main() {
     let bumbas_spear_btn = button::CheckButton::default().with_size(120,0).with_label("Bumba's Spear");
     let protector_btn = button::CheckButton::default().with_size(170,0).with_label("Protector of the Jungle");
     let mhb_btn = button::CheckButton::default().with_size(160,0).with_label("Manikin Hidden Blade");
-    let hs_reaver_subsequent_hits_btn = button::CheckButton::default().with_size(290,0).with_label("Heartseeker and Reaver Subsequent Hits");
+    let binding_btn = button::CheckButton::default().with_size(130,0).with_label("Stone of Binding");
     pack2.end();   
 
 
@@ -7145,12 +7114,12 @@ fn main() {
     let focus_btn = button::CheckButton::default().with_size(110,0).with_label("Gem of Focus");
     let magus_btn = button::CheckButton::default().with_size(150,0).with_label("Spear of the Magus");
     let doom_btn = button::CheckButton::default().with_size(90,0).with_label("Doom Orb");
-    let tyranical_btn = button::CheckButton::default().with_size(150,0).with_label("Tyrannical Plate Helm");
-    let binding_btn = button::CheckButton::default().with_size(130,0).with_label("Stone of Binding");
     let bancroft_btn = button::CheckButton::default().with_size(130,0).with_label("Bancroft's Talon");
     let tahuti_btn = button::CheckButton::default().with_size(110,0).with_label("Rod of Tahuti");
-    let calam_btn = button::CheckButton::default().with_size(140,0).with_label("Calamitous Glyph");
-    let myr_btn = button::CheckButton::default().with_size(80,0).with_label("Myrddin"); 
+    let calam_btn = button::CheckButton::default().with_size(130,0).with_label("Calamitous Glyph");
+    let myr_btn = button::CheckButton::default().with_size(70,0).with_label("Myrddin"); 
+    let divine_btn = button::CheckButton::default().with_size(60,0).with_label("Divine"); 
+    let tablet_btn = button::CheckButton::default().with_size(140,0).with_label("Tablet of Destinies"); 
     pack3.end();
 
     let mut phys_pack3 = group::Pack::new(10, 160, 100, 30, "");
@@ -7159,7 +7128,8 @@ fn main() {
     let redstone_attack_speed_btn = button::CheckButton::default().with_size(250,0).with_label("Corrupted Bluestone (Attack Speed)");
     let trans_btn = button::CheckButton::default().with_size(120,0).with_label("Transcendence");
     let hydras_btn = button::CheckButton::default().with_size(120,0).with_label("Hydra's Lament");
-    let ichaival_ability_power_btn = button::CheckButton::default().with_size(250,0).with_label("Ichaival (Fully Stacked For Abilities)");
+    let boomerang_btn = button::CheckButton::default().with_size(150,0).with_label("Bladed Boomerang");
+
     phys_pack3.end();
     phys_pack3.hide();
 
@@ -7274,11 +7244,11 @@ fn main() {
     target2_item6.add_choice(&array_to_menu_string(&TANK_ITEMS).to_string());
 
     //default build displayed
-    target2_item1.set_value(7);
-    target2_item2.set_value(25);
-    target2_item3.set_value(9);
-    target2_item4.set_value(18);
-    target2_item5.set_value(10);
+    target2_item1.set_value(38);
+    target2_item2.set_value(18);
+    target2_item3.set_value(15);
+    target2_item4.set_value(8);
+    target2_item5.set_value(5);
     target2_item6.set_value(0);
 
     let mut target1_min_ability_damage = input::IntInput::new(230,330,50,40,"Minimum Ability Damage: Target 1: ");
@@ -7351,9 +7321,7 @@ fn main() {
 
 
     let red_buff = button::CheckButton::new(220,0,80,40,"Red Buff");
-    let enhanced_red_buff = button::CheckButton::new(320,0,140,40,"Enhanced Red Buff");
     let purp_buff = button::CheckButton::new(220,40,100,40,"Purple Buff");
-    let enhanced_purp_buff = button::CheckButton::new(320,40,160,40,"Enhanced Purple Buff");
     let fire_giant = button::CheckButton::new(220,80,100,40,"Fire Giant");
     let enhanced_fire_giant = button::CheckButton::new(320,80,160,40,"Enhanced Fire Giant");
     let p500_pot = button::CheckButton::new(220,120,100,40,"500 Pot");
@@ -7413,21 +7381,21 @@ fn main() {
             (&phys_starter).value(),(&phys_item1).value(),(&phys_item2).value(),(&phys_item3).value(),(&phys_item4).value(),(&phys_item5).value(),
             level.value() as f32,target1_level.value() as f32, target2_level.value() as f32,
             obby_btn.value(),soul_gem_btn.value(),poly_btn.value(),estaff_btn.value(),conduit_btn.value(),archmage_btn.value(),
-            temper_btn.value(),diamond_btn.value(),focus_btn.value(),magus_btn.value(),doom_btn.value(),tyranical_btn.value(),
+            temper_btn.value(),diamond_btn.value(),focus_btn.value(),magus_btn.value(),doom_btn.value(),
             binding_btn.value(),bancroft_btn.value(),tahuti_btn.value(),(&target1_item1).value(),(&target1_item2).value(),(&target1_item3).value(),(&target1_item4).value(),
             (&target1_item5).value(),(&target1_item6).value(),(&target2_item1).value(),(&target2_item2).value(),(&target2_item3).value(),(&target2_item4).value(),
             (&target2_item5).value(),(&target2_item6).value(),target1_min_ability_damage.value().parse().unwrap(),target1_min_auto_dps.value().parse().unwrap()
             ,target2_min_ability_damage.value().parse().unwrap(),target2_min_auto_dps.value().parse().unwrap(),sort_damage_menu.value() as usize,builds_to_store_with_sort.value().parse().unwrap()
-            ,!physical_magical_toggle_btn.value(),titans_bane_btn.value(),arondight_btn.value(),serrated_btn.value(),runeforged_btn.value(),shifters_power_btn.value(),cowl_btn.value(),
+            ,!physical_magical_toggle_btn.value(),titans_bane_btn.value(),arondight_btn.value(),serrated_btn.value(),runeforged_btn.value(),cowl_btn.value(),
             redstone_attack_speed_btn.value(),bumbas_spear_btn.value(),protector_btn.value(),mhb_btn.value(),book_of_thoth_btn.value(),warlocks_btn.value(),trans_btn.value(),
             min_cdr.value().parse().unwrap(),min_lifesteal.value().parse().unwrap(),require_antiheal.value(),string_to_god(god.value().as_str()),
             string_to_god(target1_god.value().as_str()),string_to_god(target2_god.value().as_str()),kaldr_btn.value(),pos2_btn.value()
             ,ability_can_crit_btn.value(),true_damage_ability.value(),hydras_btn.value(),calam_btn.value(),as_buff.value().parse().unwrap(),freya_1_2.value(),
-            baka_3.value(),hs_reaver_subsequent_hits_btn.value(),ichaival_ability_power_btn.value(),sol_passive.value(),flat_power_buff.value().parse().unwrap(),
-            percent_power_buff.value().parse().unwrap(),red_buff.value(),enhanced_red_buff.value(),purp_buff.value(),enhanced_purp_buff.value(),fire_giant.value(),
+            baka_3.value(),sol_passive.value(),flat_power_buff.value().parse().unwrap(),
+            percent_power_buff.value().parse().unwrap(),red_buff.value(),purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
             ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
-            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap())); 
+            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap(),divine_btn.value(),tablet_btn.value(),boomerang_btn.value())); 
 
     
 
@@ -7442,17 +7410,18 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     starter_index:i32,item1_index:i32,item2_index:i32,item3_index:i32,item4_index:i32,item5_index:i32,
     phys_starter_index:i32,phys_item1_index:i32,phys_item2_index:i32,phys_item3_index:i32,phys_item4_index:i32,phys_item5_index:i32,
     level:f32,target1_level:f32,target2_level:f32,obby_enabled:bool,soul_gem_enabled:bool,poly_enabled:bool,estaff_enabled:bool,
-    conduit_enabled:bool,archmages_enabled:bool,temper_enabled:bool,diamond_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,tyranical_enabled:bool,binding_enabled:bool,
+    conduit_enabled:bool,archmages_enabled:bool,temper_enabled:bool,diamond_enabled:bool,focus_enabled:bool,magus_enabled:bool,doom_enabled:bool,binding_enabled:bool,
     bancroft_enabled:bool,tahuti_enabled:bool,target1_item1_index:i32,target1_item2_index:i32,target1_item3_index:i32,target1_item4_index:i32,target1_item5_index:i32,target1_item6_index:i32
     ,target2_item1_index:i32,target2_item2_index:i32,target2_item3_index:i32,target2_item4_index:i32,target2_item5_index:i32,target2_item6_index:i32,
     target1_min_ability_damage:f32,target1_min_auto_dps:f32,target2_min_ability_damage:f32,target2_min_auto_dps:f32,sort_mode:usize,builds_to_store_with_sort:usize,magical:bool,
-    titans_bane_enabled:bool,arondight_enabled:bool,serrated_enabled:bool,runeforged_enabled:bool,shifters_power_enabled:bool,cowl_enabled:bool,redstone_attack_speed_enabled:bool,
+    titans_bane_enabled:bool,arondight_enabled:bool,serrated_enabled:bool,runeforged_enabled:bool,cowl_enabled:bool,redstone_attack_speed_enabled:bool,
     bumbas_spear_enabled:bool,protector_enabled:bool,mhb_enabled:bool,book_of_thoth_enabled:bool,warlocks_enabled:bool,trans_enabled:bool,min_cdr:f32,
     min_lifesteal:f32,require_antiheal:bool,god:&God,target1_god:&God,target2_god:&God,kaldr_enabled:bool,pos2_enabled:bool,
     ability_crit_enabled:bool,ability_true_damage:bool,hydras_enabled:bool,calam_enabled:bool,as_buff:f32,freya_1_2_enabled:bool,baka_3_enabled:bool,
-    hs_reaver_subsequent_hits:bool,ichaival_ability_power:bool,sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,enhanced_red_buff:bool,purp_buff:bool,
-    enhanced_purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32)
+    sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,purp_buff:bool,
+    fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
+    ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32,divine_enabled:bool,tablet_enabled:bool,
+    boomerang_enabled:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7606,10 +7575,11 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                     if j.name == "Bancroft's Talon" && !bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
                 }
                 
-                if i.name == "Book of Thoth" && !book_of_thoth_enabled { duplicate_detected_in_build = true;}
-                if i.name == "Warlock's Staff" && !warlocks_enabled { duplicate_detected_in_build = true;}
-                if i.name == "Transcendence" && !trans_enabled { duplicate_detected_in_build = true;}
-                if (i.name == "Bancroft's Talon" || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
+                if i.name == BOOK_OF_THOTH.name && !book_of_thoth_enabled { duplicate_detected_in_build = true;}
+                if i.name == WARLOCKS.name && !warlocks_enabled { duplicate_detected_in_build = true;}
+                if i.name == TRANS.name && !trans_enabled { duplicate_detected_in_build = true;}
+                if i.name == TABLET.name && !tablet_enabled { duplicate_detected_in_build = true;}
+                if (i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
 
                 if i.name == TAHUTI.name || i.name == CALAM_TAHUTI.name { tahutis += 1.0; }
                 if i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name || i.name == BANCROFTS_CLAW.name { bancrofts += 1.0; }
@@ -7632,11 +7602,11 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 antiheal_pass = false;
                 for i in build.names.iter()
                 {
-                    if [BRAWLERS.name,TOXICBLADE.name,SHADOWSTEEL.name,DIVINE.name,TAINTED_AMULET.name,TAINTED_STEEL.name,TAINTED_BREASTPLATE.name].contains(i){ antiheal_pass = true; }
+                    if [BRAWLERS.name,TOXICBLADE.name,DIVINE.name,TAINTED_AMULET.name,TAINTED_STEEL.name,TAINTED_BREASTPLATE.name].contains(i){ antiheal_pass = true; }
                 }
             }
             
-            let mut cdr_after_cap = build.cdr;
+            let mut cdr_after_cap = build.cdr + ((god.class=="Warrior")as i32 as f32) * (0.05 + 0.0025 * level);
             if sphinx_bool { cdr_after_cap = clamp(cdr_after_cap,0.0,0.5); }
             else { cdr_after_cap = clamp(cdr_after_cap,0.0,0.4); }
 
@@ -7655,12 +7625,12 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                     target1_ability_damage = ability_damage(base_ability_damage, ability_scaling, 
                         god, level, &build, target1_god, target1_level, &target1_build, obby_enabled, soul_gem_enabled, 
                         poly_enabled,estaff_enabled,conduit_enabled,archmages_enabled,focus_enabled,magus_enabled,doom_enabled,
-                        tyranical_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
-                        titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
+                        binding_enabled,bancroft_enabled,tahuti_enabled,magical,
+                        titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,cowl_enabled,
                         redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled,
-                        as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                        purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled,myr_enabled,
-                        number_of_abilities);
+                        as_buff,sol_passive,flat_power_buff,percent_power_buff,red_buff,
+                        purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target1_mitigations,calam_enabled,claw_enabled,myr_enabled,
+                        number_of_abilities,divine_enabled,boomerang_enabled);
 
                     if target1_ability_damage < target1_min_ability_damage{ build_fits_criteria = false;}
                     
@@ -7669,12 +7639,12 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         target2_ability_damage = ability_damage(base_ability_damage, ability_scaling, 
                             god, level, &build, target2_god, target2_level, &target2_build, obby_enabled, soul_gem_enabled, 
                             poly_enabled,estaff_enabled,conduit_enabled,archmages_enabled,focus_enabled,magus_enabled,doom_enabled,
-                            tyranical_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
-                            titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,
+                            binding_enabled,bancroft_enabled,tahuti_enabled,magical,
+                            titans_bane_enabled,arondight_enabled,serrated_enabled,runeforged_enabled,cowl_enabled,
                             redstone_attack_speed_enabled,bumbas_spear_enabled,protector_enabled,mhb_enabled,ability_crit_enabled,ability_true_damage,hydras_enabled
-                            ,as_buff,hs_reaver_subsequent_hits,ichaival_ability_power,sol_passive,flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,
-                            purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled,myr_enabled,
-                            number_of_abilities);
+                            ,as_buff,sol_passive,flat_power_buff,percent_power_buff,red_buff,
+                            purp_buff,fire_giant,enhanced_fire_giant,p500_pot,pen_pot,target2_mitigations,calam_enabled,claw_enabled,myr_enabled,
+                            number_of_abilities,divine_enabled,boomerang_enabled);
 
                         if target2_ability_damage < target2_min_ability_damage{ build_fits_criteria = false;}
                         
@@ -7707,22 +7677,22 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 if calculate_auto_dps && build_fits_criteria
                 {
                     target1_auto_damage = auto_attack_dps(auto_sample_time, god, level, &build, target1_god, target1_level, &target1_build, temper_enabled,
-                        diamond_enabled,focus_enabled,magus_enabled,doom_enabled,tyranical_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
-                        serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
+                        diamond_enabled,focus_enabled,magus_enabled,doom_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
+                        serrated_enabled,runeforged_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                         protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
-                        flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c);
+                        flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
+                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
                     else
                     {
                         target2_auto_damage = auto_attack_dps(auto_sample_time, god, level, &build, target2_god, target2_level, &target2_build, temper_enabled,
-                            diamond_enabled,focus_enabled,magus_enabled,doom_enabled,tyranical_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
-                            serrated_enabled,runeforged_enabled,shifters_power_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
+                            diamond_enabled,focus_enabled,magus_enabled,doom_enabled,binding_enabled,bancroft_enabled,tahuti_enabled,magical,
+                            serrated_enabled,runeforged_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                             protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
-                            flat_power_buff,percent_power_buff,red_buff,enhanced_red_buff,purp_buff,enhanced_purp_buff,fire_giant,enhanced_fire_giant,
-                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c);
+                            flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
+                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
