@@ -1209,7 +1209,7 @@ static CALAM_TAHUTI:Item = Item
 static CHRONOS_PENDANT:Item = Item
 {
     name: "Chronos' Pendant",
-    magical_power: 90.0,
+    magical_power: 100.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1321,7 +1321,7 @@ static TABLET:Item = Item
     name: "Tablet of Destinies",
     magical_power: 90.0,
     physical_power: 0.0,
-    flat_pen: 10.0,
+    flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
@@ -1715,8 +1715,8 @@ static CYCLOP_RING :Item = Item
 
 //-------------------------------------------------------------------------
 //Physical Items
-static PHYSICAL_ITEMS:[&Item;43] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
-                                    &OBOW,&DEVOS,&BLOODFORGE,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,&RAGE,&BOOMERANG,
+static PHYSICAL_ITEMS:[&Item;44] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
+                                    &OBOW,&DEVOS,&BLOODFORGE,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,&RAGE,&BOOMERANG,&WIND_DEMON,
                                     &FAILNOT,&ARONDIGHT,&GRIFFONWING,&SPHINX,&SHADOWDRINKER,&SERRATED,&GOLDEN_BLADE,&HASTENED_KATANA,
                                     &FROSTBOUND,&RUNEFORGED,&DAWNBRINGER,&BERSERKERS,&GLADS,&BINDING,
                                     &CAD_SHIELD,&TOXICBLADE,&EVERGREEN,&THISTLETHORN,&BRISTLEBUSH,&THICKBARK];
@@ -1740,7 +1740,7 @@ static BRAWLERS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2500.0,
 };
 
 static JOTUNNS:Item = Item
@@ -1769,7 +1769,7 @@ static CRUSHER:Item = Item
 {
     name: "The Crusher",
     magical_power: 0.0,
-    physical_power: 55.0,
+    physical_power: 50.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
     attack_speed: 0.15,
@@ -1784,7 +1784,7 @@ static CRUSHER:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2600.0,
 };
 
 static TITANS:Item = Item
@@ -2125,7 +2125,7 @@ static QINS:Item = Item
     physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.2,
+    attack_speed: 0.25,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2191,7 +2191,7 @@ static BOOMERANG:Item = Item
     physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.15,
+    attack_speed: 0.2,
     crit_chance: 0.2,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -2203,7 +2203,7 @@ static BOOMERANG:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2500.0,
 };
 
 static WIND_DEMON:Item = Item
@@ -2423,7 +2423,7 @@ static DAWNBRINGER:Item = Item
     hp5: 0.0,
     ccr: 0.2,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2400.0,
 };
 
 
@@ -3119,10 +3119,10 @@ static ABSOLUTION:Item = Item
     mana: 0.0,
     health: 250.0,
     phys_prot: 0.0,
-    magical_prot: 60.0,
+    magical_prot: 70.0,
     mp5: 0.0,
     hp5: 0.0,
-    ccr: 0.1,
+    ccr: 0.2,
     move_speed: 0.0,
     gold: 2250.0,
 };
@@ -3183,8 +3183,8 @@ static PHALANX:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 150.0,
-    phys_prot: 55.0,
+    health: 200.0,
+    phys_prot: 60.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 20.0,
@@ -3203,11 +3203,11 @@ static PROPHETIC:Item = Item
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
-    cdr: 0.2,
+    cdr: 0.1,
     mana: 0.0,
     health: 150.0,
-    phys_prot: 85.0,
-    magical_prot: 85.0,
+    phys_prot: 70.0,
+    magical_prot: 70.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -3234,13 +3234,13 @@ static CANNONEER:Item = Item
     hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2250.0,
+    gold: 2100.0,
 };
 
 
 
-static GODS:[&God;124] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
-                        &HOUYI,&ISHTAR,&IZANAMI,&JING,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
+static GODS:[&God;125] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+                        &HOUYI,&ISHTAR,&IZANAMI,&JING,&MANTI,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
                         &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
                         &THOTH,&TIAMAT,&VULCAN,&YUHUANG,&ZEUS,&ZHONG,&ARACHNE,&AWILIX,&BAKA,&BASTET,&CAMA,&CLIO,&DAJI,
@@ -4987,6 +4987,29 @@ static JING:God = God
     class: "Hunter"
 };
 
+static MANTI:God = God //stats are currently PH
+{
+    name: "Martichoras",
+    base_health: 718.0,
+    health_per_level: 81.0,
+    base_mana: 266.0,
+    mana_per_level: 31.0,
+    base_as: 1.01,
+    as_per_level: 0.013,
+    base_auto_damage: 39.0,
+    auto_damage_per_level: 2.5,
+    auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    base_phys_prots: 18.0,
+    phys_prots_per_level: 3.0,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
+    base_hp5: 7.69,
+    hp5_per_level: 0.69,
+    base_mp5: 4.87,
+    mp5_per_level: 0.37,
+    class: "Hunter"
+};
+
 static MEDUSA:God = God
 {
     name: "Medusa",
@@ -6286,7 +6309,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.15; }
         if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
-        if binding_enabled && name == &BINDING.name { binding_shred = 5.0 + level; }
+        if binding_enabled && name == &BINDING.name { binding_shred = level; }
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.2; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
@@ -6461,7 +6484,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut unmitigated_heartseeker_damage = 0.0;
     if heartseeker_bool
     {
-        let percent_health = clamp((1.0/5000.0)*power-(1.0/100.0),0.03,0.06);
+        let percent_health = clamp((1.0/3750.0)*power-(1.0/30.0),0.02,0.06);
         unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
         if number_of_abilities > 1
         {
@@ -6501,15 +6524,15 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if conduit_bool{ conduit_true_damage = 40.0;}
 
     let mut tablet_true_damage = 0.0;
-    if tablet_bool{ tablet_true_damage = 0.04 * (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))); }
+    if tablet_bool{ tablet_true_damage = 0.07 * (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))); }
 
     let mut unmitigated_crusher_damage = 0.0;
     if crusher_bool
     { 
-        unmitigated_crusher_damage = (power * 0.4) * number_of_abilities as f32;
+        unmitigated_crusher_damage = (power * 0.3) * number_of_abilities as f32;
         if number_of_abilities > 1
         {
-            unmitigated_crusher_damage += (power * 0.2) * (number_of_abilities as f32 - 1.0);
+            unmitigated_crusher_damage += (power * 0.15) * (number_of_abilities as f32 - 1.0);
         }
     }
 
@@ -6517,10 +6540,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if arondight_bool{ unmitigated_arondight_damage = 20.0 + (power * 0.5)}
 
     let mut unmitigated_bluestone_pendant_damage = 0.0;
-    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 60.0;}
+    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 48.0;}
 
     let mut unmitigated_bluestone_brooch_damage = 0.0;
-    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (200.0 + 0.15 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health));}
+    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (180.0 + 0.15 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health));}
 
     let mut unmitigated_redstone_damage = 0.0;
     if redstone_bool{ unmitigated_redstone_damage = 250.0;}
@@ -6529,7 +6552,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
                                 unmitigated_archmages_damage + unmitigated_crusher_damage + unmitigated_heartseeker_damage + unmitigated_arondight_damage + unmitigated_bluestone_pendant_damage + 
                                 unmitigated_bluestone_brooch_damage + unmitigated_redstone_damage + unmitigated_hydras_auto_damage + unmitigated_calam_damage + unmitigated_claw_damage + unmitigated_divine_damage;
 
-    let damage = ( unmitigated_damage * protections_multiplier) + conduit_true_damage + mhb_damage + tablet_true_damage;
+    let damage = (unmitigated_damage * protections_multiplier) + conduit_true_damage + mhb_damage + tablet_true_damage;
 
     let damage_after_you_do_more_damage_buffs = damage * (1.0  + focus_damage_multi + fighters_multi + rangdas_multi + myr_multi);
 
@@ -6585,6 +6608,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     let mut time_of_next_cyclopean = 0.0;
     let mut toxic_blade_stacks = -1.0;
     let mut boomerang_crit = 0.0;
+    let mut manti_poison_stacks = 0.0;
+    let mut next_manti_poison_damage_time = 0.0;
 
 
     let mut power = clamp((build.magical_power+ ((god.class=="Mage")as i32 as f32) * (20.0 + level)) * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
@@ -6598,7 +6623,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
     if ishtar_1a
     {
-        basic_attack_damage += 30.0;
+        basic_attack_damage += 28.0;
         deathbringer_bonus -= 0.4;
     }
 
@@ -6827,7 +6852,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut unmitigated_qins_damage = 0.0;  
             if qins_bool 
             {
-                let percent_health = (2.0/75000.0)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (7.0/300.0);
+                let percent_health = clamp((1.0/25000.0)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (0.05),0.03,0.06);
                 unmitigated_qins_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
                 unmitigated_qins_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
@@ -6862,6 +6887,19 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 obow_stacks = (obow_stacks + 1) % 4;
             }
 
+            let mut unmitigated_manti_poison_damage = 0.0;
+            if god.name == MANTI.name
+            {
+                if(manti_poison_stacks == 0.0){ manti_poison_stacks = 4.0; next_manti_poison_damage_time = time_spent_attacking + 1.0; }
+                else if(manti_poison_stacks < 8.0) { manti_poison_stacks+=1.0; }
+
+                if time_spent_attacking > next_manti_poison_damage_time
+                {
+                    next_mani_scepter_damage_time = time_spent_attacking + 1.0;
+                    unmitigated_manti_poison_damage = ((god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power)) * 0.025 * manti_poison_stacks;
+                }
+            }
+
             let mut manikins_scepter_damage = 0.0;
             let mut unmitigated_manikins_scepter_damage = 0.0;
             if manikins_scepter_bool
@@ -6886,6 +6924,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 }
                 manikins_scepter_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
+            
 
             let mut unmitigated_manikins_mace_damage = 0.0;
             let mut manikins_mace_damage = 0.0;
@@ -6967,7 +7006,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if ishtar_1b
             { 
                 let crit_multi = clamp(1.0 + crit_chance * (0.75 + deathbringer_bonus - spectral_multi - 0.35 * (god.name==HEIM.name) as i32 as f32 - 0.65 * (target.name==GEB.name) as i32 as f32) * !magical as i32 as f32,1.0,100.0);
-                unmitigated_ishtar_1b_damage = 0.5 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power) * crit_multi; 
+                unmitigated_ishtar_1b_damage = 0.32 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power) * crit_multi; 
             }
 
             let mut butcher_blades_damage = 0.0;
@@ -6979,7 +7018,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
             let damage = (unmitigated_damage_after_crit + unmitigated_telk_damage + unmitigated_qins_damage + unmitigated_obow_damage 
                         + unmitigated_damage_kaldr_damage +  unmitigated_pos2_damage + unmitigated_freya_1_damage + unmitigated_erlang_passive_damage 
-                        + unmitigated_ishtar_1b_damage + unmitigated_cyclop_damage) * protections_multiplier 
+                        + unmitigated_ishtar_1b_damage + unmitigated_cyclop_damage + unmitigated_manti_poison_damage) * protections_multiplier 
                         + manikins_mace_damage + manikins_scepter_damage + butcher_blades_damage + mitigated_freya_2_damage + mitigated_ao_2_damage + anim_damage;
             
 
@@ -7042,7 +7081,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.1");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.2");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7127,6 +7166,7 @@ fn main() {
     phys_pack3.set_spacing(10);
     let redstone_attack_speed_btn = button::CheckButton::default().with_size(250,0).with_label("Corrupted Bluestone (Attack Speed)");
     let trans_btn = button::CheckButton::default().with_size(120,0).with_label("Transcendence");
+    let devos_btn = button::CheckButton::default().with_size(100,0).with_label("Devourer's");
     let hydras_btn = button::CheckButton::default().with_size(120,0).with_label("Hydra's Lament");
     let boomerang_btn = button::CheckButton::default().with_size(150,0).with_label("Bladed Boomerang");
 
@@ -7395,7 +7435,8 @@ fn main() {
             percent_power_buff.value().parse().unwrap(),red_buff.value(),purp_buff.value(),fire_giant.value(),
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
             ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
-            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap(),divine_btn.value(),tablet_btn.value(),boomerang_btn.value())); 
+            ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap(),divine_btn.value(),tablet_btn.value(),boomerang_btn.value(),
+            devos_btn.value())); 
 
     
 
@@ -7421,7 +7462,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,purp_buff:bool,
     fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
     ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32,divine_enabled:bool,tablet_enabled:bool,
-    boomerang_enabled:bool)
+    boomerang_enabled:bool,devos_enabled:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7578,7 +7619,8 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 if i.name == BOOK_OF_THOTH.name && !book_of_thoth_enabled { duplicate_detected_in_build = true;}
                 if i.name == WARLOCKS.name && !warlocks_enabled { duplicate_detected_in_build = true;}
                 if i.name == TRANS.name && !trans_enabled { duplicate_detected_in_build = true;}
-                if i.name == TABLET.name && !tablet_enabled { duplicate_detected_in_build = true;}
+                if i.name == DEVOS.name && !devos_enabled { duplicate_detected_in_build = true;}
+                if i.name == TABLET.name && !tablet_enabled { duplicate_detected_in_build = true;}                
                 if (i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
 
                 if i.name == TAHUTI.name || i.name == CALAM_TAHUTI.name { tahutis += 1.0; }
@@ -7587,6 +7629,10 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 if i.name == CALAM_TAHUTI.name || i.name == NIMBLE_BANCROFTS.name || i.name == BANCROFTS_CLAW.name || i.name == HEAVY_EXE.name || i.name == FEROCIOUS_EXE.name { glyphs += 1.0; }
 
                 if i.name == SPHINX.name { sphinx_bool = true; }
+
+                if god.class == "Hunter" && (i.name == SERRATED.name||i.name==SHADOWDRINKER.name) { duplicate_detected_in_build = true; }
+                if god.class != "Hunter" && (i.name == FAILNOT.name) { duplicate_detected_in_build = true; }
+                if god.name != RAT.name && (i.name == BRISTLEBUSH.name || i.name == THISTLETHORN.name || i.name ==  EVERGREEN.name || i.name == THICKBARK.name) { duplicate_detected_in_build = true;}
 
                 build_vec.push(i);
             }
