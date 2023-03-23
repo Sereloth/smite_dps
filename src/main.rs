@@ -104,7 +104,7 @@ static GRIFFONWING:Item = Item
 {
     name: "Griffonwing Earrings",
     magical_power: 80.0,
-    physical_power: 45.0,
+    physical_power: 55.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.3,
@@ -295,74 +295,74 @@ static FOCUS:Item = Item
 static VAMP_SHROUD:Item = Item
 {
     name: "Vampiric Shroud",
-    magical_power: 30.0,
+    magical_power: 35.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.07,
+    lifesteal: 0.04,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
-    mp5: 0.7,
+    mp5: 10.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 700.0,
+    gold: 650.0,
 };
 
 static BLOODSOAKED:Item = Item
 {
     name: "Blood-Soaked Shroud",
-    magical_power: 95.0,
+    magical_power: 110.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
     mana: 0.0,
-    health: 300.0,
+    health: 350.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.15,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2150.0,
 };
 
 static SACRIFICIAL:Item = Item
 {
     name: "Sacrificial Shroud",
-    magical_power: 115.0,
+    magical_power: 125.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
-    phys_prot: 40.0,
+    phys_prot: 50.0,
     magical_prot: 0.0,
     mp5: 0.15,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2150.0,
 };
 
 static DEATHS_TOLL:Item = Item
 {
     name: "Death's Toll",
     magical_power: 35.0,
-    physical_power: 15.0,
+    physical_power: 18.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -452,13 +452,13 @@ static DIAMOND:Item = Item
     magical_power: 0.0,
     physical_power: 0.0,
     flat_pen: 0.0,
-    percent_pen: 0.0,
+    percent_pen: 0.1,
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 100.0,
+    health: 150.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.0,
@@ -476,7 +476,7 @@ static ORNATE:Item = Item
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.35,
-    crit_chance: 0.25,
+    crit_chance: 0.35,
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
@@ -494,12 +494,12 @@ static LEATHER_COWL:Item = Item
 {
     name: "Leather Cowl",
     magical_power: 0.0,
-    physical_power: 15.0,
+    physical_power: 18.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.07,
+    attack_speed: 0.1,
     crit_chance: 0.0,
-    lifesteal: 0.07,
+    lifesteal: 0.04,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -509,19 +509,19 @@ static LEATHER_COWL:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 700.0,
+    gold: 650.0,
 };
 
 static HUNTERS_COWL:Item = Item
 {
     name: "Hunter's Cowl",
     magical_power: 0.0,
-    physical_power: 60.0,
+    physical_power: 70.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.15,
+    attack_speed: 0.1,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.2,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -531,7 +531,7 @@ static HUNTERS_COWL:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2150.0,
 };
 
 static BLUESTONE_PENDANT:Item = Item
@@ -603,8 +603,8 @@ static REDSTONE:Item = Item
 static BUMBAS_DAGGER:Item = Item
 {
     name: "Bumba's Dagger",
-    magical_power: 12.0,
-    physical_power: 7.0,
+    magical_power: 15.0,
+    physical_power: 10.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -647,8 +647,8 @@ static BUMBAS_SPEAR:Item = Item
 static BUMBAS_HAMMER:Item = Item
 {
     name: "Bumba's Hammer",
-    magical_power: 70.0,
-    physical_power: 50.0,
+    magical_power: 80.0,
+    physical_power: 60.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -669,8 +669,8 @@ static BUMBAS_HAMMER:Item = Item
 static EYE:Item = Item
 {
     name: "Eye of the Jungle",
-    magical_power: 20.0,
-    physical_power: 10.0,
+    magical_power: 30.0,
+    physical_power: 15.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.07,
@@ -691,8 +691,8 @@ static EYE:Item = Item
 static SEER:Item = Item
 {
     name: "Seer of the Jungle",
-    magical_power: 95.0,
-    physical_power: 65.0,
+    magical_power: 100.0,
+    physical_power: 70.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.25,
@@ -701,7 +701,7 @@ static SEER:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
-    phys_prot: 35.0,
+    phys_prot: 40.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 0.0,
@@ -981,7 +981,7 @@ static EVERGREEN:Item = Item
 {
     name: "Evergreen Acorn",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1003,7 +1003,7 @@ static THICKBARK:Item = Item
 {
     name: "Thickbark Acorn",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1025,7 +1025,7 @@ static BRISTLEBUSH:Item = Item
 {
     name: "Bristlebush Acorn",
     magical_power: 0.0,
-    physical_power: 45.0,
+    physical_power: 50.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1068,11 +1068,11 @@ static THISTLETHORN:Item = Item
 //-------------------------------------------------------------------------
 //Magical Items
 
-static MAGICAL_ITEMS:[&Item;35] = [&EMPTY,&DIVINE,&MAGUS,&DESO,&OBBY,&TAHUTI,&CALAM_TAHUTI,&CHRONOS_PENDANT,&CHARONS,
+static MAGICAL_ITEMS:[&Item;37] = [&EMPTY,&DIVINE,&MAGUS,&DESO,&OBBY,&TAHUTI,&CALAM_TAHUTI,&CHRONOS_PENDANT,&CHARONS,
                                     &DOOM_ORB,&MYRDDIN,&BOOK_OF_THOTH,&TABLET,&POLY,&REAVER,
                                     &PYTHAGS,&SOUL_GEM,&BANCROFTS,&NIMBLE_BANCROFTS,&BANCROFTS_CLAW,&TYPHONS,&BINDING,
-                                    &ISOLATION,&ESTAFF,
-                                    &ASCLEPIUS,&WARLOCKS,&DEMONIC_GRIP,&TELKHINES,&CYCLOP_RING,&HASTENED_RING,&GRIFFONWING,&SPHINX,&TOXICBLADE,&BERSERKERS,&GLADS];
+                                    &ASCLEPIUS,&LAST_GASP,&REJUV_HEART,&ISOLATION,&ESTAFF,
+                                    &WARLOCKS,&DEMONIC_GRIP,&TELKHINES,&CYCLOP_RING,&HASTENED_RING,&GRIFFONWING,&SPHINX,&TOXICBLADE,&BERSERKERS,&GLADS];
 
 static DIVINE:Item = Item
 {
@@ -1105,7 +1105,7 @@ static MAGUS:Item = Item
     percent_pen: 0.1,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.12,
+    lifesteal: 0.08,
     cdr: 0.0,
     mana:0.0,
     health: 0.0,
@@ -1137,7 +1137,7 @@ static DESO:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2350.0,
 };
 
 static OBBY:Item = Item
@@ -1165,7 +1165,7 @@ static OBBY:Item = Item
 static TAHUTI:Item = Item
 {
     name: "Rod of Tahuti",
-    magical_power: 135.0,
+    magical_power: 150.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1187,7 +1187,7 @@ static TAHUTI:Item = Item
 static CALAM_TAHUTI:Item = Item
 {
     name: "Calamitous Rod of Tahuti",
-    magical_power: 135.0,
+    magical_power: 150.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1256,19 +1256,19 @@ static DOOM_ORB:Item = Item
     magical_power: 145.0,
     physical_power: 0.0,
     flat_pen: 0.0,
-    percent_pen: 0.0,
+    percent_pen: 0.1,
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
-    mana:200.0,
+    mana: 0.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 25.0,
     hp5: 0.0,
     ccr: 0.0,
-    move_speed: 0.04,
+    move_speed: 0.06,
     gold: 2850.0,
 };
 
@@ -1297,7 +1297,7 @@ static MYRDDIN:Item = Item
 static BOOK_OF_THOTH:Item = Item
 {
     name: "Book of Thoth",
-    magical_power: 80.0,
+    magical_power: 70.0,
     physical_power: 0.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
@@ -1347,7 +1347,7 @@ static POLY:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.12,
+    lifesteal: 0.08,
     cdr: 0.0,
     mana:300.0,
     health: 0.0,
@@ -1385,13 +1385,13 @@ static REAVER:Item = Item
 static PYTHAGS:Item = Item
 {
     name: "Pythagorem's Piece",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.24,
+    lifesteal: 0.16,
     cdr: 0.1,
     mana:0.0,
     health: 250.0,
@@ -1407,13 +1407,13 @@ static PYTHAGS:Item = Item
 static SOUL_GEM:Item = Item
 {
     name: "Soul Gem",
-    magical_power: 80.0,
+    magical_power: 90.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.12,
+    lifesteal: 0.08,
     cdr: 0.1,
     mana:0.0,
     health: 150.0,
@@ -1423,7 +1423,7 @@ static SOUL_GEM:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2300.0,
+    gold: 2400.0,
 };
 
 static BANCROFTS:Item = Item
@@ -1435,9 +1435,9 @@ static BANCROFTS:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
-    mana:150.0,
+    mana:200.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
@@ -1457,9 +1457,9 @@ static NIMBLE_BANCROFTS:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
-    mana:150.0,
+    mana:200.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
@@ -1479,9 +1479,9 @@ static BANCROFTS_CLAW:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
-    mana:150.0,
+    mana:200.0,
     health: 0.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
@@ -1495,13 +1495,13 @@ static BANCROFTS_CLAW:Item = Item
 static TYPHONS:Item = Item
 {
     name: "Typhon's Fang",
-    magical_power: 70.0,
+    magical_power: 85.0,
     physical_power: 0.0,
     flat_pen: 0.0,
-    percent_pen: 0.1,
+    percent_pen: 0.2,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
     mana:200.0,
     health: 0.0,
@@ -1511,7 +1511,7 @@ static TYPHONS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2800.0,
+    gold: 2650.0,
 };
 
 static BINDING:Item = Item
@@ -1580,28 +1580,7 @@ static ESTAFF:Item = Item
     gold: 2600.0,
 };
 
-static ASCLEPIUS:Item = Item
-{
-    name: "Rod of Asclepius",
-    magical_power: 90.0,
-    physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.0,
-    attack_speed: 0.0,
-    crit_chance: 0.0,
-    lifesteal: 0.0,
-    cdr: 0.0,
-    mana:0.0,
-    health: 200.0,
-    phys_prot: 0.0,
-    magical_prot: 0.0,
-    mp5: 0.0,
-    hp5: 0.0,
-    ccr: 0.0,
-    move_speed: 0.07,
-    gold: 2600.0,
-};
-// 
+
 static WARLOCKS:Item = Item
 {
     name: "Warlock's Staff",
@@ -1653,9 +1632,9 @@ static TELKHINES:Item = Item
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.2,
+    attack_speed: 0.15,
     crit_chance: 0.0,
-    lifesteal: 0.1,
+    lifesteal: 0.06,
     cdr: 0.0,
     mana:0.0,
     health: 0.0,
@@ -1693,7 +1672,7 @@ static HASTENED_RING:Item = Item
 static CYCLOP_RING :Item = Item
 {
     name: "Cyclopean Ring",
-    magical_power: 80.0,
+    magical_power: 70.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1712,14 +1691,80 @@ static CYCLOP_RING :Item = Item
     gold: 2600.0,
 };
 
+static ASCLEPIUS:Item = Item
+{
+    name: "Rod of Asclepius",
+    magical_power: 90.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana: 250.0,
+    health: 250.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2600.0,
+};
+
+static REJUV_HEART:Item = Item
+{
+    name: "Rejuvenating Heart",
+    magical_power: 70.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 300.0,
+    health: 300.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2450.0,
+};
+
+static LAST_GASP:Item = Item
+{
+    name: "Last Gasp",
+    magical_power: 100.0,
+    physical_power: 0.0,
+    flat_pen: 15.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 200.0,
+    health: 200.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 0.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2400.0,
+};
+
 
 //-------------------------------------------------------------------------
 //Physical Items
-static PHYSICAL_ITEMS:[&Item;44] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
+static PHYSICAL_ITEMS:[&Item;46] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
                                     &OBOW,&DEVOS,&BLOODFORGE,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,&RAGE,&BOOMERANG,&WIND_DEMON,
                                     &FAILNOT,&ARONDIGHT,&GRIFFONWING,&SPHINX,&SHADOWDRINKER,&SERRATED,&GOLDEN_BLADE,&HASTENED_KATANA,
                                     &FROSTBOUND,&RUNEFORGED,&DAWNBRINGER,&BERSERKERS,&GLADS,&BINDING,
-                                    &CAD_SHIELD,&TOXICBLADE,&EVERGREEN,&THISTLETHORN,&BRISTLEBUSH,&THICKBARK];
+                                    &CAD_SHIELD,&SEKHMETS,&VITAL_AMP,&TOXICBLADE,&EVERGREEN,&THISTLETHORN,&BRISTLEBUSH,&THICKBARK];
 
 static BRAWLERS:Item = Item
 {
@@ -1747,7 +1792,7 @@ static JOTUNNS:Item = Item
 {
     name: "Jotunn's Wrath",
     magical_power: 0.0,
-    physical_power: 45.0,
+    physical_power: 40.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -1850,7 +1895,7 @@ static TRANS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2500.0,
 };
 
 static HEARTSEEKER:Item = Item
@@ -1967,12 +2012,12 @@ static DEVOS:Item = Item
 {
     name: "Devourer's Gauntlet",
     magical_power: 0.0,
-    physical_power: 65.0,
-    flat_pen: 10.0,
+    physical_power: 70.0,
+    flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.25,
+    lifesteal: 0.15,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -1992,9 +2037,9 @@ static BLOODFORGE:Item = Item
     physical_power: 75.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.0,
+    attack_speed: 0.1,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -2011,12 +2056,12 @@ static SOUL_NOMMER:Item = Item
 {
     name: "Soul Eater",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 50.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.15,
+    lifesteal: 0.1,
     cdr: 0.1,
     mana: 0.0,
     health: 0.0,
@@ -2100,12 +2145,12 @@ static ASI:Item = Item
 {
     name: "Asi",
     magical_power: 0.0,
-    physical_power: 50.0,
+    physical_power: 55.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.2,
     crit_chance: 0.0,
-    lifesteal: 0.2,
+    lifesteal: 0.12,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -2203,14 +2248,14 @@ static BOOMERANG:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2350.0,
 };
 
 static WIND_DEMON:Item = Item
 {
     name: "Demon Blade",
     magical_power: 0.0,
-    physical_power: 25.0,
+    physical_power: 30.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.2,
@@ -2364,7 +2409,7 @@ static FROSTBOUND:Item = Item
 {
     name: "Frostbound Hammer",
     magical_power: 0.0,
-    physical_power: 30.0,
+    physical_power: 35.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2379,7 +2424,7 @@ static FROSTBOUND:Item = Item
     hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2350.0,
 };
 
 static RUNEFORGED:Item = Item
@@ -2401,7 +2446,7 @@ static RUNEFORGED:Item = Item
     hp5: 15.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2400.0,
 };
 
 static DAWNBRINGER:Item = Item
@@ -2482,12 +2527,56 @@ static CAD_SHIELD:Item = Item
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
-    cdr: 0.0,
+    cdr: 0.1,
     mana: 0.0,
     health: 250.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 20.0,
+    hp5: 0.0,
+    ccr: 0.1,
+    move_speed: 0.04,
+    gold: 2400.0,
+};
+
+static VITAL_AMP:Item = Item
+{
+    name: "Vital Amplifier",
+    magical_power: 0.0,
+    physical_power: 40.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 200.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2450.0,
+};
+
+static SEKHMETS:Item = Item
+{
+    name: "Sekhmet's Scepter",
+    magical_power: 0.0,
+    physical_power: 45.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.1,
+    mana: 0.0,
+    health: 200.0,
+    phys_prot: 0.0,
+    magical_prot: 0.0,
+    mp5: 15.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -2500,10 +2589,10 @@ static CAD_SHIELD:Item = Item
 //-------------------------------------------------------------------------
 //Tank Items
 
-static TANK_ITEMS:[&Item;40] = [&WINGED_BLADE,&RELIC_DAGGER,&LOTUS,&TOXICBLADE,&RENEWAL,&THEBES,&GAIA,&SPIRIT_ROBE,&MANTLE,&MAGIS
+static TANK_ITEMS:[&Item;41] = [&WINGED_BLADE,&RELIC_DAGGER,&LOTUS,&TOXICBLADE,&RENEWAL,&THEBES,&GAIA,&SPIRIT_ROBE,&MANTLE,&MAGIS
                                     ,&PRIDWEN,&GENJIS,&ONI_HUNTERS,&SHOGUNS,&PESTI,&HEARTWARD,&TALISMAN,&BREASTPLATE,&REGROWTH,&SPECTRAL,
                                      &CONTAGION,&SOV,&MYSTICAL,&MIDGARDIAN,&EMPERORS,&LOTUS,&BINDING,&BERSERKERS,&GLADS,&PHALANX
-                                    ,&CAD_SHIELD,&FROSTBOUND,&RUNEFORGED,&MANTICORE,&FAE_BLESSED,&ABSOLUTION,&ABYSSAL,&ARCHDRUID,&PROPHETIC,
+                                    ,&CAD_SHIELD,&FROSTBOUND,&RUNEFORGED,&MANTICORE,&FAE_BLESSED,&ABSOLUTION,&ABYSSAL,&ARCHDRUID,&EROSION,&PROPHETIC,
                                      &CANNONEER];
 
 
@@ -2786,7 +2875,7 @@ static ONI_HUNTERS:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:0.0,
-    health: 150.0,
+    health: 200.0,
     phys_prot: 0.0,
     magical_prot: 60.0,
     mp5: 30.0,
@@ -3169,6 +3258,28 @@ static ARCHDRUID:Item = Item
     ccr: 0.1,
     move_speed: 0.0,
     gold: 2500.0,
+};
+
+static EROSION:Item = Item
+{
+    name: "Erosion",
+    magical_power: 0.0,
+    physical_power: 0.0,
+    flat_pen: 0.0,
+    percent_pen: 0.0,
+    attack_speed: 0.0,
+    crit_chance: 0.0,
+    lifesteal: 0.0,
+    cdr: 0.0,
+    mana: 0.0,
+    health: 350.0,
+    phys_prot: 30.0,
+    magical_prot: 30.0,
+    mp5: 15.0,
+    hp5: 0.0,
+    ccr: 0.0,
+    move_speed: 0.0,
+    gold: 2350.0,
 };
 
 static PHALANX:Item = Item
@@ -5036,7 +5147,7 @@ static MEDUSA:God = God
 static NEITH:God = God
 {
     name: "Neith",
-    base_health: 688.0,
+    base_health: 719.0,
     health_per_level: 79.0,
     base_mana: 269.0,
     mana_per_level: 39.0,
@@ -5851,7 +5962,7 @@ static GILG:God = God
     mana_per_level: 35.0,
     base_as: 1.01,
     as_per_level: 0.0125,
-    base_auto_damage: 36.0,
+    base_auto_damage: 41.0,
     auto_damage_per_level: 2.3,
     auto_progression: [1.0,0.0,0.0,0.0,0.0,0.0,0.0],
     base_phys_prots: 28.0,
@@ -6148,7 +6259,7 @@ static VAMANA:God = God
     health_per_level: 92.0,
     base_mana: 239.0,
     mana_per_level: 39.0,
-    base_as: 0.91,
+    base_as: 1.014,
     as_per_level: 0.014,
     base_auto_damage: 39.0,
     auto_damage_per_level: 2.0,
@@ -6248,7 +6359,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     divine_enabled:bool,boomerang_enabled:bool) -> f32
 {
     let mut power = clamp((build.magical_power+ ((god.class=="Mage")as i32 as f32) * (20.0 + level)) * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);
-    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (5.0 + 0.25 * level),0.0,50.0);
+    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (2.0 + 0.4 * level),0.0,50.0);
     let mut percent_pen = clamp(build.percent_pen,0.0,0.4);
     let mut attack_speed = god.base_as + (god.as_per_level * (level - 1.0)) + build.attack_speed * (god.base_as - god.as_per_level);
 
@@ -6291,13 +6402,13 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
 
 
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
-    if god.name == FREYA.name { bancroft_lifesteal += 0.15; }
+    if god.name == FREYA.name { bancroft_lifesteal += 0.07 + 0.002 * level; }
     if sol_passive { percent_power_increase += 0.25;}
 
     for name in build.names.iter()
     {
         if name == &TYPHONS.name { typhon_bool = true;}
-        if name == &BOOK_OF_THOTH.name { power += build.mana * 0.1;}
+        if name == &BOOK_OF_THOTH.name { power += build.mana * 0.08;}
         if obby_enabled && name == &OBBY.name { percent_pen = percent_pen + 0.1; }        
         if name == &REAVER.name { reaver_bool = true;}
         if soul_gem_enabled && name == &SOUL_GEM.name { soul_gem_bool = true;}
@@ -6307,10 +6418,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if archmages_enabled && name == &ARCHMAGES.name { archmage_bool = true;}
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.15; }
-        if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
+        if magus_enabled && name == &MAGUS.name { magus_multi = 0.09; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = level; }
-        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.2; }
+        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.1; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
@@ -6348,7 +6459,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
 
         if name == &GILDED.name { basic_attack_damage += 20.0; }
         if name == &DIAMOND.name { basic_attack_damage += 80.0; }
-        if name == &ORNATE.name { basic_attack_damage += 60.0; }
+        if name == &ORNATE.name { basic_attack_damage += 70.0; }
         if name == &MANIKIN_SCEPTER.name { basic_attack_damage += 10.0; }
         if name == &MANIKINS_MACE.name { basic_attack_damage += 50.0; }
 
@@ -6366,7 +6477,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut item_mitigations = 0.0;
     for name in target_build.names.iter()
     {
-        if name == &ONI_HUNTERS.name { item_mitigations += 0.12; }
+        if name == &ONI_HUNTERS.name { item_mitigations += 0.9; }
     }
     if target.name == CABRAKAN.name { item_mitigations += 0.05; }
 
@@ -6493,7 +6604,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     }
 
     let mut unmitigated_soul_gem_damage = 0.0;
-    if soul_gem_bool{ unmitigated_soul_gem_damage = power * 0.25 * (((number_of_abilities as f32-1.0)/4.0).floor()+1.0);}
+    if soul_gem_bool{ unmitigated_soul_gem_damage = power * 0.2 * (((number_of_abilities as f32-1.0)/4.0).floor()+1.0);}
     else { unmitigated_soul_gem_damage = power * 0.25 * (number_of_abilities as f32/4.0).floor();}
 
     let mut unmitigated_archmages_damage = 0.0;
@@ -6503,7 +6614,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if calam_bool{ unmitigated_calam_damage = 100.0 + (power * 0.35)}
 
     let mut unmitigated_divine_damage = 0.0;
-    if divine_bool{ unmitigated_divine_damage = 40.0 + (power * 0.2)}
+    if divine_bool{ unmitigated_divine_damage = 40.0 + (power * 0.1)}
 
     let mut unmitigated_poly_damage = 0.0;
     if poly_bool{ unmitigated_poly_damage = (power * 0.75) + god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0))}
@@ -6524,7 +6635,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if conduit_bool{ conduit_true_damage = 40.0;}
 
     let mut tablet_true_damage = 0.0;
-    if tablet_bool{ tablet_true_damage = 0.07 * (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))); }
+    if tablet_bool{ tablet_true_damage = 0.06 * (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))); }
 
     let mut unmitigated_crusher_damage = 0.0;
     if crusher_bool
@@ -6540,10 +6651,10 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if arondight_bool{ unmitigated_arondight_damage = 20.0 + (power * 0.5)}
 
     let mut unmitigated_bluestone_pendant_damage = 0.0;
-    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 48.0;}
+    if bluestone_pendant_bool{ unmitigated_bluestone_pendant_damage = 40.0;}
 
     let mut unmitigated_bluestone_brooch_damage = 0.0;
-    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (180.0 + 0.15 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health));}
+    if bluestone_brooch_bool{ unmitigated_bluestone_brooch_damage = (160.0 + 0.12 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health));}
 
     let mut unmitigated_redstone_damage = 0.0;
     if redstone_bool{ unmitigated_redstone_damage = 250.0;}
@@ -6569,7 +6680,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     redstone_attack_speed_enabled:bool,bumbas_spear_enabled:bool,protector_enabled:bool,kaldr_enabled:bool,pos2_enabled:bool,as_buff:f32,
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
     purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
-    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,boomerang_enabled:bool) -> f32
+    ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,boomerang_enabled:bool,
+    vital_enabled:bool) -> f32
 {
     let mut telk_bool = false;
     let mut demonic_bool = false;
@@ -6613,13 +6725,13 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 
 
     let mut power = clamp((build.magical_power+ ((god.class=="Mage")as i32 as f32) * (20.0 + level)) * magical as i32 as f32 + build.physical_power * !magical as i32 as f32 + flat_power_buff,0.0,900.0 * magical as i32 as f32 + 400.0 * !magical as i32 as f32);    
-    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (5.0 + 0.25 * level),0.0,50.0);
+    let flat_pen = clamp(build.flat_pen + ((god.class=="Assassin")as i32 as f32) * (2.0 + 0.4 * level),0.0,50.0);
     let mut percent_pen = clamp(build.percent_pen,0.0,0.4);
     let crit_chance = clamp(build.crit_chance,0.0,1.0);
     let mut attack_speed = god.base_as + (god.as_per_level * (level - 1.0)) + build.attack_speed * (god.base_as - god.as_per_level);
     
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
-    if god.name == FREYA.name { bancroft_lifesteal += 0.15; }
+    if god.name == FREYA.name { bancroft_lifesteal += 0.07 + 0.002 * level; }
 
     if ishtar_1a
     {
@@ -6658,17 +6770,17 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &DEMONIC_GRIP.name { demonic_bool = true;}
         if name == &GILDED.name { basic_attack_damage += 20.0; }
         if name == &DIAMOND.name { basic_attack_damage += 80.0; }
-        if name == &ORNATE.name { basic_attack_damage += 60.0; }
+        if name == &ORNATE.name { basic_attack_damage += 70.0; }
         if name == &MANIKIN_SCEPTER.name { basic_attack_damage += 10.0; manikins_scepter_bool = true; }
         if name == &MANIKINS_MACE.name { basic_attack_damage += 50.0; manikins_mace_bool = true; }
         if name == &BOOK_OF_THOTH.name { power += build.mana * 0.1; }
-        if temper_enabled && name == &DEATHS_TEMPER.name { temper_multi = 0.35; }
+        if temper_enabled && name == &DEATHS_TEMPER.name { temper_multi += 0.35; }
         if diamond_enabled && name == &DIAMOND.name { attack_speed += 0.75 * (god.base_as - god.as_per_level); }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.09; }
         if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = 5.0 + level; }
-        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal += 0.2; }
+        if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal += 0.1; }
         if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
 
@@ -6708,6 +6820,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &CYCLOP_RING.name { cyclopean_bool = true; }
         if name == &TOXICBLADE.name { toxic_blade_stacks = 0.0;}
         if boomerang_enabled && name == &BOOMERANG.name { boomerang_crit = 0.3; }
+        if vital_enabled && name == &VITAL_AMP.name { attack_speed += 0.3 * (god.base_as - god.as_per_level); temper_multi += 0.15; }
         
         
     }
@@ -6847,7 +6960,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let protections_multiplier = clamp(100.0/(100.0+target_prots_after_pen),0.0,1.0);
 
             let mut unmitigated_telk_damage = 0.0;
-            if telk_bool { unmitigated_telk_damage = 10.0 + (3.0*level);}
+            if telk_bool { unmitigated_telk_damage = 10.0 + (2.0*level);}
 
             let mut unmitigated_qins_damage = 0.0;  
             if qins_bool 
@@ -6862,7 +6975,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             {
                 if time_of_next_cyclopean <= time_spent_attacking
                 {
-                    unmitigated_cyclop_damage = 0.08 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
+                    unmitigated_cyclop_damage = 0.07 * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
                     time_of_next_cyclopean = time_spent_attacking + 10.0
                 }
                 time_of_next_cyclopean -= 2.0;
@@ -6908,7 +7021,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 if time_spent_attacking > next_mani_scepter_damage_time
                 {
                     next_mani_scepter_damage_time = time_spent_attacking + 1.0;
-                    unmitigated_manikins_scepter_damage = (8.0 + 0.025 * power) * 0.5 * manikins_scepter_stacks;
+                    unmitigated_manikins_scepter_damage = (8.0 + 0.035 * power) * 0.5 * manikins_scepter_stacks;
                 }
                 if manikins_scepter_stacks < 3.0{ manikins_scepter_stacks += 1.0; }   
                 
@@ -7060,7 +7173,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if wind_bool && autos >= estimated_autos_to_proc_wind_demon
             {
                 percent_pen = clamp(percent_pen + 0.1,0.0,0.4);
-                attack_speed += 0.1 * (god.base_as - god.as_per_level); 
+                attack_speed += 0.15 * (god.base_as - god.as_per_level); 
                 wind_bool = false;
             }
 
@@ -7081,7 +7194,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.2");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.3");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7168,7 +7281,8 @@ fn main() {
     let trans_btn = button::CheckButton::default().with_size(120,0).with_label("Transcendence");
     let devos_btn = button::CheckButton::default().with_size(100,0).with_label("Devourer's");
     let hydras_btn = button::CheckButton::default().with_size(120,0).with_label("Hydra's Lament");
-    let boomerang_btn = button::CheckButton::default().with_size(150,0).with_label("Bladed Boomerang");
+    let boomerang_btn = button::CheckButton::default().with_size(140,0).with_label("Bladed Boomerang");
+    let vital_btn = button::CheckButton::default().with_size(110,0).with_label("Vital Amplifier");
 
     phys_pack3.end();
     phys_pack3.hide();
@@ -7284,7 +7398,7 @@ fn main() {
     target2_item6.add_choice(&array_to_menu_string(&TANK_ITEMS).to_string());
 
     //default build displayed
-    target2_item1.set_value(38);
+    target2_item1.set_value(39);
     target2_item2.set_value(18);
     target2_item3.set_value(15);
     target2_item4.set_value(8);
@@ -7436,7 +7550,7 @@ fn main() {
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
             ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
             ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap(),divine_btn.value(),tablet_btn.value(),boomerang_btn.value(),
-            devos_btn.value())); 
+            devos_btn.value(),vital_btn.value())); 
 
     
 
@@ -7462,7 +7576,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,purp_buff:bool,
     fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
     ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32,divine_enabled:bool,tablet_enabled:bool,
-    boomerang_enabled:bool,devos_enabled:bool)
+    boomerang_enabled:bool,devos_enabled:bool,vital_enabled:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7613,7 +7727,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 for j in &required_items
                 {
                     if i.name==j.name {duplicate_detected_in_build = true;}
-                    if j.name == "Bancroft's Talon" && !bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
+                    if j.name == "Bancroft's Talon" && !bancroft_enabled { bancroft_passive_lifesteal = 0.1; }
                 }
                 
                 if i.name == BOOK_OF_THOTH.name && !book_of_thoth_enabled { duplicate_detected_in_build = true;}
@@ -7621,7 +7735,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                 if i.name == TRANS.name && !trans_enabled { duplicate_detected_in_build = true;}
                 if i.name == DEVOS.name && !devos_enabled { duplicate_detected_in_build = true;}
                 if i.name == TABLET.name && !tablet_enabled { duplicate_detected_in_build = true;}                
-                if (i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.2; }
+                if (i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name) && bancroft_enabled { bancroft_passive_lifesteal = 0.1; }
 
                 if i.name == TAHUTI.name || i.name == CALAM_TAHUTI.name { tahutis += 1.0; }
                 if i.name == BANCROFTS.name || i.name == NIMBLE_BANCROFTS.name || i.name == BANCROFTS_CLAW.name { bancrofts += 1.0; }
@@ -7727,7 +7841,8 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         serrated_enabled,runeforged_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                         protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                         flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
-                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled);
+                        p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled,
+                        vital_enabled);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
@@ -7738,7 +7853,8 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             serrated_enabled,runeforged_enabled,cowl_enabled,redstone_attack_speed_enabled,bumbas_spear_enabled,
                             protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                             flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
-                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled);
+                            p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled,
+                            vital_enabled);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
