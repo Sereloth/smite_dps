@@ -1121,7 +1121,7 @@ static MAGUS:Item = Item
 static DESO:Item = Item
 {
     name: "Spear of Desolation",
-    magical_power: 110.0,
+    magical_power: 100.0,
     physical_power: 0.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
@@ -1165,7 +1165,7 @@ static OBBY:Item = Item
 static TAHUTI:Item = Item
 {
     name: "Rod of Tahuti",
-    magical_power: 150.0,
+    magical_power: 140.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.08,
@@ -1187,7 +1187,7 @@ static TAHUTI:Item = Item
 static CALAM_TAHUTI:Item = Item
 {
     name: "Calamitous Rod of Tahuti",
-    magical_power: 150.0,
+    magical_power: 140.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.08,
@@ -1253,7 +1253,7 @@ static CHARONS:Item = Item
 static DOOM_ORB:Item = Item
 {
     name: "Doom Orb",
-    magical_power: 145.0,
+    magical_power: 130.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.08,
@@ -2034,7 +2034,7 @@ static BLOODFORGE:Item = Item
 {
     name: "Bloodforge",
     magical_power: 0.0,
-    physical_power: 65.0,
+    physical_power: 55.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.1,
@@ -2189,7 +2189,7 @@ static DEATHBRINGER:Item = Item
 {
     name: "Deathbringer",
     magical_power: 0.0,
-    physical_power: 50.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2255,10 +2255,10 @@ static WIND_DEMON:Item = Item
 {
     name: "Demon Blade",
     magical_power: 0.0,
-    physical_power: 30.0,
+    physical_power: 25.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.2,
+    attack_speed: 0.15,
     crit_chance: 0.2,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -3350,9 +3350,9 @@ static CANNONEER:Item = Item
 
 
 
-static GODS:[&God;125] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
+static GODS:[&God;126] = [&AMC,&ANHUR,&APOLLO,&ARTEMIS,&CERN,&CHARYBDIS,&CHERNO,&CHIRON,&CUPID,&DANZA,&HACHI,&HEIM,
                         &HOUYI,&ISHTAR,&IZANAMI,&JING,&MANTI,&MEDUSA,&NEITH,&RAMA,&SKADI,&ULLR,&XBAL,&AGNI,&AHPUCH,&ANUBIS,&AOKUANG,
-                        &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&JANUS,
+                        &APHRO,&BABA,&BARON,&CHANGE,&CHRONOS,&DISCO,&ESET,&FREYA,&HADES,&HEBO,&HEL,&HERA,&IX,&JANUS,
                         &KUKU,&MERLIN,&MORGANA,&NOX,&NUWA,&OLORUN,&PERSE,&POSEIDON,&RA,&RAIJIN,&SCYLLA,&SOL,&MORRI,
                         &THOTH,&TIAMAT,&VULCAN,&YUHUANG,&ZEUS,&ZHONG,&ARACHNE,&AWILIX,&BAKA,&BASTET,&CAMA,&CLIO,&DAJI,
                         &FENRIR,&HUNBATZ,&KALI,&LANCELOT,&LOKI,&MERC,&NEZHA,&NEMESIS,&PELE,&RAT,&RAVANA,&SERQET,&SET,
@@ -3755,6 +3755,29 @@ static HERA:God = God
     hp5_per_level: 0.45,
     base_mp5: 5.21,
     mp5_per_level: 0.41,
+    class: "Mage"
+};
+
+static IX:God = God
+{
+    name: "Ix Chel",
+    base_health: 616.0,
+    health_per_level: 84.0,
+    base_mana: 344.0,
+    mana_per_level: 44.0,
+    base_as: 0.91,
+    as_per_level: 0.008,
+    base_auto_damage: 36.0,
+    auto_damage_per_level: 1.5,
+    auto_progression: [1.0,1.0,1.0,1.0,1.0,1.0,1.0],
+    base_phys_prots: 20.0,
+    phys_prots_per_level: 3.0,
+    base_magical_prots: 31.6,
+    magical_prots_per_level: 1.6,
+    base_hp5: 7.6,
+    hp5_per_level: 0.6,
+    base_mp5: 5.45,
+    mp5_per_level: 0.45,
     class: "Mage"
 };
 
@@ -6428,11 +6451,11 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if archmages_enabled && name == &ARCHMAGES.name { archmage_bool = true;}
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.15; }
-        if magus_enabled && name == &MAGUS.name { magus_multi = 0.09; }
+        if magus_enabled && name == &MAGUS.name { magus_multi = 0.05; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = level; }
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal = 0.1; }
-        if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
+        if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.2; }
         if claw_enabled && name == &BANCROFTS_CLAW.name { claw_bool = true; }
         if name == &FIGHTERS.name { fighters_multi = 0.06 + (0.0025 * level); }
         if name == &RANGDAS.name { rangdas_bool = true; }
@@ -6633,7 +6656,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     if hydras_bool
     {         
         let unmitigated_damage_hydras = god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power;
-        let unmitigated_damage_after_multis_hydras = unmitigated_damage_hydras * god.auto_progression[0];
+        let unmitigated_damage_after_multis_hydras = unmitigated_damage_hydras * god.auto_progression[0] * 1.3;
         let crit_multi = 1.0 + clamp(build.crit_chance + boomerang_crit,0.0,1.0) * (0.75 + deathbringer_bonus - 0.35 * (god.name==HEIM.name) as i32 as f32) * ((0.0 * magical as i32 as f32) + (1.0 * !magical as i32 as f32));
         unmitigated_hydras_auto_damage = unmitigated_damage_after_multis_hydras * crit_multi;
     }
@@ -6787,11 +6810,11 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if temper_enabled && name == &DEATHS_TEMPER.name { temper_multi += 0.35; }
         if diamond_enabled && name == &DIAMOND.name { attack_speed += 0.75 * (god.base_as - god.as_per_level); }
         if focus_enabled && name == &FOCUS.name { focus_damage_multi = 0.09; }
-        if magus_enabled && name == &MAGUS.name { magus_multi = 0.075; }
+        if magus_enabled && name == &MAGUS.name { magus_multi = 0.05; }
         if doom_enabled && name == &DOOM_ORB.name { power += 20.0; }
         if binding_enabled && name == &BINDING.name { binding_shred = 5.0 + level; }
         if bancroft_enabled && (name == &BANCROFTS.name || name == &NIMBLE_BANCROFTS.name || name == &BANCROFTS_CLAW.name) { power += 100.0; bancroft_lifesteal += 0.1; }
-        if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.25; }
+        if tahuti_enabled && (name == &TAHUTI.name || name == &CALAM_TAHUTI.name) { tahuti_scaling_multi = 1.2; }
         if name == &SACRIFICIAL.name { sacrificial_damage_multi = 0.15; }
 
         if name == &DOMINANCE.name { dominance_pen = 0.16; }
@@ -7183,7 +7206,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if wind_bool && autos >= estimated_autos_to_proc_wind_demon
             {
                 percent_pen = clamp(percent_pen + 0.08,0.0,0.32);
-                attack_speed += 0.15 * (god.base_as - god.as_per_level); 
+                attack_speed += 0.1 * (god.base_as - god.as_per_level); 
                 wind_bool = false;
             }
 
@@ -7204,7 +7227,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.4");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.4 Bonus");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
