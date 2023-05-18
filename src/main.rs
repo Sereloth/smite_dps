@@ -2034,10 +2034,10 @@ static BLOODFORGE:Item = Item
 {
     name: "Bloodforge",
     magical_power: 0.0,
-    physical_power: 55.0,
+    physical_power: 75.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.1,
+    attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.1,
     cdr: 0.0,
@@ -2750,7 +2750,7 @@ static GAIA:Item = Item
     hp5: 25.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2250.0,
+    gold: 2100.0,
 };
 
 static SPIRIT_ROBE:Item = Item
@@ -3014,7 +3014,7 @@ static REGROWTH:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold:2000.0,
+    gold:2250.0,
 };
 
 
@@ -3289,7 +3289,7 @@ static PHALANX:Item = Item
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.0,
+    attack_speed: 0.3,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -3345,7 +3345,7 @@ static CANNONEER:Item = Item
     hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2100.0,
+    gold: 2000.0,
 };
 
 
@@ -6714,7 +6714,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     freya_1_2_enabled:bool,baka_3_enabled:bool,sol_passive:bool,obby_enabled:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,
     purp_buff:bool,fire_giant:bool,enhanced_fire_giant:bool,p500_pot:bool,pen_pot:bool,mitigations:f32,chronos_2:bool,
     ao_2:bool,ferocious_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,boomerang_enabled:bool,
-    vital_enabled:bool) -> f32
+    vital_enabled:bool,spectral_aura_enabled:bool) -> f32
 {
     let mut telk_bool = false;
     let mut demonic_bool = false;
@@ -6859,14 +6859,14 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     }
 
     let mut spectral_multi = 0.0;
-    let mut spectral_stacks = -1.0;
     let mut item_mitigations = 0.0;
     for name in target_build.names.iter()
     {
-        if name == &SPECTRAL.name { spectral_multi = 0.3; spectral_stacks = 0.0; }
+        if name == &SPECTRAL.name { spectral_multi = 0.3; }
         if name == &ONI_HUNTERS.name { item_mitigations += 0.09; }
     }
-    if target.name == CABRAKAN.name { item_mitigations += 0.05; }
+    if spectral_aura_enabled { spectral_multi = 0.3; }
+    //if target.name == CABRAKAN.name { item_mitigations += 0.05; }
 
     attack_speed += as_buff * (god.base_as - god.as_per_level);
 
@@ -7195,11 +7195,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 toxic_blade_stacks += 1.0;
             }
 
-            if (spectral_stacks != -1.0) && (spectral_stacks < 4.0)
-            {
-                spectral_multi += 0.0375;
-                spectral_stacks += 1.0;
-            }
+            
 
 
             autos += 1.0;
@@ -7227,7 +7223,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.4 Bonus");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.5");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
@@ -7513,6 +7509,7 @@ fn main() {
     let enhanced_fire_giant = button::CheckButton::new(320,80,160,40,"Enhanced Fire Giant");
     let p500_pot = button::CheckButton::new(220,120,100,40,"500 Pot");
     let pen_pot = button::CheckButton::new(320,120,160,40,"Pen Pot");
+    let spectral_aura = button::CheckButton::new(220,160,160,40,"Spectral Aura On Target");
 
     wind3.end();
     
@@ -7583,7 +7580,7 @@ fn main() {
             enhanced_fire_giant.value(),max_gold.value().parse().unwrap(),p500_pot.value(),pen_pot.value(),ttk_btn.value(),target1_mitigations.value().parse().unwrap()
             ,target2_mitigations.value().parse().unwrap(),chronos_2.value(),ao_2.value(),ferocious_btn.value(),bancrofts_claw_btn.value(),myr_btn.value(),
             ishtar_1a.value(),ishtar_1b.value(),ishtar_1c.value(),number_of_abilities_input.value().parse().unwrap(),divine_btn.value(),tablet_btn.value(),boomerang_btn.value(),
-            devos_btn.value(),vital_btn.value())); 
+            devos_btn.value(),vital_btn.value(),spectral_aura.value())); 
 
     
 
@@ -7609,7 +7606,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
     sol_passive:bool,flat_power_buff:f32,percent_power_buff:f32,red_buff:bool,purp_buff:bool,
     fire_giant:bool,enhanced_fire_giant:bool,max_gold:f32,p500_pot:bool,pen_pot:bool,ttk_display:bool,target1_mitigations:f32,target2_mitigations:f32,chronos_2:bool,
     ao_2:bool,ferocious_enabled:bool,claw_enabled:bool,myr_enabled:bool,ishtar_1a:bool,ishtar_1b:bool,ishtar_1c:bool,number_of_abilities:i32,divine_enabled:bool,tablet_enabled:bool,
-    boomerang_enabled:bool,devos_enabled:bool,vital_enabled:bool)
+    boomerang_enabled:bool,devos_enabled:bool,vital_enabled:bool,spectral_aura_enabled:bool)
 {
 
     if god.name == ERROR.name || target1_god.name == ERROR.name || target2_god.name == ERROR.name
@@ -7875,7 +7872,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                         protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                         flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
                         p500_pot,pen_pot,target1_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled,
-                        vital_enabled);
+                        vital_enabled,spectral_aura_enabled);
                         
                     if target1_auto_damage < target1_min_auto_dps{ build_fits_criteria = false;}
                     
@@ -7887,7 +7884,7 @@ fn run(calculate_ability_damage:bool,calculate_auto_dps:bool,auto_sample_time:f3
                             protector_enabled,kaldr_enabled,pos2_enabled,as_buff,freya_1_2_enabled,baka_3_enabled,sol_passive,obby_enabled,
                             flat_power_buff,percent_power_buff,red_buff,purp_buff,fire_giant,enhanced_fire_giant,
                             p500_pot,pen_pot,target2_mitigations,chronos_2,ao_2,ferocious_enabled,myr_enabled,ishtar_1a,ishtar_1b,ishtar_1c,boomerang_enabled,
-                            vital_enabled);
+                            vital_enabled,spectral_aura_enabled);
 
                         if target2_auto_damage < target2_min_auto_dps{ build_fits_criteria = false;}
                               
