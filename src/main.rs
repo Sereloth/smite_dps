@@ -1169,7 +1169,7 @@ static OBBY:Item = Item
 static TAHUTI:Item = Item
 {
     name: "Rod of Tahuti",
-    magical_power: 100.0,
+    magical_power: 110.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1191,7 +1191,7 @@ static TAHUTI:Item = Item
 static CALAM_TAHUTI:Item = Item
 {
     name: "Calamitous Rod of Tahuti",
-    magical_power: 100.0,
+    magical_power: 110.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1301,7 +1301,7 @@ static MYRDDIN:Item = Item
 static BOOK_OF_THOTH:Item = Item
 {
     name: "Book of Thoth",
-    magical_power: 60.0,
+    magical_power: 70.0,
     physical_power: 0.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
@@ -1433,7 +1433,7 @@ static SOUL_GEM:Item = Item
 static BANCROFTS:Item = Item
 {
     name: "Bancroft's Talon",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1455,7 +1455,7 @@ static BANCROFTS:Item = Item
 static NIMBLE_BANCROFTS:Item = Item
 {
     name: "Nimble Bancroft's Talon",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1477,7 +1477,7 @@ static NIMBLE_BANCROFTS:Item = Item
 static BANCROFTS_CLAW:Item = Item
 {
     name: "Bancroft's Claw",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1789,7 +1789,7 @@ static BRAWLERS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2400.0,
 };
 
 static JOTUNNS:Item = Item
@@ -1821,7 +1821,7 @@ static CRUSHER:Item = Item
     physical_power: 35.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
-    attack_speed: 0.15,
+    attack_speed: 0.2,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -1833,7 +1833,7 @@ static CRUSHER:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2600.0,
+    gold: 2500.0,
 };
 
 static TITANS:Item = Item
@@ -2496,7 +2496,7 @@ static BERSERKERS:Item = Item
     hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2300.0,
 };
 
 static GLADS:Item = Item
@@ -2584,7 +2584,7 @@ static SEKHMETS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2500.0,
+    gold: 2400.0,
 };
 
 
@@ -2901,9 +2901,9 @@ static SHOGUNS:Item = Item
     lifesteal: 0.0,
     cdr: 0.1,
     mana:0.0,
-    health: 100.0,
+    health: 150.0,
     phys_prot: 0.0,
-    magical_prot: 40.0,
+    magical_prot: 45.0,
     mp5: 20.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -6468,7 +6468,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     for name in build.names.iter()
     {
         if name == &TYPHONS.name { typhon_bool = true;}
-        if name == &BOOK_OF_THOTH.name { power += build.mana * 0.06;}
+        if name == &BOOK_OF_THOTH.name { power += build.mana * 0.07;}
         if obby_enabled && name == &OBBY.name { percent_pen = percent_pen + 0.2; }        
         if name == &REAVER.name { reaver_bool = true;}
         if soul_gem_enabled && name == &SOUL_GEM.name { soul_gem_bool = true;}
@@ -6654,7 +6654,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut unmitigated_heartseeker_damage = 0.0;
     if heartseeker_bool
     {
-        let percent_health = clamp((1.0/3750.0)*power-(0.02),0.02,0.06);
+        let percent_health = clamp((1.0/2500.0)*power-(0.04),0.02,0.06);
         unmitigated_heartseeker_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
         if number_of_abilities > 1
         {
@@ -7260,7 +7260,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.7 Bonus");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.8");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
