@@ -305,7 +305,7 @@ static VAMP_SHROUD:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.04,
+    lifesteal: 0.06,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -321,13 +321,13 @@ static VAMP_SHROUD:Item = Item
 static BLOODSOAKED:Item = Item
 {
     name: "Blood-Soaked Shroud",
-    magical_power: 80.0,
+    magical_power: 85.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.1,
+    lifesteal: 0.12,
     cdr: 0.0,
     mana: 0.0,
     health: 300.0,
@@ -349,7 +349,7 @@ static SACRIFICIAL:Item = Item
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.1,
+    lifesteal: 0.12,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -755,7 +755,7 @@ static MANIKIN_SCEPTER:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 750.0,
+    gold: 650.0,
 };
 
 static MANIKINS_MACE:Item = Item
@@ -765,7 +765,7 @@ static MANIKINS_MACE:Item = Item
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
-    attack_speed: 0.0,
+    attack_speed: 0.15,
     crit_chance: 0.0,
     lifesteal: 0.0,
     cdr: 0.0,
@@ -777,7 +777,7 @@ static MANIKINS_MACE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2250.0,
+    gold: 2150.0,
 };
 
 static MHB:Item = Item
@@ -799,7 +799,7 @@ static MHB:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2250.0,
+    gold: 2150.0,
 };
 
 static TAINTED_STEEL:Item = Item
@@ -1097,7 +1097,7 @@ static DIVINE:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2550.0,
+    gold: 2450.0,
 };
 
 static MAGUS:Item = Item
@@ -1339,7 +1339,7 @@ static TABLET:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2650.0,
+    gold: 2550.0,
 };
 
 static POLY:Item = Item
@@ -1597,7 +1597,7 @@ static WARLOCKS:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana:200.0,
-    health: 200.0,
+    health: 250.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.0,
@@ -1610,7 +1610,7 @@ static WARLOCKS:Item = Item
 static DEMONIC_GRIP:Item = Item
 {
     name: "Demonic Grip",
-    magical_power: 55.0,
+    magical_power: 65.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1950,7 +1950,7 @@ static ATALANTAS:Item = Item
 {
     name: "Atalanta's Bow",
     magical_power: 0.0,
-    physical_power: 30.0,
+    physical_power: 35.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.25,
@@ -1965,7 +1965,7 @@ static ATALANTAS:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2300.0,
 };
 
 static SILVERBRANCH:Item = Item
@@ -2149,7 +2149,7 @@ static ASI:Item = Item
 {
     name: "Asi",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 45.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.2,
@@ -2164,7 +2164,7 @@ static ASI:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2450.0,
+    gold: 2400.0,
 };
 
 static QINS:Item = Item
@@ -2435,7 +2435,7 @@ static RUNEFORGED:Item = Item
 {
     name: "Runeforged Hammer",
     magical_power: 0.0,
-    physical_power: 25.0,
+    physical_power: 30.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2673,7 +2673,7 @@ static TOXICBLADE:Item = Item
     name: "Toxic Blade",
     magical_power: 0.0,
     physical_power: 0.0,
-    flat_pen: 10.0,
+    flat_pen: 15.0,
     percent_pen: 0.0,
     attack_speed: 0.15,
     crit_chance: 0.0,
@@ -2992,11 +2992,11 @@ static BREASTPLATE:Item = Item
     health: 0.0,
     phys_prot: 55.0,
     magical_prot: 0.0,
-    mp5: 10.0,
+    mp5: 20.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2300.0,
+    gold: 2250.0,
 };
 
 static REGROWTH:Item = Item
@@ -3283,7 +3283,7 @@ static EROSION:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2350.0,
+    gold: 2250.0,
 };
 
 static PHALANX:Item = Item
@@ -4259,7 +4259,7 @@ static ARES:God = God
     base_as: 0.91,
     as_per_level: 0.0125,
     base_auto_damage: 40.0,
-    auto_damage_per_level: 1.55,
+    auto_damage_per_level: 4.0,
     auto_progression: [1.0,0.75,1.0,1.25,0.0,0.0,0.0],
     base_phys_prots: 31.0,
     phys_prots_per_level: 3.2,
@@ -4774,7 +4774,7 @@ static YMIR:God = God
     base_hp5: 8.9,
     hp5_per_level: 0.9,
     base_mp5: 4.9,
-    mp5_per_level: 0.4,
+    mp5_per_level: 0.45,
     class: "Guardian"
 };
 
@@ -6453,6 +6453,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
 
     if god.name == KUKU.name {power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.04; }
     if god.name == FREYA.name { bancroft_lifesteal += 0.07 + 0.002 * level; }    
+    if god.name == THOTH.name { percent_pen = percent_pen + 0.05; }
     if sol_passive { percent_power_increase += 0.25;}
 
     let mut levels_in_ult = 0.0;
@@ -6495,7 +6496,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         if name == &TRANS.name { power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.02; }
         if name == &SILVERBRANCH.name { silverbranch_bool = true; }
         if serrated_enabled && name == &SERRATED.name { power += 21.0; }
-        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.1; }
+        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.15; }
         if cowl_enabled
         {
             if name== &LEATHER_COWL.name { attack_speed += 0.1 * (god.base_as - god.as_per_level);}
@@ -6537,7 +6538,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     let mut item_mitigations = 0.0;
     for name in target_build.names.iter()
     {
-        if name == &ONI_HUNTERS.name { item_mitigations += 0.9; }
+        if name == &ONI_HUNTERS.name { item_mitigations += 0.12; }
     }
     if target.name == CABRAKAN.name { item_mitigations += 0.05; }
 
@@ -6855,7 +6856,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         if name == &TRANS.name { power += (build.mana + (god.base_mana + god.mana_per_level * (level - 1.0))) * 0.02; }
         if name == &SILVERBRANCH.name { silverbranch_bool = true; }
         if serrated_enabled && name == &SERRATED.name { power += 21.0; }
-        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.1; }
+        if runeforged_enabled && name == &RUNEFORGED.name { runeforged_multi = 0.15; }
         if cowl_enabled
         {
             if name== &LEATHER_COWL.name { attack_speed += 0.1 * (god.base_as - god.as_per_level);}
@@ -6890,7 +6891,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     for name in target_build.names.iter()
     {
         if name == &SPECTRAL.name { spectral_multi = 0.3; }
-        if name == &ONI_HUNTERS.name { item_mitigations += 0.09; }
+        if name == &ONI_HUNTERS.name { item_mitigations += 0.12; }
     }
     if spectral_aura_enabled { spectral_multi = 0.3; }
     //if target.name == CABRAKAN.name { item_mitigations += 0.05; }
@@ -7035,9 +7036,9 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             let mut unmitigated_qins_damage = 0.0;  
             if qins_bool 
             {
-                let percent_health = clamp((0.00009)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (0.01875),0.015,0.06);
+                let percent_health = clamp((0.00009)*((target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health)) - (0.1875),0.015,0.06);
                 unmitigated_qins_damage = percent_health * (target.base_health + (target.health_per_level * (target_level - 1.0)) + target_build.health);
-                unmitigated_qins_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+                unmitigated_qins_damage *= 1.0 - 0.25 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
 
             let mut unmitigated_cyclop_damage = 0.0;
@@ -7065,7 +7066,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                 if obow_stacks == 3
                 {
                     unmitigated_obow_damage = 15.0 + 0.6 * (god.base_auto_damage + (god.auto_damage_per_level * (level - 1.0)) + basic_attack_damage + power);
-                    unmitigated_obow_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+                    unmitigated_obow_damage *= 1.0 - 0.25 * (god.name == CHARYBDIS.name) as i32 as f32;
                 }
                 obow_stacks = (obow_stacks + 1) % 4;
             }
@@ -7105,7 +7106,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                     let physical_protections_multiplier = clamp(100.0/(100.0+target_physical_prots_after_shred_and_pen),0.0,1.0);
                     manikins_scepter_damage = unmitigated_manikins_scepter_damage * physical_protections_multiplier;
                 }
-                manikins_scepter_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+                manikins_scepter_damage *= 1.0 - 0.25 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
             
 
@@ -7131,7 +7132,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                     let physical_protections_multiplier = clamp(100.0/(100.0+target_physical_prots_after_shred_and_pen),0.0,1.0);
                     manikins_mace_damage = unmitigated_manikins_mace_damage * physical_protections_multiplier;
                 }
-                manikins_mace_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+                manikins_mace_damage *= 1.0 - 0.25 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
 
             let mut anim_damage = 0.0;
@@ -7149,7 +7150,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
                     let magical_protections_multiplier = clamp(100.0/(100.0+target_magical_prots_after_shred_and_pen),0.0,1.0);
                     anim_damage = unmitigated_anim_damage * magical_protections_multiplier;
                 }
-                manikins_scepter_damage *= 1.0 - 0.3 * (god.name == CHARYBDIS.name) as i32 as f32;
+                anim_damage *= 1.0 - 0.25 * (god.name == CHARYBDIS.name) as i32 as f32;
             }
 
             let mut unmitigated_damage_kaldr_damage = 0.0;
@@ -7260,7 +7261,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.8");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.10");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
