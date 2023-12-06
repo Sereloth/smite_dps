@@ -297,13 +297,13 @@ static FOCUS:Item = Item
 static VAMP_SHROUD:Item = Item
 {
     name: "Vampiric Shroud",
-    magical_power: 30.0,
+    magical_power: 25.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.06,
+    lifesteal: 0.04,
     cdr: 0.0,
     mana: 0.0,
     health: 0.0,
@@ -319,7 +319,7 @@ static VAMP_SHROUD:Item = Item
 static BLOODSOAKED:Item = Item
 {
     name: "Blood-Soaked Shroud",
-    magical_power: 80.0,
+    magical_power: 70.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1387,13 +1387,13 @@ static REAVER:Item = Item
 static PYTHAGS:Item = Item
 {
     name: "Pythagorem's Piece",
-    magical_power: 60.0,
+    magical_power: 50.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
-    lifesteal: 0.16,
+    lifesteal: 0.12,
     cdr: 0.1,
     mana:0.0,
     health: 150.0,
@@ -1497,7 +1497,7 @@ static BANCROFTS_CLAW:Item = Item
 static TYPHONS:Item = Item
 {
     name: "Typhon's Fang",
-    magical_power: 65.0,
+    magical_power: 60.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
@@ -2467,7 +2467,7 @@ static DAWNBRINGER:Item = Item
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.0,
-    hp5: 0.0,
+    hp5: 15.0,
     ccr: 0.2,
     move_speed: 0.0,
     gold: 2400.0,
@@ -2487,14 +2487,14 @@ static BERSERKERS:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 100.0,
+    health: 150.0,
     phys_prot: 50.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 20.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2300.0,
+    gold: 2250.0,
 };
 
 static GLADS:Item = Item
@@ -2509,14 +2509,14 @@ static GLADS:Item = Item
     lifesteal: 0.0,
     cdr: 0.1,
     mana: 0.0,
-    health: 150.0,
+    health: 200.0,
     phys_prot: 40.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 25.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2350.0,
+    gold: 2300.0,
 };
 
 static CAD_SHIELD:Item = Item
@@ -2925,10 +2925,10 @@ static PESTI:Item = Item
     phys_prot: 0.0,
     magical_prot: 70.0,
     mp5: 0.0,
-    hp5: 0.0,
+    hp5: 15.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2400.0,
+    gold: 2300.0,
 };
 
 static HEARTWARD:Item = Item
@@ -2988,9 +2988,9 @@ static BREASTPLATE:Item = Item
     cdr: 0.2,
     mana: 300.0,
     health: 0.0,
-    phys_prot: 55.0,
+    phys_prot: 50.0,
     magical_prot: 0.0,
-    mp5: 20.0,
+    mp5: 15.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
@@ -3253,8 +3253,8 @@ static ARCHDRUID:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 250.0,
-    phys_prot: 30.0,
-    magical_prot: 30.0,
+    phys_prot: 35.0,
+    magical_prot: 35.0,
     mp5: 15.0,
     hp5: 0.0,
     ccr: 0.1,
@@ -3296,14 +3296,14 @@ static PHALANX:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 150.0,
+    health: 200.0,
     phys_prot: 50.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 20.0,
     ccr: 0.1,
     move_speed: 0.0,
-    gold: 2200.0,
+    gold: 2150.0,
 };
 
 static PROPHETIC:Item = Item
@@ -3583,7 +3583,7 @@ static CHRONOS:God = God
     health_per_level: 79.0,
     base_mana: 282.0,
     mana_per_level: 42.0,
-    base_as: 1.01,
+    base_as: 1.065,
     as_per_level: 0.015,
     base_auto_damage: 42.0,
     auto_damage_per_level: 1.5,
@@ -4310,7 +4310,7 @@ static ATHENA:God = God
     base_magical_prots: 36.6,
     magical_prots_per_level: 1.6,
     base_hp5: 8.9,
-    hp5_per_level: 0.9,
+    hp5_per_level: 0.8,
     base_mp5: 5.02,
     mp5_per_level: 0.42,
     class: "Guardian"
@@ -6587,7 +6587,7 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
         percent_pen = clamp(percent_pen + 0.1,0.0,0.4)
     }
 
-    if typhon_bool { power += clamp(build.lifesteal + bancroft_lifesteal,0.0,0.4)*200.0;}
+    if typhon_bool { power += clamp(build.lifesteal + bancroft_lifesteal,0.0,0.4)*150.0;}
 
     if silverbranch_bool{ power += clamp(attack_speed - 2.5,0.0,0.8) * 150.0;  }
 
@@ -6955,7 +6955,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
         percent_pen = clamp(percent_pen + 0.1,0.0,0.4)
     }
 
-    if typhon_bool { power += clamp(build.lifesteal + bancroft_lifesteal,0.0,0.4)*200.0}
+    if typhon_bool { power += clamp(build.lifesteal + bancroft_lifesteal,0.0,0.4)*150.0}
 
     if nimble_bool { attack_speed += (1.0/1500.0) * clamp(power,0.0,600.0) * (god.base_as - god.as_per_level);}
 
@@ -7190,7 +7190,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             }
 
             let mut unmitigated_pos2_damage = 0.0;
-            if pos2_enabled{ unmitigated_pos2_damage = 2.0 * (70.0 + (power * 0.25));} // *2 as we assume both 'extra' shots hit
+            if pos2_enabled{ unmitigated_pos2_damage = 2.0 * (60.0 + (power * 0.25));} // *2 as we assume both 'extra' shots hit
 
             let mut unmitigated_ishtar_1b_damage = 0.0;
             if ishtar_1b
@@ -7267,7 +7267,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.12");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 10.13");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
