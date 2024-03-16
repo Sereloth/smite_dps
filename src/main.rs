@@ -219,8 +219,8 @@ static ALTERNATE_TIMELINE:Item = Item
     cdr: 0.1,
     mana:0.0,
     health: 0.0,
-    phys_prot: 40.0,
-    magical_prot: 40.0,
+    phys_prot: 35.0,
+    magical_prot: 35.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
@@ -416,7 +416,7 @@ static DEATHS_TEMPER:Item = Item
     lifesteal: 0.0,
     cdr: 0.0,
     mana: 0.0,
-    health: 75.0,
+    health: 150.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.0,
@@ -1079,7 +1079,7 @@ static MAGICAL_ITEMS:[&Item;37] = [&EMPTY,&DIVINE,&MAGUS,&DESO,&OBBY,&TAHUTI,&CA
 static DIVINE:Item = Item
 {
     name: "Divine Ruin",
-    magical_power: 70.0,
+    magical_power: 75.0,
     physical_power: 0.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
@@ -1101,7 +1101,7 @@ static DIVINE:Item = Item
 static MAGUS:Item = Item
 {
     name: "Spear of the Magus",
-    magical_power: 75.0,
+    magical_power: 85.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1123,7 +1123,7 @@ static MAGUS:Item = Item
 static DESO:Item = Item
 {
     name: "Spear of Desolation",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 15.0,
     percent_pen: 0.0,
@@ -1167,7 +1167,7 @@ static OBBY:Item = Item
 static TAHUTI:Item = Item
 {
     name: "Rod of Tahuti",
-    magical_power: 110.0,
+    magical_power: 115.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1189,7 +1189,7 @@ static TAHUTI:Item = Item
 static CALAM_TAHUTI:Item = Item
 {
     name: "Calamitous Rod of Tahuti",
-    magical_power: 110.0,
+    magical_power: 115.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
@@ -1233,7 +1233,7 @@ static CHRONOS_PENDANT:Item = Item
 static COIN:Item = Item
 {
     name: "Charon's Coin",
-    magical_power: 65.0,
+    magical_power: 75.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
@@ -1255,10 +1255,10 @@ static COIN:Item = Item
 static DOOM_ORB:Item = Item
 {
     name: "Doom Orb",
-    magical_power: 90.0,
+    magical_power: 95.0,
     physical_power: 0.0,
-    flat_pen: 0.0,
-    percent_pen: 0.1,
+    flat_pen: 10.0,
+    percent_pen: 0.0,
     attack_speed: 0.0,
     crit_chance: 0.0,
     lifesteal: 0.0,
@@ -1299,7 +1299,7 @@ static MYRDDIN:Item = Item
 static BOOK_OF_THOTH:Item = Item
 {
     name: "Book of Thoth",
-    magical_power: 70.0,
+    magical_power: 60.0,
     physical_power: 0.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
@@ -1409,7 +1409,7 @@ static PYTHAGS:Item = Item
 static SOUL_GEM:Item = Item
 {
     name: "Soul Gem",
-    magical_power: 70.0,
+    magical_power: 80.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1608,7 +1608,7 @@ static WARLOCKS:Item = Item
 static DEMONIC_GRIP:Item = Item
 {
     name: "Demonic Grip",
-    magical_power: 65.0,
+    magical_power: 75.0,
     physical_power: 0.0,
     flat_pen: 0.0,
     percent_pen: 0.0,
@@ -1762,8 +1762,8 @@ static LAST_GASP:Item = Item
 
 //-------------------------------------------------------------------------
 //Physical Items
-static PHYSICAL_ITEMS:[&Item;49] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
-                                    &OBOW,&DEVOS,&BLOODFORGE,&CRIMSONCLAWS,&SOUL_NOMMER,&EXE,&HEAVY_EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,
+static PHYSICAL_ITEMS:[&Item;48] = [&EMPTY,&BRAWLERS,&JOTUNNS,&CRUSHER,&TITANS,&DOMINANCE,&TRANS,&HEARTSEEKER,&HYDRAS,&ATALANTAS,&SILVERBRANCH,
+                                    &OBOW,&DEVOS,&BLOODFORGE,&CRIMSONCLAWS,&SOUL_NOMMER,&EXE,&FEROCIOUS_EXE,&ASI,&QINS,&DEATHBRINGER,
                                     &DEVOTED_DEATHBRINGER,&RAGE,&BOOMERANG,&WIND_DEMON,
                                     &FAILNOT,&ARONDIGHT,&GRIFFONWING,&SPHINX,&SHADOWDRINKER,&SERRATED,&GOLDEN_BLADE,&HASTENED_KATANA,
                                     &FROSTBOUND,&RUNEFORGED,&DAWNBRINGER,&BLACKTHORN,&BERSERKERS,&GLADS,&BINDING,
@@ -1839,7 +1839,7 @@ static TITANS:Item = Item
 {
     name: "Titan's Bane",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 40.0,
     flat_pen: 0.0,
     percent_pen: 0.2,
     attack_speed: 0.0,
@@ -2081,7 +2081,7 @@ static SOUL_NOMMER:Item = Item
 {
     name: "Soul Eater",
     magical_power: 0.0,
-    physical_power: 40.0,
+    physical_power: 50.0,
     flat_pen: 10.0,
     percent_pen: 0.0,
     attack_speed: 0.0,
@@ -2251,7 +2251,7 @@ static DEVOTED_DEATHBRINGER:Item = Item
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2900.0,
+    gold: 3500.0,
 };
 
 static RAGE:Item = Item
@@ -2324,11 +2324,11 @@ static FAILNOT:Item = Item
 {
     name: "Fail-not",
     magical_power: 0.0,
-    physical_power: 35.0,
+    physical_power: 30.0,
     flat_pen: 0.0,
     percent_pen: 0.1,
     attack_speed: 0.0,
-    crit_chance: 0.2,
+    crit_chance: 0.15,
     lifesteal: 0.0,
     cdr: 0.2,
     mana: 0.0,
@@ -2530,14 +2530,14 @@ static BLACKTHORN:Item = Item
     lifesteal: 0.0,
     cdr: 0.1,
     mana: 200.0,
-    health: 250.0,
+    health: 300.0,
     phys_prot: 0.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 0.0,
     ccr: 0.0,
     move_speed: 0.0,
-    gold: 2350.0,
+    gold: 2200.0,
 };
 
 
@@ -3364,7 +3364,7 @@ static PHALANX:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 200.0,
-    phys_prot: 50.0,
+    phys_prot: 40.0,
     magical_prot: 0.0,
     mp5: 0.0,
     hp5: 20.0,
@@ -3408,8 +3408,8 @@ static CANNONEER:Item = Item
     cdr: 0.0,
     mana: 0.0,
     health: 250.0,
-    phys_prot: 25.0,
-    magical_prot: 25.0,
+    phys_prot: 30.0,
+    magical_prot: 30.0,
     mp5: 0.0,
     hp5: 20.0,
     ccr: 0.0,
@@ -4294,7 +4294,7 @@ static ZHONG:God = God
     health_per_level: 89.0,
     base_mana: 297.0,
     mana_per_level: 47.0,
-    base_as: 0.87,
+    base_as: 0.96,
     as_per_level: 0.01,
     base_auto_damage: 35.0,
     auto_damage_per_level: 1.5,
@@ -6140,8 +6140,8 @@ static HERCULES:God = God
 static HORUS:God = God
 {
     name: "Horus",
-    base_health: 767.0,
-    health_per_level: 88.0,
+    base_health: 783.0,
+    health_per_level: 100.0,
     base_mana: 267.0,
     mana_per_level: 37.0,
     base_as: 1.01,
@@ -6664,8 +6664,8 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     {
         //build.crit_chance isn't mutable so boomerang_crit stores any increases to crit chance
         //which is why this code is very scuffed
-        boomerang_crit = 1.3*boomerang_crit + 0.3*build.crit_chance;
-        power += clamp(build.crit_chance + boomerang_crit - 1.0,0.0,999.0) * 200.0;   
+        boomerang_crit = 1.2*boomerang_crit + 0.2*build.crit_chance;
+        power += clamp(build.crit_chance + boomerang_crit - 1.0,0.0,999.0) * 100.0;   
     }
 
     let mut rangdas_multi = 0.0;
@@ -6743,8 +6743,11 @@ fn ability_damage (base_ability_damage:f32, ability_scaling:f32, god:&God, level
     }
 
     let mut unmitigated_soul_gem_damage = 0.0;
-    if soul_gem_bool{ unmitigated_soul_gem_damage = power * 0.2 * (((number_of_abilities as f32-1.0)/4.0).floor()+1.0);}
-    else { unmitigated_soul_gem_damage = power * 0.25 * (number_of_abilities as f32/4.0).floor();}
+    if(soul_gem_bool)
+    {
+        if soul_gem_enabled{ unmitigated_soul_gem_damage = power * 0.2 * (((number_of_abilities as f32-1.0)/4.0).floor()+1.0);}
+        else { unmitigated_soul_gem_damage = power * 0.25 * (number_of_abilities as f32/4.0).floor();}
+    }
 
     let mut unmitigated_archmages_damage = 0.0;
     if archmage_bool{ unmitigated_archmages_damage = power * 0.3;}
@@ -7041,8 +7044,8 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
     {
         //build.crit_chance isn't mutable so boomerang_crit stores any increases to crit chance
         //which is why this code is very scuffed
-        boomerang_crit = 1.3*boomerang_crit + 0.3*build.crit_chance;
-        power += clamp(build.crit_chance + boomerang_crit - 1.0,0.0,999.0) * 200.0;   
+        boomerang_crit = 1.2*boomerang_crit + 0.2*build.crit_chance;
+        power += clamp(build.crit_chance + boomerang_crit - 1.0,0.0,999.0) * 100.0;   
     }
 
 
@@ -7332,7 +7335,6 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
             if wind_bool && autos >= estimated_autos_to_proc_wind_demon
             {
                 percent_pen = clamp(percent_pen + 0.1,0.0,0.4);
-                attack_speed += 0.1 * (god.base_as - god.as_per_level); 
                 wind_bool = false;
             }
 
@@ -7353,7 +7355,7 @@ fn auto_attack_dps (time_to_auto:f32, god:&God, level: f32, build:&Build, target
 fn main() {
     let app = app::App::default();
 
-    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 11.1");
+    let mut wind = Window::new(0, 0, 1200, 470, "Smite Damage Stuff 11.3");
 
 
     let mut run_btn = Button::new(10, 0, 80, 40, "Run");
